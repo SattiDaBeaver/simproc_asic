@@ -1,6 +1,6 @@
 module simproc (
-    input  logic clk,
-    input  logic rst,
+    input  logic            clk,
+    input  logic            rst,
 
     // Memory interface
     output logic    [7:0]   mem_din,
@@ -9,8 +9,11 @@ module simproc (
     input  logic    [7:0]   mem_dout,
 
     // Debug interface
+    input  logic    [7:0]   pc_set_val,
+    input  logic            pc_set_wr,
     input  logic            run,
-    output logic            halt
+    output logic            halt,
+    output logic            done
 );
 
     // ALU wires
@@ -70,6 +73,32 @@ module simproc (
         .pc_out(pc_out)
     );
 
+    // Data Path wires
+    logic [7:0] instr_reg_in;
+    logic [7:0] instr_reg_out;
+
+    logic [7:0] mdr_in;
+    logic [7:0] mdr_out;
+
+    logic [7:0] reg_a_in;
+    logic [7:0] reg_a_out;
+
+    logic [7:0] reg_b_in;
+    logic [7:0] reg_b_out;
+
+    logic [7:0] alu_reg_in;
+    logic [7:0] alu_reg_out;
+
+    logic       n_flag_in, z_flag_in;
+    logic       n_flag_out, z_flag_out;
+
+    // Load wires
+    logic       ir_load;
+    logic       mdr_load;
+    logic       ab_load;
+    logic       alu_out_load;
+    logic       flag_wr;
+
     // FSM states
     typedef enum logic[2:0] { 
         IDLE, CYCLE_1, CYCLE_2, CYCLE_3, CYCLE_4, CYCLE_5
@@ -105,5 +134,208 @@ module simproc (
         SHIFT_R  = 1'b0,
         SHIFT_L  = 1'b1
     } shift_t;
+
+    state_t curr_state, next_state;
+
+    always_comb begin
+        // Default values
+        next_state      = curr_state;
+        done            = 0;
+        halt            = 0;
+
+        pc_in           = 8'b0;
+        pc_wr           = 0;
+
+        alu_in_a        = 8'b0;
+        alu_in_b        = 8'b0;
+        mem_addr        = 8'b0;
+        mem_we          = 0;
+        mem_din         = 8'b0;
+        instr_reg_in    = 8'b0;
+        ir_load         = 0;
+        rf_write        = 0;
+        rf_data_w_in    = 8'b0;
+        alu_op          = ALU_ADD;
+        alu_out_load    = 0;
+        flag_wr         = 0;
+        alu_reg_in      = 8'b0;
+
+        rf_reg_a_in     = 2'b0;
+        reg_a_in        = 8'b0;
+        rf_reg_b_in     = 2'b0;
+        reg_b_in        = 8'b0;
+        ab_load         = 0;
+
+
+        // State case statement (state table)
+        case (curr_state)
+            IDLE: begin
+                halt = 1;
+                pc_in = pc_set_val;
+                pc_wr = pc_set_wr;
+
+                if (run) begin
+                    next_state = CYCLE_1;
+                end
+                else begin
+                    next_state = IDLE;
+                end
+            end
+
+            CYCLE_1: begin
+                // IR <- mem[PC]
+                mem_addr        = pc_out;
+                instr_reg_in    = mem_dout;
+                ir_load         = 1;
+
+                // PC <- PC + 1
+                alu_in_a        = pc_out;
+                alu_in_b        = 8'h01;
+                alu_op          = ALU_ADD;
+                pc_in           = alu_out;
+                pc_wr           = 1;
+
+                next_state      = CYCLE_2;
+            end
+
+            CYCLE_2: begin
+                // Preload regA and regB data in registers
+                rf_reg_a_in     = instr_reg_out[7:6];
+                reg_a_in        = rf_data_a_out;
+
+                rf_reg_b_in     = instr_reg_out[5:4];
+                reg_b_in        = rf_data_b_out;
+                ab_load         = 1;
+
+                next_state      = CYCLE_3;
+            end
+
+            CYCLE_3: begin
+                if (instr_reg_out[3:0] == OP_ADD || instr_reg_out[3:0] == OP_SUB ||
+                    instr_reg_out[3:0] == OP_NAND) begin
+                    // Select operation
+                    case (instr_reg_out[3:0])
+                        OP_ADD:  alu_op = ALU_ADD;
+                        OP_SUB:  alu_op = ALU_SUB;
+                        OP_NAND: alu_op = ALU_NAND;
+                        default: alu_op = ALU_ADD;
+                    endcase
+                    // select registers A and B
+                    alu_in_a        = reg_a_out;
+                    alu_in_b        = reg_b_out;
+                    // load result in register and set flags
+                    alu_out_load    = 1;
+                    flag_wr         = 1;
+
+                    next_state = CYCLE_4;
+                end
+
+                else if (instr_reg_out[2:0] == OP_SHIFT[2:0]) begin
+                    // Select shift operation
+                    alu_op = (instr_reg_out[5] == 1) ? ALU_SHL : ALU_SHR;
+                    // select registers A and B
+                    alu_in_a        = reg_a_out;
+                    alu_in_b        = {6'b0, instr_reg_out[4:3]};
+                    // load result in register and set flags
+                    alu_out_load    = 1;
+                    flag_wr         = 1;
+
+                    next_state      = CYCLE_4;
+                end
+
+                else if (instr_reg_out[3:0] == OP_LOAD) begin
+                    // MDR <- mem[rB]
+                    mem_addr        = reg_b_out;
+                    mdr_in          = mem_dout;
+                    mdr_load        = 1;
+
+                    next_state      = CYCLE_4;
+                end
+
+                else if (instr_reg_out[3:0] == OP_STORE) begin
+                    // mem[rB] = rA
+                    mem_addr        = reg_b_out;
+                    mem_din         = reg_a_out;
+                    mem_we          = 1;
+
+                    // Check for run
+                    done            = 1;
+                    next_state      = (run == 1) ? CYCLE_1 : IDLE; 
+                end
+
+                else if (instr_reg_out[3:0] == OP_BNZ || instr_reg_out[3:0] == OP_BPZ ||
+                    instr_reg_out[3:0] == OP_BZ || instr_reg_out[3:0] == OP_JUMP) begin
+                    // Select operation
+                    case (instr_reg_out[3:0])
+                        OP_BNZ: if (!z_flag_out) pc_wr = 1;
+                        OP_BPZ: if (!n_flag_out) pc_wr = 1;
+                        OP_BZ:  if (z_flag_out)  pc_wr = 1;
+                        J: pc_wr = 1;
+                    endcase
+                    // A <- PC, B <- SE(instr[7:4])
+                    alu_in_a        = pc_out;
+                    alu_in_b        = {{4{instr_reg_out[7]}}, instr_reg_out[7:4]};
+                    alu_op          = ALU_ADD;
+
+                    // Check for run
+                    done            = 1;
+                    next_state      = (run == 1) ? CYCLE_1 : IDLE; 
+                end
+
+                else if (instr_reg_out[2:0] == OP_ORI[2:0]) begin
+                    // rA <- RF[0]
+                    rf_reg_a_in     = 2'b0; // change this to 1, to match SimProc
+                    ab_load         = 1;
+
+                    next_state      = CYCLE_4;
+                end
+            end
+
+            CYCLE_4: begin
+
+            end
+
+            CYCLE_5: begin
+
+            end
+            
+            default: next_state = IDLE;
+        endcase
+    end
+
+    always_ff @(posedge clk) begin
+        if (rst) begin
+            curr_state      <= IDLE;
+
+            instr_reg_out   <= 8'b0;
+            mdr_out         <= 8'b0;
+            reg_a_out       <= 8'b0;
+            reg_b_out       <= 8'b0;
+            alu_reg_out     <= 8'b0;
+            n_flag_out      <= 0;
+            z_flag_out      <= 0;
+        end
+        else begin
+            curr_state <= next_state;
+
+            if (ir_load) begin
+                instr_reg_out   <= instr_reg_in;
+            end
+            if (mdr_load) begin
+                mdr_out         <= mdr_in;
+            end
+            if (ab_load) begin
+                reg_a_out       <= reg_a_in;
+                reg_b_out       <= reg_b_in;
+            end
+            if (alu_out_load) begin
+                alu_reg_out     <= alu_reg_in;
+            end
+            if (flag_wr) begin
+                n_flag_out      <= n_flag_in;
+                z_flag_out      <= z_flag_in;
+            end
+        end
+    end
     
 endmodule
