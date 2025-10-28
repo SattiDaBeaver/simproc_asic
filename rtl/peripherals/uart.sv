@@ -223,8 +223,6 @@ module UART_TX #(
     logic   [indexBits - 1 : 0]         index;
     logic   [clkBits - 1 : 0]           clkCount;
 
-
-
     typedef enum logic [1:0] {
         IDLE,
         TRANSMIT,
