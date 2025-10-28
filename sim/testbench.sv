@@ -31,6 +31,8 @@ module tb_simproc;
         mem[1] = 8'b0100_0100;
       	mem[2] = 8'b0100_0111;
         mem[3] = 8'b1010_1000;
+        mem[4] = 8'b0000_0110;
+        mem[5] = 8'b1101_1010;
         
         
       	// mem[0]  = 8'b00000110;
@@ -104,7 +106,7 @@ module tb_simproc;
         // run = 0;
 
         // Run for some cycles
-        repeat (20) @(posedge clk);
+        repeat (30) @(posedge clk);
 
       	// DUT.RF1.rf[0] = 8'h00;
       	// #5
