@@ -162,22 +162,17 @@ module simproc (
         mem_addr        = 8'b0;
         mem_we          = 0;
         mem_din         = 8'b0;
-        instr_reg_in    = 8'b0;
         ir_load         = 0;
         rf_write        = 0;
         rf_data_w_in    = 8'b0;
         alu_op          = ALU_ADD;
         alu_out_load    = 0;
         flag_wr         = 0;
-        alu_reg_in      = 8'b0;
 
         rf_reg_a_in     = 2'b0;
-        reg_a_in        = 8'b0;
         rf_reg_b_in     = 2'b0;
-        reg_b_in        = 8'b0;
         ab_load         = 0;
 
-        mdr_in          = 8'b0;
         mdr_load        = 0;
 
         rf_reg_w_in     = 2'b0;

@@ -28,6 +28,7 @@ module tb_simproc;
         DUT.RF1.rf[3] = 8'h00;
 
         mem[0] = 8'b0100_0100;
+      	mem[1] = 8'b0100_0111;
         
       	// mem[0]  = 8'b00000110;
         // mem[1]  = 8'b01010110;
@@ -91,10 +92,22 @@ module tb_simproc;
         #20;
         rst = 0;
         pc_set_wr = 0;
+      	DUT.RF1.rf[0] = 8'h12;
+        DUT.RF1.rf[1] = 8'h34;
+        DUT.RF1.rf[2] = 8'h00;
+        DUT.RF1.rf[3] = 8'h00;
         run = 1;
+        #10
+        run = 0;
 
         // Run for some cycles
-        repeat (20) @(posedge clk);
+      	repeat (8) @(posedge clk);
+      	DUT.RF1.rf[0] = 8'h00;
+      	#5
+      	run = 1;
+        #10
+        run = 0;
+      	repeat (8) @(posedge clk);
 
         // Stop simulation
         $finish;
