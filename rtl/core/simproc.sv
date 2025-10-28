@@ -243,7 +243,10 @@ module simproc (
 
                 else if (instr_reg_out[2:0] == OP_SHIFT[2:0]) begin
                     // Select shift operation
-                    alu_op = (instr_reg_out[5] == 1) ? ALU_SHL : ALU_SHR;
+                    if (instr_reg_out[5] == 1)
+                        alu_op = ALU_SHL;
+                    else
+                        alu_op = ALU_SHR;
                     // select registers A and B
                     alu_in_a        = reg_a_out;
                     alu_in_b        = {6'b0, instr_reg_out[4:3]};
@@ -270,7 +273,11 @@ module simproc (
 
                     // Check for run
                     done            = 1;
-                    next_state      = (run == 1) ? CYCLE_1 : IDLE; 
+                    if (run)
+                        next_state = CYCLE_1;
+                    else
+                        next_state = IDLE;
+
                 end
 
                 else if (instr_reg_out[3:0] == OP_BNZ || instr_reg_out[3:0] == OP_BPZ ||
@@ -289,7 +296,10 @@ module simproc (
 
                     // Check for run
                     done            = 1;
-                    next_state      = (run == 1) ? CYCLE_1 : IDLE; 
+                    if (run)
+                        next_state = CYCLE_1;
+                    else
+                        next_state = IDLE;
                 end
 
                 else if (instr_reg_out[2:0] == OP_ORI[2:0]) begin
@@ -312,7 +322,10 @@ module simproc (
 
                     // Check for run
                     done            = 1;
-                    next_state      = (run == 1) ? CYCLE_1 : IDLE; 
+                    if (run)
+                        next_state = CYCLE_1;
+                    else
+                        next_state = IDLE;
                 end
 
                 else if (instr_reg_out[3:0] == OP_LOAD) begin
@@ -323,7 +336,10 @@ module simproc (
 
                     // Check for run
                     done            = 1;
-                    next_state      = (run == 1) ? CYCLE_1 : IDLE; 
+                    if (run)
+                        next_state = CYCLE_1;
+                    else
+                        next_state = IDLE;
                 end
 
                 else if (instr_reg_out[2:0] == OP_ORI[2:0]) begin
@@ -347,7 +363,10 @@ module simproc (
 
                     // Check for run
                     done            = 1;
-                    next_state      = (run == 1) ? CYCLE_1 : IDLE; 
+                    if (run)
+                        next_state = CYCLE_1;
+                    else
+                        next_state = IDLE;
             end
             
             default: next_state = IDLE;
@@ -389,4 +408,91 @@ module simproc (
         end
     end
     
+endmodule
+
+
+module register_file (
+	input  logic            clk,
+    input  logic            rst,
+	input  logic            RFWrite,
+	input  logic    [1:0]   regA,
+	input  logic    [1:0]   regB,
+	input  logic    [1:0]   regW,
+	input  logic    [7:0]   dataW,
+
+	output logic    [7:0]   dataA,
+	output logic    [7:0]   dataB
+);
+
+    logic [7:0] rf[0:3];
+
+	always_ff @ (posedge clk) begin
+        if (rst) begin
+            rf[0] <= 8'b0;
+            rf[1] <= 8'b0;
+            rf[2] <= 8'b0;
+            rf[3] <= 8'b0;
+        end
+		else if (RFWrite) begin
+            rf[regW] <= dataW;
+		end
+	end
+	always_comb begin
+        dataA = rf[regA];
+        dataB = rf[regB];
+    end
+endmodule
+
+
+module program_counter (
+    input  logic            clk,
+    input  logic            rst,
+    input  logic    [7:0]   pc_in,
+    input  logic            pc_wr,
+    output logic    [7:0]   pc_out
+); 
+    always_ff @ (posedge clk) begin
+        if (rst) begin
+            pc_out <= 8'b0;
+        end
+        else if (pc_wr) begin
+            pc_out <= pc_in;
+        end
+    end
+endmodule
+
+
+module ALU (
+    input  logic    [2:0]   ALUop,
+    input  logic    [7:0]   A,
+    input  logic    [7:0]   B,
+    output logic            N,
+    output logic            Z,
+    output logic    [7:0]   ALUout
+);
+
+    typedef enum logic [2:0] {
+        ADD  = 3'b000,
+        SUB  = 3'b001,
+        OR   = 3'b010,
+        NAND = 3'b011,
+        SHL  = 3'b100,
+        SHR  = 3'b101
+    } aluop_t;
+
+    always @ (*) begin
+        case(ALUop) 
+            ADD:        ALUout = A + B;
+            SUB:        ALUout = A - B;
+            OR:         ALUout = A | B;
+            NAND:       ALUout = ~(A & B);
+            SHL:        ALUout = A << B[1:0];
+            SHR:        ALUout = A >> B[1:0];
+
+            default:    ALUout = 8'h00; 
+        endcase
+    end
+
+    assign N = ALUout[7];
+    assign Z = ~(|ALUout);
 endmodule
