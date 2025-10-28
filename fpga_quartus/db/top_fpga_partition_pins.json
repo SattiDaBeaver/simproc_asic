@@ -1,0 +1,165 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "mem_din[0]",
+					"strict" : false
+				},
+				{
+					"name" : "mem_din[1]",
+					"strict" : false
+				},
+				{
+					"name" : "mem_din[2]",
+					"strict" : false
+				},
+				{
+					"name" : "mem_din[3]",
+					"strict" : false
+				},
+				{
+					"name" : "mem_din[4]",
+					"strict" : false
+				},
+				{
+					"name" : "mem_din[5]",
+					"strict" : false
+				},
+				{
+					"name" : "mem_din[6]",
+					"strict" : false
+				},
+				{
+					"name" : "mem_din[7]",
+					"strict" : false
+				},
+				{
+					"name" : "mem_addr[0]",
+					"strict" : false
+				},
+				{
+					"name" : "mem_addr[1]",
+					"strict" : false
+				},
+				{
+					"name" : "mem_addr[2]",
+					"strict" : false
+				},
+				{
+					"name" : "mem_addr[3]",
+					"strict" : false
+				},
+				{
+					"name" : "mem_addr[4]",
+					"strict" : false
+				},
+				{
+					"name" : "mem_addr[5]",
+					"strict" : false
+				},
+				{
+					"name" : "mem_addr[6]",
+					"strict" : false
+				},
+				{
+					"name" : "mem_addr[7]",
+					"strict" : false
+				},
+				{
+					"name" : "mem_we",
+					"strict" : false
+				},
+				{
+					"name" : "halt",
+					"strict" : false
+				},
+				{
+					"name" : "done",
+					"strict" : false
+				},
+				{
+					"name" : "clk",
+					"strict" : false
+				},
+				{
+					"name" : "rst",
+					"strict" : false
+				},
+				{
+					"name" : "mem_dout[1]",
+					"strict" : false
+				},
+				{
+					"name" : "mem_dout[2]",
+					"strict" : false
+				},
+				{
+					"name" : "mem_dout[0]",
+					"strict" : false
+				},
+				{
+					"name" : "mem_dout[3]",
+					"strict" : false
+				},
+				{
+					"name" : "run",
+					"strict" : false
+				},
+				{
+					"name" : "pc_set_val[0]",
+					"strict" : false
+				},
+				{
+					"name" : "pc_set_wr",
+					"strict" : false
+				},
+				{
+					"name" : "pc_set_val[1]",
+					"strict" : false
+				},
+				{
+					"name" : "pc_set_val[2]",
+					"strict" : false
+				},
+				{
+					"name" : "pc_set_val[3]",
+					"strict" : false
+				},
+				{
+					"name" : "pc_set_val[4]",
+					"strict" : false
+				},
+				{
+					"name" : "pc_set_val[5]",
+					"strict" : false
+				},
+				{
+					"name" : "pc_set_val[6]",
+					"strict" : false
+				},
+				{
+					"name" : "pc_set_val[7]",
+					"strict" : false
+				},
+				{
+					"name" : "mem_dout[7]",
+					"strict" : false
+				},
+				{
+					"name" : "mem_dout[6]",
+					"strict" : false
+				},
+				{
+					"name" : "mem_dout[5]",
+					"strict" : false
+				},
+				{
+					"name" : "mem_dout[4]",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,9 @@
+
+State Machine - |top_fpga|curr_state
+Name curr_state.CYCLE_5 curr_state.CYCLE_4 curr_state.CYCLE_3 curr_state.CYCLE_2 curr_state.CYCLE_1 curr_state.IDLE 
+curr_state.IDLE 0 0 0 0 0 0 
+curr_state.CYCLE_1 0 0 0 0 1 1 
+curr_state.CYCLE_2 0 0 0 1 0 1 
+curr_state.CYCLE_3 0 0 1 0 0 1 
+curr_state.CYCLE_4 0 1 0 0 0 1 
+curr_state.CYCLE_5 1 0 0 0 0 1 
