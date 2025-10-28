@@ -99,6 +99,17 @@ module simproc (
     logic       alu_out_load;
     logic       flag_wr;
 
+    // Assign wires
+    always_comb begin
+        n_flag_in       = alu_n;
+        z_flag_in       = alu_z;
+        alu_reg_in      = alu_out;
+        reg_a_in        = rf_data_a_out;
+        reg_b_in        = rf_data_b_out;
+        mdr_in          = mem_dout;
+        instr_reg_in    = mem_dout;
+    end
+
     // FSM states
     typedef enum logic[2:0] { 
         IDLE, CYCLE_1, CYCLE_2, CYCLE_3, CYCLE_4, CYCLE_5
@@ -166,6 +177,10 @@ module simproc (
         reg_b_in        = 8'b0;
         ab_load         = 0;
 
+        mdr_in          = 8'b0;
+        mdr_load        = 0;
+
+        rf_reg_w_in     = 2'b0;
 
         // State case statement (state table)
         case (curr_state)
@@ -185,7 +200,6 @@ module simproc (
             CYCLE_1: begin
                 // IR <- mem[PC]
                 mem_addr        = pc_out;
-                instr_reg_in    = mem_dout;
                 ir_load         = 1;
 
                 // PC <- PC + 1
@@ -201,10 +215,7 @@ module simproc (
             CYCLE_2: begin
                 // Preload regA and regB data in registers
                 rf_reg_a_in     = instr_reg_out[7:6];
-                reg_a_in        = rf_data_a_out;
-
                 rf_reg_b_in     = instr_reg_out[5:4];
-                reg_b_in        = rf_data_b_out;
                 ab_load         = 1;
 
                 next_state      = CYCLE_3;
@@ -246,7 +257,6 @@ module simproc (
                 else if (instr_reg_out[3:0] == OP_LOAD) begin
                     // MDR <- mem[rB]
                     mem_addr        = reg_b_out;
-                    mdr_in          = mem_dout;
                     mdr_load        = 1;
 
                     next_state      = CYCLE_4;
@@ -270,7 +280,7 @@ module simproc (
                         OP_BNZ: if (!z_flag_out) pc_wr = 1;
                         OP_BPZ: if (!n_flag_out) pc_wr = 1;
                         OP_BZ:  if (z_flag_out)  pc_wr = 1;
-                        J: pc_wr = 1;
+                        OP_JUMP:                 pc_wr = 1;
                     endcase
                     // A <- PC, B <- SE(instr[7:4])
                     alu_in_a        = pc_out;
@@ -292,11 +302,52 @@ module simproc (
             end
 
             CYCLE_4: begin
+                if (instr_reg_out[3:0] == OP_ADD || instr_reg_out[3:0] == OP_SUB ||
+                    instr_reg_out[3:0] == OP_NAND || instr_reg_out[2:0] == OP_SHIFT[2:0]) 
+                    begin
+                    // RF[instr[7:6]] <- ALU out
+                    rf_reg_w_in     = instr_reg_out[7:6];
+                    rf_data_w_in    = alu_reg_out;
+                    rf_write        = 1;
 
+                    // Check for run
+                    done            = 1;
+                    next_state      = (run == 1) ? CYCLE_1 : IDLE; 
+                end
+
+                else if (instr_reg_out[3:0] == OP_LOAD) begin
+                    // RF[instr[7:6]] <- MDR
+                    rf_reg_w_in     = instr_reg_out[7:6];
+                    rf_data_w_in    = mdr_out;
+                    rf_write        = 1;
+
+                    // Check for run
+                    done            = 1;
+                    next_state      = (run == 1) ? CYCLE_1 : IDLE; 
+                end
+
+                else if (instr_reg_out[2:0] == OP_ORI[2:0]) begin
+                    // A <- rA, B <- ZE(instr[7:3])
+                    alu_in_a        = reg_a_out;
+                    alu_in_b        = {3'b0, instr_reg_out[7:3]};
+                    alu_op          = ALU_OR;
+                    alu_out_load    = 1;
+                    flag_wr         = 1;
+
+                    next_state      = CYCLE_5;
+                end
             end
 
             CYCLE_5: begin
+                // only for ORI
+                // RF[0] <- ALU out (change later to be SimProc accurate)
+                    rf_reg_w_in     = 2'b0; // change this to 1, to match SimProc
+                    rf_data_w_in    = alu_reg_out;
+                    rf_write        = 1;
 
+                    // Check for run
+                    done            = 1;
+                    next_state      = (run == 1) ? CYCLE_1 : IDLE; 
             end
             
             default: next_state = IDLE;
