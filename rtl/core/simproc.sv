@@ -288,6 +288,7 @@ module simproc (
                     alu_in_a        = pc_out;
                     alu_in_b        = {{4{instr_reg_out[7]}}, instr_reg_out[7:4]};
                     alu_op          = ALU_ADD;
+                    pc_in           = alu_out;
 
                     // Check for run
                     done            = 1;

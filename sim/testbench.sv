@@ -22,13 +22,16 @@ module tb_simproc;
 
     // Small program in memory
     initial begin
-        DUT.RF1.rf[0] = 8'h12;
-        DUT.RF1.rf[1] = 8'h34;
+        DUT.RF1.rf[0] = 8'h00;
+        DUT.RF1.rf[1] = 8'h00;
         DUT.RF1.rf[2] = 8'h00;
         DUT.RF1.rf[3] = 8'h00;
-
-        mem[0] = 8'b0100_0100;
-      	mem[1] = 8'b0100_0111;
+    
+        mem[0] = 8'b1001_0000;
+        mem[1] = 8'b0100_0100;
+      	mem[2] = 8'b0100_0111;
+        mem[3] = 8'b1010_1000;
+        
         
       	// mem[0]  = 8'b00000110;
         // mem[1]  = 8'b01010110;
@@ -92,22 +95,23 @@ module tb_simproc;
         #20;
         rst = 0;
         pc_set_wr = 0;
-      	DUT.RF1.rf[0] = 8'h12;
-        DUT.RF1.rf[1] = 8'h34;
+      	DUT.RF1.rf[0] = 8'h00;
+        DUT.RF1.rf[1] = 8'h01;
         DUT.RF1.rf[2] = 8'h00;
         DUT.RF1.rf[3] = 8'h00;
         run = 1;
-        #10
-        run = 0;
+        // #10
+        // run = 0;
 
         // Run for some cycles
-      	repeat (8) @(posedge clk);
-      	DUT.RF1.rf[0] = 8'h00;
-      	#5
-      	run = 1;
-        #10
-        run = 0;
-      	repeat (8) @(posedge clk);
+        repeat (20) @(posedge clk);
+
+      	// DUT.RF1.rf[0] = 8'h00;
+      	// #5
+      	// run = 1;
+        // #10
+        // run = 0;
+      	// repeat (8) @(posedge clk);
 
         // Stop simulation
         $finish;
@@ -115,9 +119,13 @@ module tb_simproc;
 
     // --- Monitor FSM, registers, and memory address ---
     always_ff @(posedge clk) begin
-        $display("Time=%0t ns | FSM=%0d | Done=%b | MemAddr=%0h | RF[0]=%0h RF[1]=%0h RF[2]=%0h",
-                $time, DUT.curr_state, done, mem_addr,
-                DUT.RF1.rf[0], DUT.RF1.rf[1], DUT.RF1.rf[2]);
+        if (DUT.curr_state == 1) begin
+        $display("Time=%0t ns | PC =%0d|FSM=%0d | Done=%b | MemAddr=%0h | RF[0]=%0h RF[1]=%0h RF[2]=%0h RF[3]=%0h",
+                $time, DUT.pc_out, DUT.curr_state, done, mem_addr,
+                DUT.RF1.rf[0], DUT.RF1.rf[1], DUT.RF1.rf[2], DUT.RF1.rf[3]);
+        // $display("MEM[C2]=%0h MEM[C1]=%0h MEM[C0]=%0h",
+        //         mem[8'hC2], mem[8'hC1], mem[8'hC0]);
+        end
     end
 
 endmodule
