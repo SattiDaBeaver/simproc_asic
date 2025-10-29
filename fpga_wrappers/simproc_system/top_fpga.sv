@@ -12,20 +12,26 @@ module top_fpga (
     // output logic    [6:0]   HEX0,
     output logic    [9:0]   LEDR
 );
+    logic [9:0] clk_per_bit;
+    logic uart_rx, uart_tx;
 
-    assign clk_per_bit  = SW;
-    assign LEDR         = SW;
+    assign clk_per_bit      = SW;
+    assign uart_rx          = ARDUINO_IO[0];
+    assign ARDUINO_IO[1]    = uart_tx;
+    assign LEDR[9:2]        = SW[9:2];
 
     simproc_system #(
         .CLK_BITS(10)
-    ) (
+    ) SIMPROC_SYS1 (
         .clk(CLOCK_50),
         .rst(~KEY[0]),
 
         .clk_per_bit(clk_per_bit),
-        .uart_rx(ARDUINO_IO[0]),
+        .uart_rx(uart_rx),
 
-        .uart_tx(ARDUINO_IO[1])
+        .uart_tx(uart_tx),
+        .halt(LEDR[1]),
+        .done(LEDR[0])
     );
 endmodule
 
@@ -38,7 +44,11 @@ module simproc_system #(
     input  logic    [CLK_BITS - 1 : 0]  clk_per_bit,
     input  logic                        uart_rx,
 
-    output logic                        uart_tx
+    output logic                        uart_tx,
+
+    // Debug outputs
+    output logic                        halt,
+    output logic                        done
 );
 
     // Internal Signals
@@ -67,8 +77,6 @@ module simproc_system #(
     logic       pc_set_wr;
     logic       run;
     logic [7:0] pc_val;
-    logic       halt;
-    logic       done;
 
     // Module instantiations
     // DP Ram

@@ -12,8 +12,7 @@ SW[9] => clk_per_bit[9].IN1
 KEY[0] => _.IN1
 KEY[1] => ~NO_FANOUT~
 CLOCK_50 => CLOCK_50.IN1
-ARDUINO_IO[0] <> simproc_system:SIMPROC_SYS.uart_rx
-ARDUINO_IO[1] <> simproc_system:SIMPROC_SYS.uart_tx
+ARDUINO_IO[1] <> ARDUINO_IO[1]
 ARDUINO_IO[2] <> <UNC>
 ARDUINO_IO[3] <> <UNC>
 ARDUINO_IO[4] <> <UNC>
@@ -28,8 +27,8 @@ ARDUINO_IO[12] <> <UNC>
 ARDUINO_IO[13] <> <UNC>
 ARDUINO_IO[14] <> <UNC>
 ARDUINO_IO[15] <> <UNC>
-LEDR[0] <= clk_per_bit[0].DB_MAX_OUTPUT_PORT_TYPE
-LEDR[1] <= clk_per_bit[1].DB_MAX_OUTPUT_PORT_TYPE
+LEDR[0] <= simproc_system:SIMPROC_SYS1.done
+LEDR[1] <= simproc_system:SIMPROC_SYS1.halt
 LEDR[2] <= clk_per_bit[2].DB_MAX_OUTPUT_PORT_TYPE
 LEDR[3] <= clk_per_bit[3].DB_MAX_OUTPUT_PORT_TYPE
 LEDR[4] <= clk_per_bit[4].DB_MAX_OUTPUT_PORT_TYPE
@@ -40,7 +39,7 @@ LEDR[8] <= clk_per_bit[8].DB_MAX_OUTPUT_PORT_TYPE
 LEDR[9] <= clk_per_bit[9].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|top_fpga|simproc_system:SIMPROC_SYS
+|top_fpga|simproc_system:SIMPROC_SYS1
 clk => clk.IN3
 rst => rst.IN2
 clk_per_bit[0] => clk_per_bit[0].IN1
@@ -55,9 +54,11 @@ clk_per_bit[8] => clk_per_bit[8].IN1
 clk_per_bit[9] => clk_per_bit[9].IN1
 uart_rx => uart_rx.IN1
 uart_tx <= UART_wrapper:UART1.TX_out
+halt <= simproc:CPU1.halt
+done <= simproc:CPU1.done
 
 
-|top_fpga|simproc_system:SIMPROC_SYS|dp_ram:RAM1
+|top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1
 clk => mem[255][0].CLK
 clk => mem[255][1].CLK
 clk => mem[255][2].CLK
@@ -10460,7 +10461,7 @@ dout_b[6] <= Mux9.DB_MAX_OUTPUT_PORT_TYPE
 dout_b[7] <= Mux8.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|top_fpga|simproc_system:SIMPROC_SYS|simproc:CPU1
+|top_fpga|simproc_system:SIMPROC_SYS1|simproc:CPU1
 clk => clk.IN2
 rst => rst.IN2
 mem_din[0] <= mem_din.DB_MAX_OUTPUT_PORT_TYPE
@@ -10529,7 +10530,7 @@ halt <= halt.DB_MAX_OUTPUT_PORT_TYPE
 done <= Selector36.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|top_fpga|simproc_system:SIMPROC_SYS|simproc:CPU1|ALU:ALU1
+|top_fpga|simproc_system:SIMPROC_SYS1|simproc:CPU1|ALU:ALU1
 ALUop[0] => Mux0.IN10
 ALUop[0] => Mux1.IN10
 ALUop[0] => Mux2.IN10
@@ -10650,7 +10651,7 @@ ALUout[6] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
 ALUout[7] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|top_fpga|simproc_system:SIMPROC_SYS|simproc:CPU1|register_file:RF1
+|top_fpga|simproc_system:SIMPROC_SYS1|simproc:CPU1|register_file:RF1
 clk => rf[3][0].CLK
 clk => rf[3][1].CLK
 clk => rf[3][2].CLK
@@ -10831,7 +10832,7 @@ dataB[6] <= Mux9.DB_MAX_OUTPUT_PORT_TYPE
 dataB[7] <= Mux8.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|top_fpga|simproc_system:SIMPROC_SYS|simproc:CPU1|program_counter:PC1
+|top_fpga|simproc_system:SIMPROC_SYS1|simproc:CPU1|program_counter:PC1
 clk => pc_out[0]~reg0.CLK
 clk => pc_out[1]~reg0.CLK
 clk => pc_out[2]~reg0.CLK
@@ -10874,7 +10875,7 @@ pc_out[6] <= pc_out[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 pc_out[7] <= pc_out[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|top_fpga|simproc_system:SIMPROC_SYS|UART_wrapper:UART1
+|top_fpga|simproc_system:SIMPROC_SYS1|UART_wrapper:UART1
 clk => clk.IN2
 rst => rst.IN2
 clk_per_bit[0] => clk_per_bit[0].IN2
@@ -10912,7 +10913,7 @@ RX_done <= UART_RX:UART_RX1.RXdone
 RX_parityError <= UART_RX:UART_RX1.parityError
 
 
-|top_fpga|simproc_system:SIMPROC_SYS|UART_wrapper:UART1|UART_TX:UART_TX1
+|top_fpga|simproc_system:SIMPROC_SYS1|UART_wrapper:UART1|UART_TX:UART_TX1
 clk => packet[0].CLK
 clk => packet[1].CLK
 clk => packet[2].CLK
@@ -11007,7 +11008,7 @@ TXdone <= TXdone~reg0.DB_MAX_OUTPUT_PORT_TYPE
 busy <= busy~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|top_fpga|simproc_system:SIMPROC_SYS|UART_wrapper:UART1|UART_RX:UART_RX1
+|top_fpga|simproc_system:SIMPROC_SYS1|UART_wrapper:UART1|UART_RX:UART_RX1
 clk => RXout[0]~reg0.CLK
 clk => RXout[1]~reg0.CLK
 clk => RXout[2]~reg0.CLK

@@ -7,7 +7,11 @@ module simproc_system #(
     input  logic    [CLK_BITS - 1 : 0]  clk_per_bit,
     input  logic                        uart_rx,
 
-    output logic                        uart_tx
+    output logic                        uart_tx,
+
+    // Debug outputs
+    output logic                        halt,
+    output logic                        done
 );
 
     // Internal Signals
@@ -36,8 +40,6 @@ module simproc_system #(
     logic       pc_set_wr;
     logic       run;
     logic [7:0] pc_val;
-    logic       halt;
-    logic       done;
 
     // Module instantiations
     // DP Ram

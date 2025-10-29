@@ -4,7 +4,7 @@ JedecChain;
 	DefaultMfr(6E);
 
 	P ActionCode(Cfg)
-		Device PartName(10M50DAF484) Path("C:/Projects/simproc_asic/fpga_quartus/output_files/") File("top_fpga.sof") MfrSpec(OpMask(1));
+		Device PartName(10M50DAF484) Path("C:/Projects/simproc_asic/fpga_quartus/output_files/") File("top_fpga.pof") MfrSpec(OpMask(1) Child_OpMask(2 1 1));
 
 ChainEnd;
 
