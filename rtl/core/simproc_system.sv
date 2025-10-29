@@ -85,7 +85,7 @@ module simproc_system #(
         .CLK_BITS(CLK_BITS),
         .DATA_WIDTH(8),
         .PARITY_BITS(0),
-        .STOP_BITS(1),
+        .STOP_BITS(1)
     ) UART1 (
         .clk(clk),
         .rst(rst),
@@ -108,13 +108,14 @@ module simproc_system #(
     );
 
     // UART Command FSM
-    typedef enum logic [1:0] { 
+    typedef enum logic [2:0] { 
         UART_IDLE,
         WAIT_CMD,
         WAIT_ADDR,
         WAIT_DATA,
         EXEC,
         SEND_RESP,
+        SEND_WAIT
     } uart_state_t;
 
     typedef enum logic [7:0] {
@@ -246,11 +247,15 @@ module simproc_system #(
                 tx_data = tx_buffer;
                 tx_en   = 1;
 
+                uart_next_state = SEND_WAIT;
+            end
+
+            SEND_WAIT: begin
                 if (tx_done) begin
                     uart_next_state = WAIT_CMD;
                 end
                 else begin
-                    uart_next_state = SEND_RESP;
+                    uart_next_state = SEND_WAIT;
                 end
             end
 
