@@ -1,5 +1,5 @@
 Fitter report for top_fpga
-Wed Oct 29 12:02:24 2025
+Wed Oct 29 16:54:13 2025
 Quartus Prime Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
 
 
@@ -68,18 +68,18 @@ on the Quartus Prime software download page.
 +--------------------------------------------------------------------------------------+
 ; Fitter Summary                                                                       ;
 +------------------------------------+-------------------------------------------------+
-; Fitter Status                      ; Successful - Wed Oct 29 12:02:24 2025           ;
+; Fitter Status                      ; Successful - Wed Oct 29 16:54:13 2025           ;
 ; Quartus Prime Version              ; 24.1std.0 Build 1077 03/04/2025 SC Lite Edition ;
 ; Revision Name                      ; top_fpga                                        ;
 ; Top-level Entity Name              ; top_fpga                                        ;
 ; Family                             ; MAX 10                                          ;
 ; Device                             ; 10M50DAF484C7G                                  ;
 ; Timing Models                      ; Final                                           ;
-; Total logic elements               ; 157 / 49,760 ( < 1 % )                          ;
-;     Total combinational functions  ; 149 / 49,760 ( < 1 % )                          ;
-;     Dedicated logic registers      ; 63 / 49,760 ( < 1 % )                           ;
-; Total registers                    ; 63                                              ;
-; Total pins                         ; 81 / 360 ( 23 % )                               ;
+; Total logic elements               ; 164 / 49,760 ( < 1 % )                          ;
+;     Total combinational functions  ; 152 / 49,760 ( < 1 % )                          ;
+;     Dedicated logic registers      ; 71 / 49,760 ( < 1 % )                           ;
+; Total registers                    ; 71                                              ;
+; Total pins                         ; 39 / 360 ( 11 % )                               ;
 ; Total virtual pins                 ; 0                                               ;
 ; Total memory bits                  ; 0 / 1,677,312 ( 0 % )                           ;
 ; Embedded Multiplier 9-bit elements ; 0 / 288 ( 0 % )                                 ;
@@ -159,7 +159,7 @@ on the Quartus Prime software download page.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-14        ;   0.7%      ;
+;     Processors 2-14        ;   0.8%      ;
 +----------------------------+-------------+
 
 
@@ -252,11 +252,53 @@ on the Quartus Prime software download page.
 ; Location ;                ;              ; G_SENSOR_SCLK   ; PIN_AB15      ; QSF Assignment ;
 ; Location ;                ;              ; G_SENSOR_SDI    ; PIN_V11       ; QSF Assignment ;
 ; Location ;                ;              ; G_SENSOR_SDO    ; PIN_V12       ; QSF Assignment ;
+; Location ;                ;              ; HEX0[0]         ; PIN_C14       ; QSF Assignment ;
+; Location ;                ;              ; HEX0[1]         ; PIN_E15       ; QSF Assignment ;
+; Location ;                ;              ; HEX0[2]         ; PIN_C15       ; QSF Assignment ;
+; Location ;                ;              ; HEX0[3]         ; PIN_C16       ; QSF Assignment ;
+; Location ;                ;              ; HEX0[4]         ; PIN_E16       ; QSF Assignment ;
+; Location ;                ;              ; HEX0[5]         ; PIN_D17       ; QSF Assignment ;
+; Location ;                ;              ; HEX0[6]         ; PIN_C17       ; QSF Assignment ;
 ; Location ;                ;              ; HEX0[7]         ; PIN_D15       ; QSF Assignment ;
+; Location ;                ;              ; HEX1[0]         ; PIN_C18       ; QSF Assignment ;
+; Location ;                ;              ; HEX1[1]         ; PIN_D18       ; QSF Assignment ;
+; Location ;                ;              ; HEX1[2]         ; PIN_E18       ; QSF Assignment ;
+; Location ;                ;              ; HEX1[3]         ; PIN_B16       ; QSF Assignment ;
+; Location ;                ;              ; HEX1[4]         ; PIN_A17       ; QSF Assignment ;
+; Location ;                ;              ; HEX1[5]         ; PIN_A18       ; QSF Assignment ;
+; Location ;                ;              ; HEX1[6]         ; PIN_B17       ; QSF Assignment ;
 ; Location ;                ;              ; HEX1[7]         ; PIN_A16       ; QSF Assignment ;
+; Location ;                ;              ; HEX2[0]         ; PIN_B20       ; QSF Assignment ;
+; Location ;                ;              ; HEX2[1]         ; PIN_A20       ; QSF Assignment ;
+; Location ;                ;              ; HEX2[2]         ; PIN_B19       ; QSF Assignment ;
+; Location ;                ;              ; HEX2[3]         ; PIN_A21       ; QSF Assignment ;
+; Location ;                ;              ; HEX2[4]         ; PIN_B21       ; QSF Assignment ;
+; Location ;                ;              ; HEX2[5]         ; PIN_C22       ; QSF Assignment ;
+; Location ;                ;              ; HEX2[6]         ; PIN_B22       ; QSF Assignment ;
 ; Location ;                ;              ; HEX2[7]         ; PIN_A19       ; QSF Assignment ;
+; Location ;                ;              ; HEX3[0]         ; PIN_F21       ; QSF Assignment ;
+; Location ;                ;              ; HEX3[1]         ; PIN_E22       ; QSF Assignment ;
+; Location ;                ;              ; HEX3[2]         ; PIN_E21       ; QSF Assignment ;
+; Location ;                ;              ; HEX3[3]         ; PIN_C19       ; QSF Assignment ;
+; Location ;                ;              ; HEX3[4]         ; PIN_C20       ; QSF Assignment ;
+; Location ;                ;              ; HEX3[5]         ; PIN_D19       ; QSF Assignment ;
+; Location ;                ;              ; HEX3[6]         ; PIN_E17       ; QSF Assignment ;
 ; Location ;                ;              ; HEX3[7]         ; PIN_D22       ; QSF Assignment ;
+; Location ;                ;              ; HEX4[0]         ; PIN_F18       ; QSF Assignment ;
+; Location ;                ;              ; HEX4[1]         ; PIN_E20       ; QSF Assignment ;
+; Location ;                ;              ; HEX4[2]         ; PIN_E19       ; QSF Assignment ;
+; Location ;                ;              ; HEX4[3]         ; PIN_J18       ; QSF Assignment ;
+; Location ;                ;              ; HEX4[4]         ; PIN_H19       ; QSF Assignment ;
+; Location ;                ;              ; HEX4[5]         ; PIN_F19       ; QSF Assignment ;
+; Location ;                ;              ; HEX4[6]         ; PIN_F20       ; QSF Assignment ;
 ; Location ;                ;              ; HEX4[7]         ; PIN_F17       ; QSF Assignment ;
+; Location ;                ;              ; HEX5[0]         ; PIN_J20       ; QSF Assignment ;
+; Location ;                ;              ; HEX5[1]         ; PIN_K20       ; QSF Assignment ;
+; Location ;                ;              ; HEX5[2]         ; PIN_L18       ; QSF Assignment ;
+; Location ;                ;              ; HEX5[3]         ; PIN_N18       ; QSF Assignment ;
+; Location ;                ;              ; HEX5[4]         ; PIN_M20       ; QSF Assignment ;
+; Location ;                ;              ; HEX5[5]         ; PIN_N19       ; QSF Assignment ;
+; Location ;                ;              ; HEX5[6]         ; PIN_N20       ; QSF Assignment ;
 ; Location ;                ;              ; HEX5[7]         ; PIN_L19       ; QSF Assignment ;
 ; Location ;                ;              ; VGA_B[0]        ; PIN_P1        ; QSF Assignment ;
 ; Location ;                ;              ; VGA_B[1]        ; PIN_T1        ; QSF Assignment ;
@@ -281,8 +323,8 @@ on the Quartus Prime software download page.
 ; Type                ; Total [A + B]      ; From Design Partitions [A] ; From Rapid Recompile [B] ;
 +---------------------+--------------------+----------------------------+--------------------------+
 ; Placement (by node) ;                    ;                            ;                          ;
-;     -- Requested    ; 0.00 % ( 0 / 410 ) ; 0.00 % ( 0 / 410 )         ; 0.00 % ( 0 / 410 )       ;
-;     -- Achieved     ; 0.00 % ( 0 / 410 ) ; 0.00 % ( 0 / 410 )         ; 0.00 % ( 0 / 410 )       ;
+;     -- Requested    ; 0.00 % ( 0 / 337 ) ; 0.00 % ( 0 / 337 )         ; 0.00 % ( 0 / 337 )       ;
+;     -- Achieved     ; 0.00 % ( 0 / 337 ) ; 0.00 % ( 0 / 337 )         ; 0.00 % ( 0 / 337 )       ;
 ;                     ;                    ;                            ;                          ;
 ; Routing (by net)    ;                    ;                            ;                          ;
 ;     -- Requested    ; 0.00 % ( 0 / 0 )   ; 0.00 % ( 0 / 0 )           ; 0.00 % ( 0 / 0 )         ;
@@ -305,7 +347,7 @@ on the Quartus Prime software download page.
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
 ; Partition Name                 ; Preservation Achieved ; Preservation Level Used ; Netlist Type Used ; Preservation Method ; Notes ;
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
-; Top                            ; 0.00 % ( 0 / 394 )    ; N/A                     ; Source File       ; N/A                 ;       ;
+; Top                            ; 0.00 % ( 0 / 321 )    ; N/A                     ; Source File       ; N/A                 ;       ;
 ; hard_block:auto_generated_inst ; 0.00 % ( 0 / 16 )     ; N/A                     ; Source File       ; N/A                 ;       ;
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
 
@@ -321,28 +363,28 @@ The pin-out file can be found in C:/Projects/simproc_asic/fpga_quartus/output_fi
 +---------------------------------------------+------------------------+
 ; Resource                                    ; Usage                  ;
 +---------------------------------------------+------------------------+
-; Total logic elements                        ; 157 / 49,760 ( < 1 % ) ;
-;     -- Combinational with no register       ; 94                     ;
-;     -- Register only                        ; 8                      ;
-;     -- Combinational with a register        ; 55                     ;
+; Total logic elements                        ; 164 / 49,760 ( < 1 % ) ;
+;     -- Combinational with no register       ; 93                     ;
+;     -- Register only                        ; 12                     ;
+;     -- Combinational with a register        ; 59                     ;
 ;                                             ;                        ;
 ; Logic element usage by number of LUT inputs ;                        ;
-;     -- 4 input functions                    ; 72                     ;
-;     -- 3 input functions                    ; 33                     ;
-;     -- <=2 input functions                  ; 44                     ;
-;     -- Register only                        ; 8                      ;
+;     -- 4 input functions                    ; 58                     ;
+;     -- 3 input functions                    ; 36                     ;
+;     -- <=2 input functions                  ; 58                     ;
+;     -- Register only                        ; 12                     ;
 ;                                             ;                        ;
 ; Logic elements by mode                      ;                        ;
-;     -- normal mode                          ; 103                    ;
+;     -- normal mode                          ; 106                    ;
 ;     -- arithmetic mode                      ; 46                     ;
 ;                                             ;                        ;
-; Total registers*                            ; 63 / 51,509 ( < 1 % )  ;
-;     -- Dedicated logic registers            ; 63 / 49,760 ( < 1 % )  ;
+; Total registers*                            ; 71 / 51,509 ( < 1 % )  ;
+;     -- Dedicated logic registers            ; 71 / 49,760 ( < 1 % )  ;
 ;     -- I/O registers                        ; 0 / 1,749 ( 0 % )      ;
 ;                                             ;                        ;
-; Total LABs:  partially or completely used   ; 13 / 3,110 ( < 1 % )   ;
+; Total LABs:  partially or completely used   ; 15 / 3,110 ( < 1 % )   ;
 ; Virtual pins                                ; 0                      ;
-; I/O pins                                    ; 81 / 360 ( 23 % )      ;
+; I/O pins                                    ; 39 / 360 ( 11 % )      ;
 ;     -- Clock pins                           ; 1 / 8 ( 13 % )         ;
 ;     -- Dedicated input pins                 ; 1 / 1 ( 100 % )        ;
 ;                                             ;                        ;
@@ -361,11 +403,11 @@ The pin-out file can be found in C:/Projects/simproc_asic/fpga_quartus/output_fi
 ; Oscillator blocks                           ; 0 / 1 ( 0 % )          ;
 ; Impedance control blocks                    ; 0 / 1 ( 0 % )          ;
 ; Average interconnect usage (total/H/V)      ; 0.1% / 0.1% / 0.1%     ;
-; Peak interconnect usage (total/H/V)         ; 1.9% / 2.1% / 1.6%     ;
-; Maximum fan-out                             ; 63                     ;
-; Highest non-global fan-out                  ; 27                     ;
-; Total fan-out                               ; 780                    ;
-; Average fan-out                             ; 1.87                   ;
+; Peak interconnect usage (total/H/V)         ; 2.0% / 2.1% / 1.8%     ;
+; Maximum fan-out                             ; 71                     ;
+; Highest non-global fan-out                  ; 44                     ;
+; Total fan-out                               ; 738                    ;
+; Average fan-out                             ; 2.13                   ;
 +---------------------------------------------+------------------------+
 *  Register count does not include registers inside RAM blocks or DSP blocks.
 
@@ -378,29 +420,29 @@ The pin-out file can be found in C:/Projects/simproc_asic/fpga_quartus/output_fi
 +---------------------------------------------+-----------------------+--------------------------------+
 ; Difficulty Clustering Region                ; Low                   ; Low                            ;
 ;                                             ;                       ;                                ;
-; Total logic elements                        ; 157 / 49760 ( < 1 % ) ; 0 / 49760 ( 0 % )              ;
-;     -- Combinational with no register       ; 94                    ; 0                              ;
-;     -- Register only                        ; 8                     ; 0                              ;
-;     -- Combinational with a register        ; 55                    ; 0                              ;
+; Total logic elements                        ; 164 / 49760 ( < 1 % ) ; 0 / 49760 ( 0 % )              ;
+;     -- Combinational with no register       ; 93                    ; 0                              ;
+;     -- Register only                        ; 12                    ; 0                              ;
+;     -- Combinational with a register        ; 59                    ; 0                              ;
 ;                                             ;                       ;                                ;
 ; Logic element usage by number of LUT inputs ;                       ;                                ;
-;     -- 4 input functions                    ; 72                    ; 0                              ;
-;     -- 3 input functions                    ; 33                    ; 0                              ;
-;     -- <=2 input functions                  ; 44                    ; 0                              ;
-;     -- Register only                        ; 8                     ; 0                              ;
+;     -- 4 input functions                    ; 58                    ; 0                              ;
+;     -- 3 input functions                    ; 36                    ; 0                              ;
+;     -- <=2 input functions                  ; 58                    ; 0                              ;
+;     -- Register only                        ; 12                    ; 0                              ;
 ;                                             ;                       ;                                ;
 ; Logic elements by mode                      ;                       ;                                ;
-;     -- normal mode                          ; 103                   ; 0                              ;
+;     -- normal mode                          ; 106                   ; 0                              ;
 ;     -- arithmetic mode                      ; 46                    ; 0                              ;
 ;                                             ;                       ;                                ;
-; Total registers                             ; 63                    ; 0                              ;
-;     -- Dedicated logic registers            ; 63 / 49760 ( < 1 % )  ; 0 / 49760 ( 0 % )              ;
+; Total registers                             ; 71                    ; 0                              ;
+;     -- Dedicated logic registers            ; 71 / 49760 ( < 1 % )  ; 0 / 49760 ( 0 % )              ;
 ;     -- I/O registers                        ; 0                     ; 0                              ;
 ;                                             ;                       ;                                ;
-; Total LABs:  partially or completely used   ; 13 / 3110 ( < 1 % )   ; 0 / 3110 ( 0 % )               ;
+; Total LABs:  partially or completely used   ; 15 / 3110 ( < 1 % )   ; 0 / 3110 ( 0 % )               ;
 ;                                             ;                       ;                                ;
 ; Virtual pins                                ; 0                     ; 0                              ;
-; I/O pins                                    ; 81                    ; 0                              ;
+; I/O pins                                    ; 39                    ; 0                              ;
 ; Embedded Multiplier 9-bit elements          ; 0 / 288 ( 0 % )       ; 0 / 288 ( 0 % )                ;
 ; Total memory bits                           ; 0                     ; 0                              ;
 ; Total RAM block bits                        ; 0                     ; 0                              ;
@@ -415,8 +457,8 @@ The pin-out file can be found in C:/Projects/simproc_asic/fpga_quartus/output_fi
 ;     -- Registered Output Connections        ; 0                     ; 0                              ;
 ;                                             ;                       ;                                ;
 ; Internal Connections                        ;                       ;                                ;
-;     -- Total Connections                    ; 786                   ; 8                              ;
-;     -- Registered Connections               ; 270                   ; 0                              ;
+;     -- Total Connections                    ; 744                   ; 8                              ;
+;     -- Registered Connections               ; 230                   ; 0                              ;
 ;                                             ;                       ;                                ;
 ; External Connections                        ;                       ;                                ;
 ;     -- Top                                  ; 32                    ; 0                              ;
@@ -424,7 +466,7 @@ The pin-out file can be found in C:/Projects/simproc_asic/fpga_quartus/output_fi
 ;                                             ;                       ;                                ;
 ; Partition Interface                         ;                       ;                                ;
 ;     -- Input Ports                          ; 13                    ; 0                              ;
-;     -- Output Ports                         ; 52                    ; 0                              ;
+;     -- Output Ports                         ; 10                    ; 0                              ;
 ;     -- Bidir Ports                          ; 16                    ; 0                              ;
 ;                                             ;                       ;                                ;
 ; Registered Ports                            ;                       ;                                ;
@@ -448,19 +490,19 @@ The pin-out file can be found in C:/Projects/simproc_asic/fpga_quartus/output_fi
 +----------+-------+----------+--------------+--------------+--------------+-----------------------+--------------------+--------+----------------+---------------+-----------------+----------+--------------+--------------+---------------------------+----------------------+-----------+
 ; Name     ; Pin # ; I/O Bank ; X coordinate ; Y coordinate ; Z coordinate ; Combinational Fan-Out ; Registered Fan-Out ; Global ; Input Register ; Power Up High ; PCI I/O Enabled ; Bus Hold ; Weak Pull Up ; I/O Standard ; Termination Control Block ; Location assigned by ; Slew Rate ;
 +----------+-------+----------+--------------+--------------+--------------+-----------------------+--------------------+--------+----------------+---------------+-----------------+----------+--------------+--------------+---------------------------+----------------------+-----------+
-; CLOCK_50 ; P11   ; 3        ; 34           ; 0            ; 28           ; 63                    ; 0                  ; yes    ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; 0         ;
-; KEY[0]   ; B8    ; 7        ; 46           ; 54           ; 28           ; 27                    ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; 0         ;
+; CLOCK_50 ; P11   ; 3        ; 34           ; 0            ; 28           ; 71                    ; 0                  ; yes    ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; 0         ;
+; KEY[0]   ; B8    ; 7        ; 46           ; 54           ; 28           ; 44                    ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; 0         ;
 ; KEY[1]   ; A7    ; 7        ; 49           ; 54           ; 28           ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; 0         ;
-; SW[0]    ; C10   ; 7        ; 51           ; 54           ; 28           ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; 0         ;
-; SW[1]    ; C11   ; 7        ; 51           ; 54           ; 21           ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; 0         ;
-; SW[2]    ; D12   ; 7        ; 51           ; 54           ; 0            ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; 0         ;
-; SW[3]    ; C12   ; 7        ; 54           ; 54           ; 28           ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; 0         ;
-; SW[4]    ; A12   ; 7        ; 54           ; 54           ; 21           ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; 0         ;
-; SW[5]    ; B12   ; 7        ; 49           ; 54           ; 0            ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; 0         ;
-; SW[6]    ; A13   ; 7        ; 54           ; 54           ; 14           ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; 0         ;
-; SW[7]    ; A14   ; 7        ; 58           ; 54           ; 28           ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; 0         ;
-; SW[8]    ; B14   ; 7        ; 56           ; 54           ; 0            ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; 0         ;
-; SW[9]    ; F15   ; 7        ; 69           ; 54           ; 0            ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; 0         ;
+; SW[0]    ; C10   ; 7        ; 51           ; 54           ; 28           ; 2                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; 0         ;
+; SW[1]    ; C11   ; 7        ; 51           ; 54           ; 21           ; 2                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; 0         ;
+; SW[2]    ; D12   ; 7        ; 51           ; 54           ; 0            ; 2                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; 0         ;
+; SW[3]    ; C12   ; 7        ; 54           ; 54           ; 28           ; 2                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; 0         ;
+; SW[4]    ; A12   ; 7        ; 54           ; 54           ; 21           ; 2                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; 0         ;
+; SW[5]    ; B12   ; 7        ; 49           ; 54           ; 0            ; 2                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; 0         ;
+; SW[6]    ; A13   ; 7        ; 54           ; 54           ; 14           ; 2                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; 0         ;
+; SW[7]    ; A14   ; 7        ; 58           ; 54           ; 28           ; 2                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; 0         ;
+; SW[8]    ; B14   ; 7        ; 56           ; 54           ; 0            ; 2                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; 0         ;
+; SW[9]    ; F15   ; 7        ; 69           ; 54           ; 0            ; 2                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; 0         ;
 +----------+-------+----------+--------------+--------------+--------------+-----------------------+--------------------+--------+----------------+---------------+-----------------+----------+--------------+--------------+---------------------------+----------------------+-----------+
 
 
@@ -469,48 +511,6 @@ The pin-out file can be found in C:/Projects/simproc_asic/fpga_quartus/output_fi
 +---------+-------+----------+--------------+--------------+--------------+-----------------+------------------------+---------------+-----------+-----------------+------------+---------------+----------+--------------+--------------+------------------+-----------------------------------+---------------------------+----------------------------+-----------------------------+----------------------+----------------------+---------------------+
 ; Name    ; Pin # ; I/O Bank ; X coordinate ; Y coordinate ; Z coordinate ; Output Register ; Output Enable Register ; Power Up High ; Slew Rate ; PCI I/O Enabled ; Open Drain ; TRI Primitive ; Bus Hold ; Weak Pull Up ; I/O Standard ; Current Strength ; Termination                       ; Termination Control Block ; Output Buffer Pre-emphasis ; Voltage Output Differential ; Location assigned by ; Output Enable Source ; Output Enable Group ;
 +---------+-------+----------+--------------+--------------+--------------+-----------------+------------------------+---------------+-----------+-----------------+------------+---------------+----------+--------------+--------------+------------------+-----------------------------------+---------------------------+----------------------------+-----------------------------+----------------------+----------------------+---------------------+
-; HEX0[0] ; C14   ; 7        ; 58           ; 54           ; 14           ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
-; HEX0[1] ; E15   ; 7        ; 74           ; 54           ; 7            ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
-; HEX0[2] ; C15   ; 7        ; 60           ; 54           ; 0            ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
-; HEX0[3] ; C16   ; 7        ; 62           ; 54           ; 28           ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
-; HEX0[4] ; E16   ; 7        ; 74           ; 54           ; 0            ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
-; HEX0[5] ; D17   ; 7        ; 74           ; 54           ; 14           ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
-; HEX0[6] ; C17   ; 7        ; 74           ; 54           ; 21           ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
-; HEX1[0] ; C18   ; 7        ; 69           ; 54           ; 21           ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
-; HEX1[1] ; D18   ; 6        ; 78           ; 49           ; 7            ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
-; HEX1[2] ; E18   ; 6        ; 78           ; 49           ; 0            ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
-; HEX1[3] ; B16   ; 7        ; 60           ; 54           ; 7            ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
-; HEX1[4] ; A17   ; 7        ; 64           ; 54           ; 0            ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
-; HEX1[5] ; A18   ; 7        ; 66           ; 54           ; 28           ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
-; HEX1[6] ; B17   ; 7        ; 69           ; 54           ; 28           ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
-; HEX2[0] ; B20   ; 6        ; 78           ; 44           ; 7            ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
-; HEX2[1] ; A20   ; 7        ; 66           ; 54           ; 0            ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
-; HEX2[2] ; B19   ; 7        ; 69           ; 54           ; 14           ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
-; HEX2[3] ; A21   ; 6        ; 78           ; 44           ; 0            ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
-; HEX2[4] ; B21   ; 6        ; 78           ; 43           ; 0            ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
-; HEX2[5] ; C22   ; 6        ; 78           ; 35           ; 0            ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
-; HEX2[6] ; B22   ; 6        ; 78           ; 43           ; 7            ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
-; HEX3[0] ; F21   ; 6        ; 78           ; 35           ; 21           ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
-; HEX3[1] ; E22   ; 6        ; 78           ; 33           ; 7            ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
-; HEX3[2] ; E21   ; 6        ; 78           ; 33           ; 0            ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
-; HEX3[3] ; C19   ; 7        ; 69           ; 54           ; 7            ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
-; HEX3[4] ; C20   ; 6        ; 78           ; 41           ; 7            ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
-; HEX3[5] ; D19   ; 6        ; 78           ; 41           ; 0            ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
-; HEX3[6] ; E17   ; 6        ; 78           ; 43           ; 14           ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
-; HEX4[0] ; F18   ; 6        ; 78           ; 40           ; 14           ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
-; HEX4[1] ; E20   ; 6        ; 78           ; 40           ; 0            ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
-; HEX4[2] ; E19   ; 6        ; 78           ; 40           ; 21           ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
-; HEX4[3] ; J18   ; 6        ; 78           ; 42           ; 14           ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
-; HEX4[4] ; H19   ; 6        ; 78           ; 45           ; 21           ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
-; HEX4[5] ; F19   ; 6        ; 78           ; 40           ; 7            ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
-; HEX4[6] ; F20   ; 6        ; 78           ; 35           ; 14           ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
-; HEX5[0] ; J20   ; 6        ; 78           ; 45           ; 7            ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
-; HEX5[1] ; K20   ; 6        ; 78           ; 42           ; 0            ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
-; HEX5[2] ; L18   ; 6        ; 78           ; 37           ; 14           ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
-; HEX5[3] ; N18   ; 6        ; 78           ; 34           ; 22           ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
-; HEX5[4] ; M20   ; 6        ; 78           ; 34           ; 7            ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
-; HEX5[5] ; N19   ; 6        ; 78           ; 34           ; 14           ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
-; HEX5[6] ; N20   ; 6        ; 78           ; 34           ; 0            ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
 ; LEDR[0] ; A8    ; 7        ; 46           ; 54           ; 0            ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
 ; LEDR[1] ; A9    ; 7        ; 46           ; 54           ; 21           ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
 ; LEDR[2] ; A10   ; 7        ; 51           ; 54           ; 14           ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
@@ -575,8 +575,8 @@ The pin-out file can be found in C:/Projects/simproc_asic/fpga_quartus/output_fi
 ; 3        ; 7 / 48 ( 15 % )  ; 2.5V          ; --           ;
 ; 4        ; 10 / 48 ( 21 % ) ; 2.5V          ; --           ;
 ; 5        ; 0 / 40 ( 0 % )   ; 2.5V          ; --           ;
-; 6        ; 27 / 60 ( 45 % ) ; 2.5V          ; --           ;
-; 7        ; 37 / 52 ( 71 % ) ; 2.5V          ; --           ;
+; 6        ; 0 / 60 ( 0 % )   ; 2.5V          ; --           ;
+; 7        ; 22 / 52 ( 42 % ) ; 2.5V          ; --           ;
 ; 8        ; 4 / 36 ( 11 % )  ; 2.5V          ; --           ;
 +----------+------------------+---------------+--------------+
 
@@ -602,11 +602,11 @@ The pin-out file can be found in C:/Projects/simproc_asic/fpga_quartus/output_fi
 ; A14      ; 425        ; 7        ; SW[7]                                          ; input  ; 2.5 V                 ;         ; Column I/O ; Y               ; no       ; Off          ;
 ; A15      ; 421        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Column I/O ;                 ; no       ; On           ;
 ; A16      ; 419        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Column I/O ;                 ; no       ; On           ;
-; A17      ; 407        ; 7        ; HEX1[4]                                        ; output ; 2.5 V                 ;         ; Column I/O ; Y               ; no       ; Off          ;
-; A18      ; 405        ; 7        ; HEX1[5]                                        ; output ; 2.5 V                 ;         ; Column I/O ; Y               ; no       ; Off          ;
+; A17      ; 407        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Column I/O ;                 ; no       ; On           ;
+; A18      ; 405        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Column I/O ;                 ; no       ; On           ;
 ; A19      ; 403        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Column I/O ;                 ; no       ; On           ;
-; A20      ; 401        ; 7        ; HEX2[1]                                        ; output ; 2.5 V                 ;         ; Column I/O ; Y               ; no       ; Off          ;
-; A21      ; 371        ; 6        ; HEX2[3]                                        ; output ; 2.5 V                 ;         ; Row I/O    ; Y               ; no       ; Off          ;
+; A20      ; 401        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Column I/O ;                 ; no       ; On           ;
+; A21      ; 371        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Row I/O    ;                 ; no       ; On           ;
 ; A22      ;            ;          ; GND                                            ; gnd    ;                       ;         ; --         ;                 ; --       ; --           ;
 ; AA1      ; 133        ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Column I/O ;                 ; no       ; On           ;
 ; AA2      ; 135        ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Column I/O ;                 ; no       ; On           ;
@@ -667,13 +667,13 @@ The pin-out file can be found in C:/Projects/simproc_asic/fpga_quartus/output_fi
 ; B13      ;            ;          ; GND                                            ; gnd    ;                       ;         ; --         ;                 ; --       ; --           ;
 ; B14      ; 427        ; 7        ; SW[8]                                          ; input  ; 2.5 V                 ;         ; Column I/O ; Y               ; no       ; Off          ;
 ; B15      ; 423        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Column I/O ;                 ; --       ; --           ;
-; B16      ; 417        ; 7        ; HEX1[3]                                        ; output ; 2.5 V                 ;         ; Column I/O ; Y               ; no       ; Off          ;
-; B17      ; 402        ; 7        ; HEX1[6]                                        ; output ; 2.5 V                 ;         ; Column I/O ; Y               ; no       ; Off          ;
+; B16      ; 417        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Column I/O ;                 ; no       ; On           ;
+; B17      ; 402        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Column I/O ;                 ; no       ; On           ;
 ; B18      ;            ;          ; GND                                            ; gnd    ;                       ;         ; --         ;                 ; --       ; --           ;
-; B19      ; 399        ; 7        ; HEX2[2]                                        ; output ; 2.5 V                 ;         ; Column I/O ; Y               ; no       ; Off          ;
-; B20      ; 369        ; 6        ; HEX2[0]                                        ; output ; 2.5 V                 ;         ; Row I/O    ; Y               ; no       ; Off          ;
-; B21      ; 367        ; 6        ; HEX2[4]                                        ; output ; 2.5 V                 ;         ; Row I/O    ; Y               ; no       ; Off          ;
-; B22      ; 365        ; 6        ; HEX2[6]                                        ; output ; 2.5 V                 ;         ; Row I/O    ; Y               ; no       ; Off          ;
+; B19      ; 399        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Column I/O ;                 ; no       ; On           ;
+; B20      ; 369        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Row I/O    ;                 ; no       ; On           ;
+; B21      ; 367        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Row I/O    ;                 ; no       ; On           ;
+; B22      ; 365        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Row I/O    ;                 ; no       ; On           ;
 ; C1       ; 33         ; 1B       ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Row I/O    ;                 ; --       ; --           ;
 ; C2       ; 499        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Column I/O ;                 ; no       ; On           ;
 ; C3       ; 497        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Column I/O ;                 ; no       ; On           ;
@@ -687,15 +687,15 @@ The pin-out file can be found in C:/Projects/simproc_asic/fpga_quartus/output_fi
 ; C11      ; 440        ; 7        ; SW[1]                                          ; input  ; 2.5 V                 ;         ; Column I/O ; Y               ; no       ; Off          ;
 ; C12      ; 436        ; 7        ; SW[3]                                          ; input  ; 2.5 V                 ;         ; Column I/O ; Y               ; no       ; Off          ;
 ; C13      ; 426        ; 7        ; LEDR[5]                                        ; output ; 2.5 V                 ;         ; Column I/O ; Y               ; no       ; Off          ;
-; C14      ; 424        ; 7        ; HEX0[0]                                        ; output ; 2.5 V                 ;         ; Column I/O ; Y               ; no       ; Off          ;
-; C15      ; 418        ; 7        ; HEX0[2]                                        ; output ; 2.5 V                 ;         ; Column I/O ; Y               ; no       ; Off          ;
-; C16      ; 416        ; 7        ; HEX0[3]                                        ; output ; 2.5 V                 ;         ; Column I/O ; Y               ; no       ; Off          ;
-; C17      ; 391        ; 7        ; HEX0[6]                                        ; output ; 2.5 V                 ;         ; Column I/O ; Y               ; no       ; Off          ;
-; C18      ; 400        ; 7        ; HEX1[0]                                        ; output ; 2.5 V                 ;         ; Column I/O ; Y               ; no       ; Off          ;
-; C19      ; 397        ; 7        ; HEX3[3]                                        ; output ; 2.5 V                 ;         ; Column I/O ; Y               ; no       ; Off          ;
-; C20      ; 357        ; 6        ; HEX3[4]                                        ; output ; 2.5 V                 ;         ; Row I/O    ; Y               ; no       ; Off          ;
+; C14      ; 424        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Column I/O ;                 ; no       ; On           ;
+; C15      ; 418        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Column I/O ;                 ; no       ; On           ;
+; C16      ; 416        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Column I/O ;                 ; no       ; On           ;
+; C17      ; 391        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Column I/O ;                 ; no       ; On           ;
+; C18      ; 400        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Column I/O ;                 ; no       ; On           ;
+; C19      ; 397        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Column I/O ;                 ; no       ; On           ;
+; C20      ; 357        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Row I/O    ;                 ; no       ; On           ;
 ; C21      ; 347        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Row I/O    ;                 ; no       ; On           ;
-; C22      ; 343        ; 6        ; HEX2[5]                                        ; output ; 2.5 V                 ;         ; Row I/O    ; Y               ; no       ; Off          ;
+; C22      ; 343        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Row I/O    ;                 ; no       ; On           ;
 ; D1       ; 35         ; 1B       ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Row I/O    ;                 ; no       ; On           ;
 ; D2       ; 31         ; 1B       ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Row I/O    ;                 ; no       ; On           ;
 ; D3       ; 29         ; 1B       ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Row I/O    ;                 ; no       ; On           ;
@@ -712,9 +712,9 @@ The pin-out file can be found in C:/Projects/simproc_asic/fpga_quartus/output_fi
 ; D14      ; 428        ; 7        ; LEDR[7]                                        ; output ; 2.5 V                 ;         ; Column I/O ; Y               ; no       ; Off          ;
 ; D15      ; 404        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Column I/O ;                 ; no       ; On           ;
 ; D16      ;            ;          ; GND                                            ; gnd    ;                       ;         ; --         ;                 ; --       ; --           ;
-; D17      ; 389        ; 7        ; HEX0[5]                                        ; output ; 2.5 V                 ;         ; Column I/O ; Y               ; no       ; Off          ;
-; D18      ; 385        ; 6        ; HEX1[1]                                        ; output ; 2.5 V                 ;         ; Row I/O    ; Y               ; no       ; Off          ;
-; D19      ; 359        ; 6        ; HEX3[5]                                        ; output ; 2.5 V                 ;         ; Row I/O    ; Y               ; no       ; Off          ;
+; D17      ; 389        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Column I/O ;                 ; no       ; On           ;
+; D18      ; 385        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Row I/O    ;                 ; no       ; On           ;
+; D19      ; 359        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Row I/O    ;                 ; no       ; On           ;
 ; D20      ;            ;          ; GND                                            ; gnd    ;                       ;         ; --         ;                 ; --       ; --           ;
 ; D21      ; 345        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Row I/O    ;                 ; --       ; --           ;
 ; D22      ; 341        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Row I/O    ;                 ; no       ; On           ;
@@ -732,14 +732,14 @@ The pin-out file can be found in C:/Projects/simproc_asic/fpga_quartus/output_fi
 ; E12      ; 429        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Column I/O ;                 ; no       ; On           ;
 ; E13      ; 430        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Column I/O ;                 ; no       ; On           ;
 ; E14      ; 406        ; 7        ; LEDR[6]                                        ; output ; 2.5 V                 ;         ; Column I/O ; Y               ; no       ; Off          ;
-; E15      ; 390        ; 7        ; HEX0[1]                                        ; output ; 2.5 V                 ;         ; Column I/O ; Y               ; no       ; Off          ;
-; E16      ; 388        ; 7        ; HEX0[4]                                        ; output ; 2.5 V                 ;         ; Column I/O ; Y               ; no       ; Off          ;
-; E17      ; 366        ; 6        ; HEX3[6]                                        ; output ; 2.5 V                 ;         ; Row I/O    ; Y               ; no       ; Off          ;
-; E18      ; 387        ; 6        ; HEX1[2]                                        ; output ; 2.5 V                 ;         ; Row I/O    ; Y               ; no       ; Off          ;
-; E19      ; 352        ; 6        ; HEX4[2]                                        ; output ; 2.5 V                 ;         ; Row I/O    ; Y               ; no       ; Off          ;
-; E20      ; 355        ; 6        ; HEX4[1]                                        ; output ; 2.5 V                 ;         ; Row I/O    ; Y               ; no       ; Off          ;
-; E21      ; 335        ; 6        ; HEX3[2]                                        ; output ; 2.5 V                 ;         ; Row I/O    ; Y               ; no       ; Off          ;
-; E22      ; 333        ; 6        ; HEX3[1]                                        ; output ; 2.5 V                 ;         ; Row I/O    ; Y               ; no       ; Off          ;
+; E15      ; 390        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Column I/O ;                 ; no       ; On           ;
+; E16      ; 388        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Column I/O ;                 ; no       ; On           ;
+; E17      ; 366        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Row I/O    ;                 ; no       ; On           ;
+; E18      ; 387        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Row I/O    ;                 ; no       ; On           ;
+; E19      ; 352        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Row I/O    ;                 ; no       ; On           ;
+; E20      ; 355        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Row I/O    ;                 ; no       ; On           ;
+; E21      ; 335        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Row I/O    ;                 ; no       ; On           ;
+; E22      ; 333        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Row I/O    ;                 ; no       ; On           ;
 ; F1       ; 47         ; 1B       ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Row I/O    ;                 ; no       ; On           ;
 ; F2       ; 43         ; 1B       ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Row I/O    ;                 ; no       ; On           ;
 ; F3       ; 7          ; 1A       ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Row I/O    ;                 ; no       ; On           ;
@@ -757,10 +757,10 @@ The pin-out file can be found in C:/Projects/simproc_asic/fpga_quartus/output_fi
 ; F15      ; 398        ; 7        ; SW[9]                                          ; input  ; 2.5 V                 ;         ; Column I/O ; Y               ; no       ; Off          ;
 ; F16      ; 396        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Column I/O ;                 ; no       ; On           ;
 ; F17      ; 364        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Row I/O    ;                 ; no       ; On           ;
-; F18      ; 354        ; 6        ; HEX4[0]                                        ; output ; 2.5 V                 ;         ; Row I/O    ; Y               ; no       ; Off          ;
-; F19      ; 353        ; 6        ; HEX4[5]                                        ; output ; 2.5 V                 ;         ; Row I/O    ; Y               ; no       ; Off          ;
-; F20      ; 342        ; 6        ; HEX4[6]                                        ; output ; 2.5 V                 ;         ; Row I/O    ; Y               ; no       ; Off          ;
-; F21      ; 340        ; 6        ; HEX3[0]                                        ; output ; 2.5 V                 ;         ; Row I/O    ; Y               ; no       ; Off          ;
+; F18      ; 354        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Row I/O    ;                 ; no       ; On           ;
+; F19      ; 353        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Row I/O    ;                 ; no       ; On           ;
+; F20      ; 342        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Row I/O    ;                 ; no       ; On           ;
+; F21      ; 340        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Row I/O    ;                 ; no       ; On           ;
 ; F22      ; 331        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Row I/O    ;                 ; no       ; On           ;
 ; G1       ; 45         ; 1B       ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Row I/O    ;                 ; no       ; On           ;
 ; G2       ; 34         ; 1B       ; ~ALTERA_TCK~ / RESERVED_INPUT                  ; input  ; 2.5 V Schmitt Trigger ;         ; Row I/O    ; N               ; no       ; Off          ;
@@ -802,7 +802,7 @@ The pin-out file can be found in C:/Projects/simproc_asic/fpga_quartus/output_fi
 ; H16      ;            ; 6        ; VCCIO6                                         ; power  ;                       ; 2.5V    ; --         ;                 ; --       ; --           ;
 ; H17      ; 384        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Row I/O    ;                 ; no       ; On           ;
 ; H18      ; 374        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Row I/O    ;                 ; no       ; On           ;
-; H19      ; 372        ; 6        ; HEX4[4]                                        ; output ; 2.5 V                 ;         ; Row I/O    ; Y               ; no       ; Off          ;
+; H19      ; 372        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Row I/O    ;                 ; no       ; On           ;
 ; H20      ; 375        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Row I/O    ;                 ; no       ; On           ;
 ; H21      ; 323        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Row I/O    ;                 ; no       ; On           ;
 ; H22      ; 321        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Row I/O    ;                 ; no       ; On           ;
@@ -823,9 +823,9 @@ The pin-out file can be found in C:/Projects/simproc_asic/fpga_quartus/output_fi
 ; J15      ; 370        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Row I/O    ;                 ; no       ; On           ;
 ; J16      ;            ;          ; GND                                            ; gnd    ;                       ;         ; --         ;                 ; --       ; --           ;
 ; J17      ;            ; 6        ; VCCIO6                                         ; power  ;                       ; 2.5V    ; --         ;                 ; --       ; --           ;
-; J18      ; 362        ; 6        ; HEX4[3]                                        ; output ; 2.5 V                 ;         ; Row I/O    ; Y               ; no       ; Off          ;
+; J18      ; 362        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Row I/O    ;                 ; no       ; On           ;
 ; J19      ;            ;          ; GND                                            ; gnd    ;                       ;         ; --         ;                 ; --       ; --           ;
-; J20      ; 373        ; 6        ; HEX5[0]                                        ; output ; 2.5 V                 ;         ; Row I/O    ; Y               ; no       ; Off          ;
+; J20      ; 373        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Row I/O    ;                 ; no       ; On           ;
 ; J21      ; 327        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Row I/O    ;                 ; no       ; On           ;
 ; J22      ; 325        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Row I/O    ;                 ; no       ; On           ;
 ; K1       ; 49         ; 1B       ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Row I/O    ;                 ; no       ; On           ;
@@ -847,7 +847,7 @@ The pin-out file can be found in C:/Projects/simproc_asic/fpga_quartus/output_fi
 ; K17      ;            ; 6        ; VCCIO6                                         ; power  ;                       ; 2.5V    ; --         ;                 ; --       ; --           ;
 ; K18      ; 360        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Row I/O    ;                 ; no       ; On           ;
 ; K19      ; 361        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Row I/O    ;                 ; no       ; On           ;
-; K20      ; 363        ; 6        ; HEX5[1]                                        ; output ; 2.5 V                 ;         ; Row I/O    ; Y               ; no       ; Off          ;
+; K20      ; 363        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Row I/O    ;                 ; no       ; On           ;
 ; K21      ; 326        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Row I/O    ;                 ; no       ; On           ;
 ; K22      ; 324        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Row I/O    ;                 ; no       ; On           ;
 ; L1       ; 51         ; 1B       ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Row I/O    ;                 ; no       ; On           ;
@@ -867,7 +867,7 @@ The pin-out file can be found in C:/Projects/simproc_asic/fpga_quartus/output_fi
 ; L15      ; 346        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Row I/O    ;                 ; no       ; On           ;
 ; L16      ;            ; 6        ; VCCIO6                                         ; power  ;                       ; 2.5V    ; --         ;                 ; --       ; --           ;
 ; L17      ;            ;          ; GND                                            ; gnd    ;                       ;         ; --         ;                 ; --       ; --           ;
-; L18      ; 350        ; 6        ; HEX5[2]                                        ; output ; 2.5 V                 ;         ; Row I/O    ; Y               ; no       ; Off          ;
+; L18      ; 350        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Row I/O    ;                 ; no       ; On           ;
 ; L19      ; 349        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Row I/O    ;                 ; no       ; On           ;
 ; L20      ; 351        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Row I/O    ;                 ; no       ; On           ;
 ; L21      ;            ;          ; GND                                            ; gnd    ;                       ;         ; --         ;                 ; --       ; --           ;
@@ -891,7 +891,7 @@ The pin-out file can be found in C:/Projects/simproc_asic/fpga_quartus/output_fi
 ; M17      ;            ; 6        ; VCCIO6                                         ; power  ;                       ; 2.5V    ; --         ;                 ; --       ; --           ;
 ; M18      ; 348        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Row I/O    ;                 ; no       ; On           ;
 ; M19      ;            ;          ; GND                                            ; gnd    ;                       ;         ; --         ;                 ; --       ; --           ;
-; M20      ; 337        ; 6        ; HEX5[4]                                        ; output ; 2.5 V                 ;         ; Row I/O    ; Y               ; no       ; Off          ;
+; M20      ; 337        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Row I/O    ;                 ; no       ; On           ;
 ; M21      ; 312        ; 5        ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Row I/O    ;                 ; no       ; On           ;
 ; M22      ; 315        ; 5        ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Row I/O    ;                 ; no       ; On           ;
 ; N1       ; 87         ; 2        ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Row I/O    ;                 ; no       ; On           ;
@@ -911,9 +911,9 @@ The pin-out file can be found in C:/Projects/simproc_asic/fpga_quartus/output_fi
 ; N15      ; 322        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Row I/O    ;                 ; no       ; On           ;
 ; N16      ;            ; 5        ; VCCIO5                                         ; power  ;                       ; 2.5V    ; --         ;                 ; --       ; --           ;
 ; N17      ;            ; 6        ; VCCIO6                                         ; power  ;                       ; 2.5V    ; --         ;                 ; --       ; --           ;
-; N18      ; 336        ; 6        ; HEX5[3]                                        ; output ; 2.5 V                 ;         ; Row I/O    ; Y               ; no       ; Off          ;
-; N19      ; 338        ; 6        ; HEX5[5]                                        ; output ; 2.5 V                 ;         ; Row I/O    ; Y               ; no       ; Off          ;
-; N20      ; 339        ; 6        ; HEX5[6]                                        ; output ; 2.5 V                 ;         ; Row I/O    ; Y               ; no       ; Off          ;
+; N18      ; 336        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Row I/O    ;                 ; no       ; On           ;
+; N19      ; 338        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Row I/O    ;                 ; no       ; On           ;
+; N20      ; 339        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Row I/O    ;                 ; no       ; On           ;
 ; N21      ; 313        ; 5        ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Row I/O    ;                 ; no       ; On           ;
 ; N22      ; 307        ; 5        ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Row I/O    ;                 ; no       ; On           ;
 ; P1       ; 85         ; 2        ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Row I/O    ;                 ; no       ; On           ;
@@ -1080,48 +1080,6 @@ Note: Pin directions (input, output or bidir) are based on device operating in u
 ; Pin Name       ; Reason                        ;
 +----------------+-------------------------------+
 ; KEY[1]         ; Incomplete set of assignments ;
-; HEX5[0]        ; Incomplete set of assignments ;
-; HEX5[1]        ; Incomplete set of assignments ;
-; HEX5[2]        ; Incomplete set of assignments ;
-; HEX5[3]        ; Incomplete set of assignments ;
-; HEX5[4]        ; Incomplete set of assignments ;
-; HEX5[5]        ; Incomplete set of assignments ;
-; HEX5[6]        ; Incomplete set of assignments ;
-; HEX4[0]        ; Incomplete set of assignments ;
-; HEX4[1]        ; Incomplete set of assignments ;
-; HEX4[2]        ; Incomplete set of assignments ;
-; HEX4[3]        ; Incomplete set of assignments ;
-; HEX4[4]        ; Incomplete set of assignments ;
-; HEX4[5]        ; Incomplete set of assignments ;
-; HEX4[6]        ; Incomplete set of assignments ;
-; HEX3[0]        ; Incomplete set of assignments ;
-; HEX3[1]        ; Incomplete set of assignments ;
-; HEX3[2]        ; Incomplete set of assignments ;
-; HEX3[3]        ; Incomplete set of assignments ;
-; HEX3[4]        ; Incomplete set of assignments ;
-; HEX3[5]        ; Incomplete set of assignments ;
-; HEX3[6]        ; Incomplete set of assignments ;
-; HEX2[0]        ; Incomplete set of assignments ;
-; HEX2[1]        ; Incomplete set of assignments ;
-; HEX2[2]        ; Incomplete set of assignments ;
-; HEX2[3]        ; Incomplete set of assignments ;
-; HEX2[4]        ; Incomplete set of assignments ;
-; HEX2[5]        ; Incomplete set of assignments ;
-; HEX2[6]        ; Incomplete set of assignments ;
-; HEX1[0]        ; Incomplete set of assignments ;
-; HEX1[1]        ; Incomplete set of assignments ;
-; HEX1[2]        ; Incomplete set of assignments ;
-; HEX1[3]        ; Incomplete set of assignments ;
-; HEX1[4]        ; Incomplete set of assignments ;
-; HEX1[5]        ; Incomplete set of assignments ;
-; HEX1[6]        ; Incomplete set of assignments ;
-; HEX0[0]        ; Incomplete set of assignments ;
-; HEX0[1]        ; Incomplete set of assignments ;
-; HEX0[2]        ; Incomplete set of assignments ;
-; HEX0[3]        ; Incomplete set of assignments ;
-; HEX0[4]        ; Incomplete set of assignments ;
-; HEX0[5]        ; Incomplete set of assignments ;
-; HEX0[6]        ; Incomplete set of assignments ;
 ; LEDR[0]        ; Incomplete set of assignments ;
 ; LEDR[1]        ; Incomplete set of assignments ;
 ; LEDR[2]        ; Incomplete set of assignments ;
@@ -1148,33 +1106,32 @@ Note: Pin directions (input, output or bidir) are based on device operating in u
 ; ARDUINO_IO[15] ; Incomplete set of assignments ;
 ; ARDUINO_IO[0]  ; Incomplete set of assignments ;
 ; ARDUINO_IO[1]  ; Incomplete set of assignments ;
+; SW[0]          ; Incomplete set of assignments ;
+; SW[1]          ; Incomplete set of assignments ;
+; SW[2]          ; Incomplete set of assignments ;
+; SW[3]          ; Incomplete set of assignments ;
+; SW[4]          ; Incomplete set of assignments ;
+; SW[5]          ; Incomplete set of assignments ;
+; SW[6]          ; Incomplete set of assignments ;
+; SW[7]          ; Incomplete set of assignments ;
+; SW[8]          ; Incomplete set of assignments ;
+; SW[9]          ; Incomplete set of assignments ;
 ; CLOCK_50       ; Incomplete set of assignments ;
 ; KEY[0]         ; Incomplete set of assignments ;
-; SW[9]          ; Incomplete set of assignments ;
-; SW[8]          ; Incomplete set of assignments ;
-; SW[7]          ; Incomplete set of assignments ;
-; SW[6]          ; Incomplete set of assignments ;
-; SW[5]          ; Incomplete set of assignments ;
-; SW[4]          ; Incomplete set of assignments ;
-; SW[3]          ; Incomplete set of assignments ;
-; SW[2]          ; Incomplete set of assignments ;
-; SW[1]          ; Incomplete set of assignments ;
-; SW[0]          ; Incomplete set of assignments ;
 +----------------+-------------------------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Fitter Resource Utilization by Entity                                                                                                                                                                                                                                                                                              ;
-+----------------------------+-------------+---------------------------+---------------+-------------+------+------------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+------------+-----------------------------------------------+--------------+--------------+
-; Compilation Hierarchy Node ; Logic Cells ; Dedicated Logic Registers ; I/O Registers ; Memory Bits ; M9Ks ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; ADC blocks ; Full Hierarchy Name                           ; Entity Name  ; Library Name ;
-+----------------------------+-------------+---------------------------+---------------+-------------+------+------------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+------------+-----------------------------------------------+--------------+--------------+
-; |top_fpga                  ; 157 (1)     ; 63 (0)                    ; 0 (0)         ; 0           ; 0    ; 1          ; 0            ; 0       ; 0         ; 81   ; 0            ; 94 (1)       ; 8 (0)             ; 55 (0)           ; 0          ; |top_fpga                                     ; top_fpga     ; work         ;
-;    |UART_wrapper:uart0|    ; 143 (0)     ; 63 (0)                    ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 80 (0)       ; 8 (0)             ; 55 (0)           ; 0          ; |top_fpga|UART_wrapper:uart0                  ; UART_wrapper ; work         ;
-;       |UART_RX:UART_RX1|   ; 97 (97)     ; 37 (37)                   ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 60 (60)      ; 4 (4)             ; 33 (33)          ; 0          ; |top_fpga|UART_wrapper:uart0|UART_RX:UART_RX1 ; UART_RX      ; work         ;
-;       |UART_TX:UART_TX1|   ; 46 (46)     ; 26 (26)                   ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 20 (20)      ; 4 (4)             ; 22 (22)          ; 0          ; |top_fpga|UART_wrapper:uart0|UART_TX:UART_TX1 ; UART_TX      ; work         ;
-;    |hex7seg:H0|            ; 7 (7)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 6 (6)        ; 0 (0)             ; 1 (1)            ; 0          ; |top_fpga|hex7seg:H0                          ; hex7seg      ; work         ;
-;    |hex7seg:H1|            ; 7 (7)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 0 (0)            ; 0          ; |top_fpga|hex7seg:H1                          ; hex7seg      ; work         ;
-+----------------------------+-------------+---------------------------+---------------+-------------+------+------------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+------------+-----------------------------------------------+--------------+--------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fitter Resource Utilization by Entity                                                                                                                                                                                                                                                                                                                                ;
++---------------------------------+-------------+---------------------------+---------------+-------------+------+------------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+------------+--------------------------------------------------------------------------+----------------+--------------+
+; Compilation Hierarchy Node      ; Logic Cells ; Dedicated Logic Registers ; I/O Registers ; Memory Bits ; M9Ks ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; ADC blocks ; Full Hierarchy Name                                                      ; Entity Name    ; Library Name ;
++---------------------------------+-------------+---------------------------+---------------+-------------+------+------------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+------------+--------------------------------------------------------------------------+----------------+--------------+
+; |top_fpga                       ; 164 (1)     ; 71 (0)                    ; 0 (0)         ; 0           ; 0    ; 1          ; 0            ; 0       ; 0         ; 39   ; 0            ; 93 (1)       ; 12 (0)            ; 59 (0)           ; 0          ; |top_fpga                                                                ; top_fpga       ; work         ;
+;    |simproc_system:SIMPROC_SYS| ; 163 (21)    ; 71 (15)                   ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 92 (6)       ; 12 (1)            ; 59 (14)          ; 0          ; |top_fpga|simproc_system:SIMPROC_SYS                                     ; simproc_system ; work         ;
+;       |UART_wrapper:UART1|      ; 142 (0)     ; 56 (0)                    ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 86 (0)       ; 11 (0)            ; 45 (0)           ; 0          ; |top_fpga|simproc_system:SIMPROC_SYS|UART_wrapper:UART1                  ; UART_wrapper   ; work         ;
+;          |UART_RX:UART_RX1|     ; 104 (104)   ; 37 (37)                   ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 67 (67)      ; 10 (10)           ; 27 (27)          ; 0          ; |top_fpga|simproc_system:SIMPROC_SYS|UART_wrapper:UART1|UART_RX:UART_RX1 ; UART_RX        ; work         ;
+;          |UART_TX:UART_TX1|     ; 38 (38)     ; 19 (19)                   ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 19 (19)      ; 1 (1)             ; 18 (18)          ; 0          ; |top_fpga|simproc_system:SIMPROC_SYS|UART_wrapper:UART1|UART_TX:UART_TX1 ; UART_TX        ; work         ;
++---------------------------------+-------------+---------------------------+---------------+-------------+------+------------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+------------+--------------------------------------------------------------------------+----------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
@@ -1184,48 +1141,6 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Name           ; Pin Type ; Pad to Core 0 ; Pad to Core 1 ; Pad to Input Register ; TCO ; TCOE ;
 +----------------+----------+---------------+---------------+-----------------------+-----+------+
 ; KEY[1]         ; Input    ; --            ; --            ; --                    ; --  ; --   ;
-; HEX5[0]        ; Output   ; --            ; --            ; --                    ; --  ; --   ;
-; HEX5[1]        ; Output   ; --            ; --            ; --                    ; --  ; --   ;
-; HEX5[2]        ; Output   ; --            ; --            ; --                    ; --  ; --   ;
-; HEX5[3]        ; Output   ; --            ; --            ; --                    ; --  ; --   ;
-; HEX5[4]        ; Output   ; --            ; --            ; --                    ; --  ; --   ;
-; HEX5[5]        ; Output   ; --            ; --            ; --                    ; --  ; --   ;
-; HEX5[6]        ; Output   ; --            ; --            ; --                    ; --  ; --   ;
-; HEX4[0]        ; Output   ; --            ; --            ; --                    ; --  ; --   ;
-; HEX4[1]        ; Output   ; --            ; --            ; --                    ; --  ; --   ;
-; HEX4[2]        ; Output   ; --            ; --            ; --                    ; --  ; --   ;
-; HEX4[3]        ; Output   ; --            ; --            ; --                    ; --  ; --   ;
-; HEX4[4]        ; Output   ; --            ; --            ; --                    ; --  ; --   ;
-; HEX4[5]        ; Output   ; --            ; --            ; --                    ; --  ; --   ;
-; HEX4[6]        ; Output   ; --            ; --            ; --                    ; --  ; --   ;
-; HEX3[0]        ; Output   ; --            ; --            ; --                    ; --  ; --   ;
-; HEX3[1]        ; Output   ; --            ; --            ; --                    ; --  ; --   ;
-; HEX3[2]        ; Output   ; --            ; --            ; --                    ; --  ; --   ;
-; HEX3[3]        ; Output   ; --            ; --            ; --                    ; --  ; --   ;
-; HEX3[4]        ; Output   ; --            ; --            ; --                    ; --  ; --   ;
-; HEX3[5]        ; Output   ; --            ; --            ; --                    ; --  ; --   ;
-; HEX3[6]        ; Output   ; --            ; --            ; --                    ; --  ; --   ;
-; HEX2[0]        ; Output   ; --            ; --            ; --                    ; --  ; --   ;
-; HEX2[1]        ; Output   ; --            ; --            ; --                    ; --  ; --   ;
-; HEX2[2]        ; Output   ; --            ; --            ; --                    ; --  ; --   ;
-; HEX2[3]        ; Output   ; --            ; --            ; --                    ; --  ; --   ;
-; HEX2[4]        ; Output   ; --            ; --            ; --                    ; --  ; --   ;
-; HEX2[5]        ; Output   ; --            ; --            ; --                    ; --  ; --   ;
-; HEX2[6]        ; Output   ; --            ; --            ; --                    ; --  ; --   ;
-; HEX1[0]        ; Output   ; --            ; --            ; --                    ; --  ; --   ;
-; HEX1[1]        ; Output   ; --            ; --            ; --                    ; --  ; --   ;
-; HEX1[2]        ; Output   ; --            ; --            ; --                    ; --  ; --   ;
-; HEX1[3]        ; Output   ; --            ; --            ; --                    ; --  ; --   ;
-; HEX1[4]        ; Output   ; --            ; --            ; --                    ; --  ; --   ;
-; HEX1[5]        ; Output   ; --            ; --            ; --                    ; --  ; --   ;
-; HEX1[6]        ; Output   ; --            ; --            ; --                    ; --  ; --   ;
-; HEX0[0]        ; Output   ; --            ; --            ; --                    ; --  ; --   ;
-; HEX0[1]        ; Output   ; --            ; --            ; --                    ; --  ; --   ;
-; HEX0[2]        ; Output   ; --            ; --            ; --                    ; --  ; --   ;
-; HEX0[3]        ; Output   ; --            ; --            ; --                    ; --  ; --   ;
-; HEX0[4]        ; Output   ; --            ; --            ; --                    ; --  ; --   ;
-; HEX0[5]        ; Output   ; --            ; --            ; --                    ; --  ; --   ;
-; HEX0[6]        ; Output   ; --            ; --            ; --                    ; --  ; --   ;
 ; LEDR[0]        ; Output   ; --            ; --            ; --                    ; --  ; --   ;
 ; LEDR[1]        ; Output   ; --            ; --            ; --                    ; --  ; --   ;
 ; LEDR[2]        ; Output   ; --            ; --            ; --                    ; --  ; --   ;
@@ -1252,109 +1167,137 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; ARDUINO_IO[15] ; Bidir    ; --            ; --            ; --                    ; --  ; --   ;
 ; ARDUINO_IO[0]  ; Bidir    ; (6) 868 ps    ; --            ; --                    ; --  ; --   ;
 ; ARDUINO_IO[1]  ; Bidir    ; --            ; --            ; --                    ; --  ; --   ;
+; SW[0]          ; Input    ; --            ; (6) 868 ps    ; --                    ; --  ; --   ;
+; SW[1]          ; Input    ; (6) 868 ps    ; --            ; --                    ; --  ; --   ;
+; SW[2]          ; Input    ; (6) 868 ps    ; --            ; --                    ; --  ; --   ;
+; SW[3]          ; Input    ; --            ; (6) 868 ps    ; --                    ; --  ; --   ;
+; SW[4]          ; Input    ; (6) 868 ps    ; --            ; --                    ; --  ; --   ;
+; SW[5]          ; Input    ; --            ; (6) 868 ps    ; --                    ; --  ; --   ;
+; SW[6]          ; Input    ; (6) 868 ps    ; --            ; --                    ; --  ; --   ;
+; SW[7]          ; Input    ; (6) 868 ps    ; --            ; --                    ; --  ; --   ;
+; SW[8]          ; Input    ; (6) 868 ps    ; --            ; --                    ; --  ; --   ;
+; SW[9]          ; Input    ; (6) 868 ps    ; --            ; --                    ; --  ; --   ;
 ; CLOCK_50       ; Input    ; (0) 0 ps      ; --            ; --                    ; --  ; --   ;
 ; KEY[0]         ; Input    ; --            ; (6) 868 ps    ; --                    ; --  ; --   ;
-; SW[9]          ; Input    ; (6) 868 ps    ; --            ; --                    ; --  ; --   ;
-; SW[8]          ; Input    ; --            ; (6) 868 ps    ; --                    ; --  ; --   ;
-; SW[7]          ; Input    ; (6) 868 ps    ; --            ; --                    ; --  ; --   ;
-; SW[6]          ; Input    ; (6) 868 ps    ; --            ; --                    ; --  ; --   ;
-; SW[5]          ; Input    ; (6) 868 ps    ; --            ; --                    ; --  ; --   ;
-; SW[4]          ; Input    ; (6) 868 ps    ; --            ; --                    ; --  ; --   ;
-; SW[3]          ; Input    ; (6) 868 ps    ; --            ; --                    ; --  ; --   ;
-; SW[2]          ; Input    ; (6) 868 ps    ; --            ; --                    ; --  ; --   ;
-; SW[1]          ; Input    ; (6) 868 ps    ; --            ; --                    ; --  ; --   ;
-; SW[0]          ; Input    ; (6) 868 ps    ; --            ; --                    ; --  ; --   ;
 +----------------+----------+---------------+---------------+-----------------------+-----+------+
 
 
-+-------------------------------------------------------------------------------------------+
-; Pad To Core Delay Chain Fanout                                                            ;
-+-------------------------------------------------------------+-------------------+---------+
-; Source Pin / Fanout                                         ; Pad To Core Index ; Setting ;
-+-------------------------------------------------------------+-------------------+---------+
-; KEY[1]                                                      ;                   ;         ;
-; ARDUINO_IO[2]                                               ;                   ;         ;
-; ARDUINO_IO[3]                                               ;                   ;         ;
-; ARDUINO_IO[4]                                               ;                   ;         ;
-; ARDUINO_IO[5]                                               ;                   ;         ;
-; ARDUINO_IO[6]                                               ;                   ;         ;
-; ARDUINO_IO[7]                                               ;                   ;         ;
-; ARDUINO_IO[8]                                               ;                   ;         ;
-; ARDUINO_IO[9]                                               ;                   ;         ;
-; ARDUINO_IO[10]                                              ;                   ;         ;
-; ARDUINO_IO[11]                                              ;                   ;         ;
-; ARDUINO_IO[12]                                              ;                   ;         ;
-; ARDUINO_IO[13]                                              ;                   ;         ;
-; ARDUINO_IO[14]                                              ;                   ;         ;
-; ARDUINO_IO[15]                                              ;                   ;         ;
-; ARDUINO_IO[0]                                               ;                   ;         ;
-;      - UART_wrapper:uart0|UART_RX:UART_RX1|regInMeta~feeder ; 0                 ; 6       ;
-; ARDUINO_IO[1]                                               ;                   ;         ;
-; CLOCK_50                                                    ;                   ;         ;
-; KEY[0]                                                      ;                   ;         ;
-;      - UART_wrapper:uart0|UART_RX:UART_RX1|dataDone         ; 1                 ; 6       ;
-;      - UART_wrapper:uart0|UART_RX:UART_RX1|dataOut[4]       ; 1                 ; 6       ;
-;      - UART_wrapper:uart0|UART_RX:UART_RX1|dataOut[5]       ; 1                 ; 6       ;
-;      - UART_wrapper:uart0|UART_RX:UART_RX1|dataOut[6]       ; 1                 ; 6       ;
-;      - UART_wrapper:uart0|UART_RX:UART_RX1|dataOut[7]       ; 1                 ; 6       ;
-;      - UART_wrapper:uart0|UART_RX:UART_RX1|dataOut[0]       ; 1                 ; 6       ;
-;      - UART_wrapper:uart0|UART_RX:UART_RX1|dataOut[1]       ; 1                 ; 6       ;
-;      - UART_wrapper:uart0|UART_RX:UART_RX1|dataOut[2]       ; 1                 ; 6       ;
-;      - UART_wrapper:uart0|UART_RX:UART_RX1|dataOut[3]       ; 1                 ; 6       ;
-;      - UART_wrapper:uart0|UART_TX:UART_TX1|TXout            ; 1                 ; 6       ;
-;      - UART_wrapper:uart0|UART_RX:UART_RX1|state.DONE       ; 1                 ; 6       ;
-;      - UART_wrapper:uart0|UART_RX:UART_RX1|state.RECEIVE    ; 1                 ; 6       ;
-;      - UART_wrapper:uart0|UART_RX:UART_RX1|state.START      ; 1                 ; 6       ;
-;      - UART_wrapper:uart0|UART_TX:UART_TX1|state.TRANSMIT   ; 1                 ; 6       ;
-;      - UART_wrapper:uart0|UART_RX:UART_RX1|RXout[4]~0       ; 1                 ; 6       ;
-;      - UART_wrapper:uart0|UART_RX:UART_RX1|clkCount[6]~32   ; 1                 ; 6       ;
-;      - UART_wrapper:uart0|UART_RX:UART_RX1|index~4          ; 1                 ; 6       ;
-;      - UART_wrapper:uart0|UART_RX:UART_RX1|index[2]~6       ; 1                 ; 6       ;
-;      - UART_wrapper:uart0|UART_RX:UART_RX1|index~7          ; 1                 ; 6       ;
-;      - UART_wrapper:uart0|UART_RX:UART_RX1|index[2]~8       ; 1                 ; 6       ;
-;      - UART_wrapper:uart0|UART_RX:UART_RX1|state~8          ; 1                 ; 6       ;
-;      - UART_wrapper:uart0|UART_TX:UART_TX1|index[2]~2       ; 1                 ; 6       ;
-;      - UART_wrapper:uart0|UART_TX:UART_TX1|packet[8]~0      ; 1                 ; 6       ;
-;      - UART_wrapper:uart0|UART_TX:UART_TX1|state~6          ; 1                 ; 6       ;
-;      - UART_wrapper:uart0|UART_RX:UART_RX1|index~10         ; 1                 ; 6       ;
-;      - UART_wrapper:uart0|UART_TX:UART_TX1|index[0]~7       ; 1                 ; 6       ;
-;      - UART_wrapper:uart0|UART_TX:UART_TX1|clkCount[1]~32   ; 1                 ; 6       ;
-; SW[9]                                                       ;                   ;         ;
-;      - UART_wrapper:uart0|UART_RX:UART_RX1|Add2~18          ; 0                 ; 6       ;
-; SW[8]                                                       ;                   ;         ;
-;      - UART_wrapper:uart0|UART_RX:UART_RX1|Add2~16          ; 1                 ; 6       ;
-; SW[7]                                                       ;                   ;         ;
-;      - UART_wrapper:uart0|UART_RX:UART_RX1|Add2~14          ; 0                 ; 6       ;
-; SW[6]                                                       ;                   ;         ;
-;      - UART_wrapper:uart0|UART_RX:UART_RX1|Add2~12          ; 0                 ; 6       ;
-; SW[5]                                                       ;                   ;         ;
-;      - UART_wrapper:uart0|UART_RX:UART_RX1|Add2~10          ; 0                 ; 6       ;
-; SW[4]                                                       ;                   ;         ;
-;      - UART_wrapper:uart0|UART_RX:UART_RX1|Add2~8           ; 0                 ; 6       ;
-; SW[3]                                                       ;                   ;         ;
-;      - UART_wrapper:uart0|UART_RX:UART_RX1|Add2~6           ; 0                 ; 6       ;
-; SW[2]                                                       ;                   ;         ;
-;      - UART_wrapper:uart0|UART_RX:UART_RX1|Add2~4           ; 0                 ; 6       ;
-; SW[1]                                                       ;                   ;         ;
-;      - UART_wrapper:uart0|UART_RX:UART_RX1|Add2~2           ; 0                 ; 6       ;
-; SW[0]                                                       ;                   ;         ;
-;      - UART_wrapper:uart0|UART_RX:UART_RX1|Add2~0           ; 0                 ; 6       ;
-+-------------------------------------------------------------+-------------------+---------+
++--------------------------------------------------------------------------------------------------------------------+
+; Pad To Core Delay Chain Fanout                                                                                     ;
++--------------------------------------------------------------------------------------+-------------------+---------+
+; Source Pin / Fanout                                                                  ; Pad To Core Index ; Setting ;
++--------------------------------------------------------------------------------------+-------------------+---------+
+; KEY[1]                                                                               ;                   ;         ;
+; ARDUINO_IO[2]                                                                        ;                   ;         ;
+; ARDUINO_IO[3]                                                                        ;                   ;         ;
+; ARDUINO_IO[4]                                                                        ;                   ;         ;
+; ARDUINO_IO[5]                                                                        ;                   ;         ;
+; ARDUINO_IO[6]                                                                        ;                   ;         ;
+; ARDUINO_IO[7]                                                                        ;                   ;         ;
+; ARDUINO_IO[8]                                                                        ;                   ;         ;
+; ARDUINO_IO[9]                                                                        ;                   ;         ;
+; ARDUINO_IO[10]                                                                       ;                   ;         ;
+; ARDUINO_IO[11]                                                                       ;                   ;         ;
+; ARDUINO_IO[12]                                                                       ;                   ;         ;
+; ARDUINO_IO[13]                                                                       ;                   ;         ;
+; ARDUINO_IO[14]                                                                       ;                   ;         ;
+; ARDUINO_IO[15]                                                                       ;                   ;         ;
+; ARDUINO_IO[0]                                                                        ;                   ;         ;
+;      - simproc_system:SIMPROC_SYS|UART_wrapper:UART1|UART_RX:UART_RX1|regInMeta      ; 0                 ; 6       ;
+; ARDUINO_IO[1]                                                                        ;                   ;         ;
+; SW[0]                                                                                ;                   ;         ;
+;      - simproc_system:SIMPROC_SYS|UART_wrapper:UART1|UART_RX:UART_RX1|Add2~0         ; 1                 ; 6       ;
+;      - LEDR[0]~output                                                                ; 1                 ; 6       ;
+; SW[1]                                                                                ;                   ;         ;
+;      - simproc_system:SIMPROC_SYS|UART_wrapper:UART1|UART_RX:UART_RX1|Add2~2         ; 0                 ; 6       ;
+;      - LEDR[1]~output                                                                ; 0                 ; 6       ;
+; SW[2]                                                                                ;                   ;         ;
+;      - simproc_system:SIMPROC_SYS|UART_wrapper:UART1|UART_RX:UART_RX1|Add2~4         ; 0                 ; 6       ;
+;      - LEDR[2]~output                                                                ; 0                 ; 6       ;
+; SW[3]                                                                                ;                   ;         ;
+;      - simproc_system:SIMPROC_SYS|UART_wrapper:UART1|UART_RX:UART_RX1|Add2~6         ; 1                 ; 6       ;
+;      - LEDR[3]~output                                                                ; 1                 ; 6       ;
+; SW[4]                                                                                ;                   ;         ;
+;      - simproc_system:SIMPROC_SYS|UART_wrapper:UART1|UART_RX:UART_RX1|Add2~8         ; 0                 ; 6       ;
+;      - LEDR[4]~output                                                                ; 0                 ; 6       ;
+; SW[5]                                                                                ;                   ;         ;
+;      - simproc_system:SIMPROC_SYS|UART_wrapper:UART1|UART_RX:UART_RX1|Add2~10        ; 1                 ; 6       ;
+;      - LEDR[5]~output                                                                ; 1                 ; 6       ;
+; SW[6]                                                                                ;                   ;         ;
+;      - simproc_system:SIMPROC_SYS|UART_wrapper:UART1|UART_RX:UART_RX1|Add2~12        ; 0                 ; 6       ;
+;      - LEDR[6]~output                                                                ; 0                 ; 6       ;
+; SW[7]                                                                                ;                   ;         ;
+;      - simproc_system:SIMPROC_SYS|UART_wrapper:UART1|UART_RX:UART_RX1|Add2~14        ; 0                 ; 6       ;
+;      - LEDR[7]~output                                                                ; 0                 ; 6       ;
+; SW[8]                                                                                ;                   ;         ;
+;      - simproc_system:SIMPROC_SYS|UART_wrapper:UART1|UART_RX:UART_RX1|Add2~16        ; 0                 ; 6       ;
+;      - LEDR[8]~output                                                                ; 0                 ; 6       ;
+; SW[9]                                                                                ;                   ;         ;
+;      - simproc_system:SIMPROC_SYS|UART_wrapper:UART1|UART_RX:UART_RX1|Add2~18        ; 0                 ; 6       ;
+;      - LEDR[9]~output                                                                ; 0                 ; 6       ;
+; CLOCK_50                                                                             ;                   ;         ;
+; KEY[0]                                                                               ;                   ;         ;
+;      - simproc_system:SIMPROC_SYS|UART_wrapper:UART1|UART_RX:UART_RX1|dataDone       ; 1                 ; 6       ;
+;      - simproc_system:SIMPROC_SYS|UART_wrapper:UART1|UART_TX:UART_TX1|TXdone         ; 1                 ; 6       ;
+;      - simproc_system:SIMPROC_SYS|UART_wrapper:UART1|UART_TX:UART_TX1|TXout          ; 1                 ; 6       ;
+;      - simproc_system:SIMPROC_SYS|UART_wrapper:UART1|UART_RX:UART_RX1|dataOut[0]     ; 1                 ; 6       ;
+;      - simproc_system:SIMPROC_SYS|UART_wrapper:UART1|UART_RX:UART_RX1|dataOut[1]     ; 1                 ; 6       ;
+;      - simproc_system:SIMPROC_SYS|UART_wrapper:UART1|UART_RX:UART_RX1|dataOut[2]     ; 1                 ; 6       ;
+;      - simproc_system:SIMPROC_SYS|UART_wrapper:UART1|UART_RX:UART_RX1|dataOut[3]     ; 1                 ; 6       ;
+;      - simproc_system:SIMPROC_SYS|UART_wrapper:UART1|UART_RX:UART_RX1|dataOut[4]     ; 1                 ; 6       ;
+;      - simproc_system:SIMPROC_SYS|UART_wrapper:UART1|UART_RX:UART_RX1|dataOut[5]     ; 1                 ; 6       ;
+;      - simproc_system:SIMPROC_SYS|UART_wrapper:UART1|UART_RX:UART_RX1|dataOut[6]     ; 1                 ; 6       ;
+;      - simproc_system:SIMPROC_SYS|UART_wrapper:UART1|UART_RX:UART_RX1|dataOut[7]     ; 1                 ; 6       ;
+;      - simproc_system:SIMPROC_SYS|UART_wrapper:UART1|UART_TX:UART_TX1|state.TRANSMIT ; 1                 ; 6       ;
+;      - simproc_system:SIMPROC_SYS|uart_curr_state.WAIT_CMD                           ; 1                 ; 6       ;
+;      - simproc_system:SIMPROC_SYS|UART_wrapper:UART1|UART_RX:UART_RX1|state.DONE     ; 1                 ; 6       ;
+;      - simproc_system:SIMPROC_SYS|UART_wrapper:UART1|UART_RX:UART_RX1|state.START    ; 1                 ; 6       ;
+;      - simproc_system:SIMPROC_SYS|UART_wrapper:UART1|UART_RX:UART_RX1|state.RECEIVE  ; 1                 ; 6       ;
+;      - simproc_system:SIMPROC_SYS|uart_curr_state.SEND_WAIT                          ; 1                 ; 6       ;
+;      - simproc_system:SIMPROC_SYS|UART_wrapper:UART1|UART_TX:UART_TX1|index[3]~2     ; 1                 ; 6       ;
+;      - simproc_system:SIMPROC_SYS|uart_curr_state~12                                 ; 1                 ; 6       ;
+;      - simproc_system:SIMPROC_SYS|UART_wrapper:UART1|UART_TX:UART_TX1|state~6        ; 1                 ; 6       ;
+;      - simproc_system:SIMPROC_SYS|cmd_byte~0                                         ; 1                 ; 6       ;
+;      - simproc_system:SIMPROC_SYS|cmd_byte[1]~1                                      ; 1                 ; 6       ;
+;      - simproc_system:SIMPROC_SYS|cmd_byte~2                                         ; 1                 ; 6       ;
+;      - simproc_system:SIMPROC_SYS|cmd_byte~3                                         ; 1                 ; 6       ;
+;      - simproc_system:SIMPROC_SYS|cmd_byte~4                                         ; 1                 ; 6       ;
+;      - simproc_system:SIMPROC_SYS|cmd_byte~5                                         ; 1                 ; 6       ;
+;      - simproc_system:SIMPROC_SYS|cmd_byte~6                                         ; 1                 ; 6       ;
+;      - simproc_system:SIMPROC_SYS|cmd_byte~7                                         ; 1                 ; 6       ;
+;      - simproc_system:SIMPROC_SYS|cmd_byte~8                                         ; 1                 ; 6       ;
+;      - simproc_system:SIMPROC_SYS|uart_curr_state~13                                 ; 1                 ; 6       ;
+;      - simproc_system:SIMPROC_SYS|UART_wrapper:UART1|UART_RX:UART_RX1|RXout[0]~0     ; 1                 ; 6       ;
+;      - simproc_system:SIMPROC_SYS|uart_curr_state.UART_IDLE                          ; 1                 ; 6       ;
+;      - simproc_system:SIMPROC_SYS|uart_curr_state~14                                 ; 1                 ; 6       ;
+;      - simproc_system:SIMPROC_SYS|uart_curr_state~15                                 ; 1                 ; 6       ;
+;      - simproc_system:SIMPROC_SYS|UART_wrapper:UART1|UART_RX:UART_RX1|clkCount[1]~34 ; 1                 ; 6       ;
+;      - simproc_system:SIMPROC_SYS|uart_curr_state~16                                 ; 1                 ; 6       ;
+;      - simproc_system:SIMPROC_SYS|UART_wrapper:UART1|UART_RX:UART_RX1|index~4        ; 1                 ; 6       ;
+;      - simproc_system:SIMPROC_SYS|UART_wrapper:UART1|UART_RX:UART_RX1|index[1]~6     ; 1                 ; 6       ;
+;      - simproc_system:SIMPROC_SYS|UART_wrapper:UART1|UART_RX:UART_RX1|index[1]~7     ; 1                 ; 6       ;
+;      - simproc_system:SIMPROC_SYS|UART_wrapper:UART1|UART_RX:UART_RX1|index~8        ; 1                 ; 6       ;
+;      - simproc_system:SIMPROC_SYS|UART_wrapper:UART1|UART_RX:UART_RX1|state~8        ; 1                 ; 6       ;
+;      - simproc_system:SIMPROC_SYS|UART_wrapper:UART1|UART_TX:UART_TX1|index[0]~7     ; 1                 ; 6       ;
+;      - simproc_system:SIMPROC_SYS|UART_wrapper:UART1|UART_TX:UART_TX1|clkCount[3]~32 ; 1                 ; 6       ;
+;      - simproc_system:SIMPROC_SYS|UART_wrapper:UART1|UART_RX:UART_RX1|index~10       ; 1                 ; 6       ;
++--------------------------------------------------------------------------------------+-------------------+---------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Control Signals                                                                                                                                                                            ;
-+----------------------------------------------------+--------------------+---------+-------------------------+--------+----------------------+------------------+---------------------------+
-; Name                                               ; Location           ; Fan-Out ; Usage                   ; Global ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
-+----------------------------------------------------+--------------------+---------+-------------------------+--------+----------------------+------------------+---------------------------+
-; CLOCK_50                                           ; PIN_P11            ; 63      ; Clock                   ; yes    ; Global Clock         ; GCLK19           ; --                        ;
-; KEY[0]                                             ; PIN_B8             ; 27      ; Sync. clear, Sync. load ; no     ; --                   ; --               ; --                        ;
-; UART_wrapper:uart0|UART_RX:UART_RX1|RXout[4]~0     ; LCCOMB_X51_Y51_N0  ; 8       ; Clock enable            ; no     ; --                   ; --               ; --                        ;
-; UART_wrapper:uart0|UART_RX:UART_RX1|clkCount[6]~32 ; LCCOMB_X50_Y51_N22 ; 10      ; Sync. clear             ; no     ; --                   ; --               ; --                        ;
-; UART_wrapper:uart0|UART_RX:UART_RX1|index[2]~6     ; LCCOMB_X51_Y51_N2  ; 4       ; Clock enable            ; no     ; --                   ; --               ; --                        ;
-; UART_wrapper:uart0|UART_TX:UART_TX1|clkCount[1]~32 ; LCCOMB_X49_Y50_N30 ; 10      ; Sync. clear             ; no     ; --                   ; --               ; --                        ;
-; UART_wrapper:uart0|UART_TX:UART_TX1|packet[8]~0    ; LCCOMB_X49_Y51_N30 ; 8       ; Clock enable            ; no     ; --                   ; --               ; --                        ;
-+----------------------------------------------------+--------------------+---------+-------------------------+--------+----------------------+------------------+---------------------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Control Signals                                                                                                                                                                                                       ;
++-------------------------------------------------------------------------------+--------------------+---------+-------------------------+--------+----------------------+------------------+---------------------------+
+; Name                                                                          ; Location           ; Fan-Out ; Usage                   ; Global ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
++-------------------------------------------------------------------------------+--------------------+---------+-------------------------+--------+----------------------+------------------+---------------------------+
+; CLOCK_50                                                                      ; PIN_P11            ; 71      ; Clock                   ; yes    ; Global Clock         ; GCLK19           ; --                        ;
+; KEY[0]                                                                        ; PIN_B8             ; 44      ; Sync. clear, Sync. load ; no     ; --                   ; --               ; --                        ;
+; simproc_system:SIMPROC_SYS|UART_wrapper:UART1|UART_RX:UART_RX1|RXout[0]~0     ; LCCOMB_X51_Y51_N18 ; 8       ; Clock enable            ; no     ; --                   ; --               ; --                        ;
+; simproc_system:SIMPROC_SYS|UART_wrapper:UART1|UART_RX:UART_RX1|clkCount[1]~34 ; LCCOMB_X52_Y50_N2  ; 10      ; Sync. clear             ; no     ; --                   ; --               ; --                        ;
+; simproc_system:SIMPROC_SYS|UART_wrapper:UART1|UART_RX:UART_RX1|index[1]~6     ; LCCOMB_X50_Y50_N2  ; 4       ; Clock enable            ; no     ; --                   ; --               ; --                        ;
+; simproc_system:SIMPROC_SYS|UART_wrapper:UART1|UART_TX:UART_TX1|clkCount[3]~32 ; LCCOMB_X50_Y51_N26 ; 10      ; Sync. clear             ; no     ; --                   ; --               ; --                        ;
+; simproc_system:SIMPROC_SYS|cmd_byte[1]~1                                      ; LCCOMB_X47_Y51_N26 ; 8       ; Clock enable            ; no     ; --                   ; --               ; --                        ;
+; simproc_system:SIMPROC_SYS|uart_curr_state~15                                 ; LCCOMB_X46_Y51_N12 ; 2       ; Clock enable            ; no     ; --                   ; --               ; --                        ;
++-------------------------------------------------------------------------------+--------------------+---------+-------------------------+--------+----------------------+------------------+---------------------------+
 
 
 +--------------------------------------------------------------------------------------------------------------------------------------------+
@@ -1362,7 +1305,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------+----------+---------+--------------------------------------+----------------------+------------------+---------------------------+
 ; Name     ; Location ; Fan-Out ; Fan-Out Using Intentional Clock Skew ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
 +----------+----------+---------+--------------------------------------+----------------------+------------------+---------------------------+
-; CLOCK_50 ; PIN_P11  ; 63      ; 14                                   ; Global Clock         ; GCLK19           ; --                        ;
+; CLOCK_50 ; PIN_P11  ; 71      ; 8                                    ; Global Clock         ; GCLK19           ; --                        ;
 +----------+----------+---------+--------------------------------------+----------------------+------------------+---------------------------+
 
 
@@ -1371,35 +1314,35 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------+-------------------------+
 ; Routing Resource Type ; Usage                   ;
 +-----------------------+-------------------------+
-; Block interconnects   ; 205 / 148,641 ( < 1 % ) ;
-; C16 interconnects     ; 7 / 5,382 ( < 1 % )     ;
-; C4 interconnects      ; 69 / 106,704 ( < 1 % )  ;
+; Block interconnects   ; 193 / 148,641 ( < 1 % ) ;
+; C16 interconnects     ; 8 / 5,382 ( < 1 % )     ;
+; C4 interconnects      ; 70 / 106,704 ( < 1 % )  ;
 ; Direct links          ; 50 / 148,641 ( < 1 % )  ;
 ; Global clocks         ; 1 / 20 ( 5 % )          ;
-; Local interconnects   ; 88 / 49,760 ( < 1 % )   ;
+; Local interconnects   ; 95 / 49,760 ( < 1 % )   ;
 ; NSLEEPs               ; 0 / 500 ( 0 % )         ;
-; R24 interconnects     ; 9 / 5,406 ( < 1 % )     ;
-; R4 interconnects      ; 131 / 147,764 ( < 1 % ) ;
+; R24 interconnects     ; 6 / 5,406 ( < 1 % )     ;
+; R4 interconnects      ; 91 / 147,764 ( < 1 % )  ;
 +-----------------------+-------------------------+
 
 
 +----------------------------------------------------------------------------+
 ; LAB Logic Elements                                                         ;
 +---------------------------------------------+------------------------------+
-; Number of Logic Elements  (Average = 12.08) ; Number of LABs  (Total = 13) ;
+; Number of Logic Elements  (Average = 10.93) ; Number of LABs  (Total = 15) ;
 +---------------------------------------------+------------------------------+
-; 1                                           ; 1                            ;
+; 1                                           ; 3                            ;
 ; 2                                           ; 0                            ;
-; 3                                           ; 1                            ;
+; 3                                           ; 0                            ;
 ; 4                                           ; 0                            ;
 ; 5                                           ; 1                            ;
 ; 6                                           ; 0                            ;
 ; 7                                           ; 0                            ;
 ; 8                                           ; 0                            ;
 ; 9                                           ; 0                            ;
-; 10                                          ; 0                            ;
+; 10                                          ; 2                            ;
 ; 11                                          ; 1                            ;
-; 12                                          ; 1                            ;
+; 12                                          ; 0                            ;
 ; 13                                          ; 0                            ;
 ; 14                                          ; 1                            ;
 ; 15                                          ; 1                            ;
@@ -1410,117 +1353,109 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-------------------------------------------------------------------+
 ; LAB-wide Signals                                                  ;
 +------------------------------------+------------------------------+
-; LAB-wide Signals  (Average = 1.08) ; Number of LABs  (Total = 13) ;
+; LAB-wide Signals  (Average = 1.20) ; Number of LABs  (Total = 15) ;
 +------------------------------------+------------------------------+
-; 1 Clock                            ; 10                           ;
-; 1 Clock enable                     ; 2                            ;
-; 1 Sync. clear                      ; 2                            ;
+; 1 Clock                            ; 11                           ;
+; 1 Clock enable                     ; 1                            ;
+; 1 Sync. clear                      ; 5                            ;
+; 1 Sync. load                       ; 1                            ;
 +------------------------------------+------------------------------+
 
 
 +-----------------------------------------------------------------------------+
 ; LAB Signals Sourced                                                         ;
 +----------------------------------------------+------------------------------+
-; Number of Signals Sourced  (Average = 15.54) ; Number of LABs  (Total = 13) ;
+; Number of Signals Sourced  (Average = 14.33) ; Number of LABs  (Total = 15) ;
 +----------------------------------------------+------------------------------+
 ; 0                                            ; 0                            ;
-; 1                                            ; 1                            ;
-; 2                                            ; 0                            ;
-; 3                                            ; 1                            ;
+; 1                                            ; 3                            ;
+; 2                                            ; 1                            ;
+; 3                                            ; 0                            ;
 ; 4                                            ; 0                            ;
 ; 5                                            ; 0                            ;
 ; 6                                            ; 0                            ;
 ; 7                                            ; 0                            ;
-; 8                                            ; 1                            ;
+; 8                                            ; 2                            ;
 ; 9                                            ; 0                            ;
 ; 10                                           ; 0                            ;
 ; 11                                           ; 2                            ;
 ; 12                                           ; 0                            ;
 ; 13                                           ; 0                            ;
 ; 14                                           ; 0                            ;
-; 15                                           ; 1                            ;
+; 15                                           ; 0                            ;
 ; 16                                           ; 0                            ;
 ; 17                                           ; 0                            ;
-; 18                                           ; 2                            ;
-; 19                                           ; 1                            ;
-; 20                                           ; 0                            ;
+; 18                                           ; 0                            ;
+; 19                                           ; 0                            ;
+; 20                                           ; 1                            ;
 ; 21                                           ; 0                            ;
-; 22                                           ; 1                            ;
+; 22                                           ; 0                            ;
 ; 23                                           ; 0                            ;
-; 24                                           ; 0                            ;
-; 25                                           ; 2                            ;
-; 26                                           ; 1                            ;
+; 24                                           ; 2                            ;
+; 25                                           ; 1                            ;
+; 26                                           ; 2                            ;
+; 27                                           ; 1                            ;
 +----------------------------------------------+------------------------------+
 
 
 +--------------------------------------------------------------------------------+
 ; LAB Signals Sourced Out                                                        ;
 +-------------------------------------------------+------------------------------+
-; Number of Signals Sourced Out  (Average = 8.00) ; Number of LABs  (Total = 13) ;
+; Number of Signals Sourced Out  (Average = 6.20) ; Number of LABs  (Total = 15) ;
 +-------------------------------------------------+------------------------------+
 ; 0                                               ; 0                            ;
-; 1                                               ; 2                            ;
-; 2                                               ; 1                            ;
-; 3                                               ; 1                            ;
-; 4                                               ; 0                            ;
-; 5                                               ; 1                            ;
-; 6                                               ; 0                            ;
-; 7                                               ; 1                            ;
+; 1                                               ; 4                            ;
+; 2                                               ; 2                            ;
+; 3                                               ; 0                            ;
+; 4                                               ; 1                            ;
+; 5                                               ; 0                            ;
+; 6                                               ; 1                            ;
+; 7                                               ; 0                            ;
 ; 8                                               ; 0                            ;
-; 9                                               ; 1                            ;
-; 10                                              ; 0                            ;
-; 11                                              ; 3                            ;
+; 9                                               ; 2                            ;
+; 10                                              ; 1                            ;
+; 11                                              ; 2                            ;
 ; 12                                              ; 1                            ;
-; 13                                              ; 0                            ;
-; 14                                              ; 1                            ;
-; 15                                              ; 0                            ;
-; 16                                              ; 0                            ;
-; 17                                              ; 1                            ;
+; 13                                              ; 1                            ;
 +-------------------------------------------------+------------------------------+
 
 
 +-----------------------------------------------------------------------------+
 ; LAB Distinct Inputs                                                         ;
 +----------------------------------------------+------------------------------+
-; Number of Distinct Inputs  (Average = 13.23) ; Number of LABs  (Total = 13) ;
+; Number of Distinct Inputs  (Average = 11.80) ; Number of LABs  (Total = 15) ;
 +----------------------------------------------+------------------------------+
 ; 0                                            ; 0                            ;
 ; 1                                            ; 0                            ;
 ; 2                                            ; 0                            ;
-; 3                                            ; 0                            ;
-; 4                                            ; 0                            ;
+; 3                                            ; 1                            ;
+; 4                                            ; 2                            ;
 ; 5                                            ; 1                            ;
 ; 6                                            ; 0                            ;
 ; 7                                            ; 0                            ;
-; 8                                            ; 1                            ;
-; 9                                            ; 0                            ;
-; 10                                           ; 3                            ;
+; 8                                            ; 0                            ;
+; 9                                            ; 1                            ;
+; 10                                           ; 2                            ;
 ; 11                                           ; 0                            ;
-; 12                                           ; 1                            ;
-; 13                                           ; 2                            ;
+; 12                                           ; 0                            ;
+; 13                                           ; 0                            ;
 ; 14                                           ; 2                            ;
 ; 15                                           ; 0                            ;
-; 16                                           ; 0                            ;
-; 17                                           ; 0                            ;
+; 16                                           ; 1                            ;
+; 17                                           ; 1                            ;
 ; 18                                           ; 0                            ;
 ; 19                                           ; 0                            ;
-; 20                                           ; 0                            ;
-; 21                                           ; 0                            ;
+; 20                                           ; 1                            ;
+; 21                                           ; 1                            ;
 ; 22                                           ; 0                            ;
 ; 23                                           ; 0                            ;
 ; 24                                           ; 0                            ;
 ; 25                                           ; 0                            ;
 ; 26                                           ; 0                            ;
-; 27                                           ; 1                            ;
+; 27                                           ; 0                            ;
 ; 28                                           ; 0                            ;
 ; 29                                           ; 0                            ;
-; 30                                           ; 0                            ;
-; 31                                           ; 0                            ;
-; 32                                           ; 0                            ;
-; 33                                           ; 0                            ;
-; 34                                           ; 0                            ;
-; 35                                           ; 0                            ;
-; 36                                           ; 1                            ;
+; 30                                           ; 1                            ;
 +----------------------------------------------+------------------------------+
 
 
@@ -1581,53 +1516,11 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------+-----------+--------------+-----------+--------------+--------------+-----------+-----------+--------------+-----------+-----------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+-----------+--------------+--------------+
 ; Pin/Rules          ; IO_000001 ; IO_000002    ; IO_000003 ; IO_000004    ; IO_000005    ; IO_000006 ; IO_000007 ; IO_000008    ; IO_000009 ; IO_000010 ; IO_000011    ; IO_000012    ; IO_000013    ; IO_000014    ; IO_000015    ; IO_000018    ; IO_000019    ; IO_000020    ; IO_000021    ; IO_000022    ; IO_000023    ; IO_000024    ; IO_000026    ; IO_000027    ; IO_000045    ; IO_000046    ; IO_000047    ; IO_000033 ; IO_000034    ; IO_000042    ;
 +--------------------+-----------+--------------+-----------+--------------+--------------+-----------+-----------+--------------+-----------+-----------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+-----------+--------------+--------------+
-; Total Pass         ; 81        ; 0            ; 81        ; 0            ; 0            ; 81        ; 81        ; 0            ; 81        ; 81        ; 0            ; 68           ; 0            ; 0            ; 29           ; 0            ; 68           ; 29           ; 0            ; 0            ; 15           ; 68           ; 0            ; 0            ; 0            ; 0            ; 0            ; 81        ; 0            ; 0            ;
+; Total Pass         ; 39        ; 0            ; 39        ; 0            ; 0            ; 39        ; 39        ; 0            ; 39        ; 39        ; 0            ; 26           ; 0            ; 0            ; 29           ; 0            ; 26           ; 29           ; 0            ; 0            ; 15           ; 26           ; 0            ; 0            ; 0            ; 0            ; 0            ; 39        ; 0            ; 0            ;
 ; Total Unchecked    ; 0         ; 0            ; 0         ; 0            ; 0            ; 0         ; 0         ; 0            ; 0         ; 0         ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0         ; 0            ; 0            ;
-; Total Inapplicable ; 0         ; 81           ; 0         ; 81           ; 81           ; 0         ; 0         ; 81           ; 0         ; 0         ; 81           ; 13           ; 81           ; 81           ; 52           ; 81           ; 13           ; 52           ; 81           ; 81           ; 66           ; 13           ; 81           ; 81           ; 81           ; 81           ; 81           ; 0         ; 81           ; 81           ;
+; Total Inapplicable ; 0         ; 39           ; 0         ; 39           ; 39           ; 0         ; 0         ; 39           ; 0         ; 0         ; 39           ; 13           ; 39           ; 39           ; 10           ; 39           ; 13           ; 10           ; 39           ; 39           ; 24           ; 13           ; 39           ; 39           ; 39           ; 39           ; 39           ; 0         ; 39           ; 39           ;
 ; Total Fail         ; 0         ; 0            ; 0         ; 0            ; 0            ; 0         ; 0         ; 0            ; 0         ; 0         ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0         ; 0            ; 0            ;
 ; KEY[1]             ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
-; HEX5[0]            ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
-; HEX5[1]            ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
-; HEX5[2]            ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
-; HEX5[3]            ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
-; HEX5[4]            ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
-; HEX5[5]            ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
-; HEX5[6]            ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
-; HEX4[0]            ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
-; HEX4[1]            ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
-; HEX4[2]            ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
-; HEX4[3]            ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
-; HEX4[4]            ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
-; HEX4[5]            ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
-; HEX4[6]            ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
-; HEX3[0]            ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
-; HEX3[1]            ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
-; HEX3[2]            ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
-; HEX3[3]            ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
-; HEX3[4]            ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
-; HEX3[5]            ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
-; HEX3[6]            ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
-; HEX2[0]            ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
-; HEX2[1]            ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
-; HEX2[2]            ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
-; HEX2[3]            ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
-; HEX2[4]            ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
-; HEX2[5]            ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
-; HEX2[6]            ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
-; HEX1[0]            ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
-; HEX1[1]            ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
-; HEX1[2]            ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
-; HEX1[3]            ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
-; HEX1[4]            ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
-; HEX1[5]            ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
-; HEX1[6]            ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
-; HEX0[0]            ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
-; HEX0[1]            ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
-; HEX0[2]            ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
-; HEX0[3]            ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
-; HEX0[4]            ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
-; HEX0[5]            ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
-; HEX0[6]            ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; LEDR[0]            ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; LEDR[1]            ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; LEDR[2]            ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
@@ -1654,18 +1547,18 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; ARDUINO_IO[15]     ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Pass         ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; ARDUINO_IO[0]      ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Pass         ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; ARDUINO_IO[1]      ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Pass         ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
+; SW[0]              ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
+; SW[1]              ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
+; SW[2]              ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
+; SW[3]              ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
+; SW[4]              ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
+; SW[5]              ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
+; SW[6]              ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
+; SW[7]              ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
+; SW[8]              ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
+; SW[9]              ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; CLOCK_50           ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; KEY[0]             ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
-; SW[9]              ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
-; SW[8]              ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
-; SW[7]              ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
-; SW[6]              ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
-; SW[5]              ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
-; SW[4]              ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
-; SW[3]              ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
-; SW[2]              ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
-; SW[1]              ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
-; SW[0]              ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 +--------------------+-----------+--------------+-----------+--------------+--------------+-----------+-----------+--------------+-----------+-----------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+-----------+--------------+--------------+
 
 
@@ -1839,11 +1732,53 @@ Warning (15705): Ignored locations or region assignments to the following nodes
     Warning (15706): Node "G_SENSOR_SCLK" is assigned to location or region, but does not exist in design
     Warning (15706): Node "G_SENSOR_SDI" is assigned to location or region, but does not exist in design
     Warning (15706): Node "G_SENSOR_SDO" is assigned to location or region, but does not exist in design
+    Warning (15706): Node "HEX0[0]" is assigned to location or region, but does not exist in design
+    Warning (15706): Node "HEX0[1]" is assigned to location or region, but does not exist in design
+    Warning (15706): Node "HEX0[2]" is assigned to location or region, but does not exist in design
+    Warning (15706): Node "HEX0[3]" is assigned to location or region, but does not exist in design
+    Warning (15706): Node "HEX0[4]" is assigned to location or region, but does not exist in design
+    Warning (15706): Node "HEX0[5]" is assigned to location or region, but does not exist in design
+    Warning (15706): Node "HEX0[6]" is assigned to location or region, but does not exist in design
     Warning (15706): Node "HEX0[7]" is assigned to location or region, but does not exist in design
+    Warning (15706): Node "HEX1[0]" is assigned to location or region, but does not exist in design
+    Warning (15706): Node "HEX1[1]" is assigned to location or region, but does not exist in design
+    Warning (15706): Node "HEX1[2]" is assigned to location or region, but does not exist in design
+    Warning (15706): Node "HEX1[3]" is assigned to location or region, but does not exist in design
+    Warning (15706): Node "HEX1[4]" is assigned to location or region, but does not exist in design
+    Warning (15706): Node "HEX1[5]" is assigned to location or region, but does not exist in design
+    Warning (15706): Node "HEX1[6]" is assigned to location or region, but does not exist in design
     Warning (15706): Node "HEX1[7]" is assigned to location or region, but does not exist in design
+    Warning (15706): Node "HEX2[0]" is assigned to location or region, but does not exist in design
+    Warning (15706): Node "HEX2[1]" is assigned to location or region, but does not exist in design
+    Warning (15706): Node "HEX2[2]" is assigned to location or region, but does not exist in design
+    Warning (15706): Node "HEX2[3]" is assigned to location or region, but does not exist in design
+    Warning (15706): Node "HEX2[4]" is assigned to location or region, but does not exist in design
+    Warning (15706): Node "HEX2[5]" is assigned to location or region, but does not exist in design
+    Warning (15706): Node "HEX2[6]" is assigned to location or region, but does not exist in design
     Warning (15706): Node "HEX2[7]" is assigned to location or region, but does not exist in design
+    Warning (15706): Node "HEX3[0]" is assigned to location or region, but does not exist in design
+    Warning (15706): Node "HEX3[1]" is assigned to location or region, but does not exist in design
+    Warning (15706): Node "HEX3[2]" is assigned to location or region, but does not exist in design
+    Warning (15706): Node "HEX3[3]" is assigned to location or region, but does not exist in design
+    Warning (15706): Node "HEX3[4]" is assigned to location or region, but does not exist in design
+    Warning (15706): Node "HEX3[5]" is assigned to location or region, but does not exist in design
+    Warning (15706): Node "HEX3[6]" is assigned to location or region, but does not exist in design
     Warning (15706): Node "HEX3[7]" is assigned to location or region, but does not exist in design
+    Warning (15706): Node "HEX4[0]" is assigned to location or region, but does not exist in design
+    Warning (15706): Node "HEX4[1]" is assigned to location or region, but does not exist in design
+    Warning (15706): Node "HEX4[2]" is assigned to location or region, but does not exist in design
+    Warning (15706): Node "HEX4[3]" is assigned to location or region, but does not exist in design
+    Warning (15706): Node "HEX4[4]" is assigned to location or region, but does not exist in design
+    Warning (15706): Node "HEX4[5]" is assigned to location or region, but does not exist in design
+    Warning (15706): Node "HEX4[6]" is assigned to location or region, but does not exist in design
     Warning (15706): Node "HEX4[7]" is assigned to location or region, but does not exist in design
+    Warning (15706): Node "HEX5[0]" is assigned to location or region, but does not exist in design
+    Warning (15706): Node "HEX5[1]" is assigned to location or region, but does not exist in design
+    Warning (15706): Node "HEX5[2]" is assigned to location or region, but does not exist in design
+    Warning (15706): Node "HEX5[3]" is assigned to location or region, but does not exist in design
+    Warning (15706): Node "HEX5[4]" is assigned to location or region, but does not exist in design
+    Warning (15706): Node "HEX5[5]" is assigned to location or region, but does not exist in design
+    Warning (15706): Node "HEX5[6]" is assigned to location or region, but does not exist in design
     Warning (15706): Node "HEX5[7]" is assigned to location or region, but does not exist in design
     Warning (15706): Node "VGA_B[0]" is assigned to location or region, but does not exist in design
     Warning (15706): Node "VGA_B[1]" is assigned to location or region, but does not exist in design
@@ -1897,11 +1832,11 @@ Warning (169064): Following 16 pins have no output enable or a GND or VCC output
     Info (169065): Pin ARDUINO_IO[0] has a permanently disabled output enable File: C:/Projects/simproc_asic/fpga_quartus/top_fpga.sv Line: 5
     Info (169065): Pin ARDUINO_IO[1] has a permanently enabled output enable File: C:/Projects/simproc_asic/fpga_quartus/top_fpga.sv Line: 5
 Info (144001): Generated suppressed messages file C:/Projects/simproc_asic/fpga_quartus/output_files/top_fpga.fit.smsg
-Info: Quartus Prime Fitter was successful. 0 errors, 111 warnings
+Info: Quartus Prime Fitter was successful. 0 errors, 153 warnings
     Info: Peak virtual memory: 6504 megabytes
-    Info: Processing ended: Wed Oct 29 12:02:24 2025
-    Info: Elapsed time: 00:00:07
-    Info: Total CPU time (on all processors): 00:00:15
+    Info: Processing ended: Wed Oct 29 16:54:13 2025
+    Info: Elapsed time: 00:00:06
+    Info: Total CPU time (on all processors): 00:00:14
 
 
 +----------------------------+

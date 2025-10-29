@@ -219,6 +219,7 @@ module simproc (
             end
 
             CYCLE_3: begin
+                next_state = IDLE;
                 if (instr_reg_out[3:0] == OP_ADD || instr_reg_out[3:0] == OP_SUB ||
                     instr_reg_out[3:0] == OP_NAND) begin
                     // Select operation
@@ -310,6 +311,7 @@ module simproc (
             end
 
             CYCLE_4: begin
+                next_state = IDLE;
                 if (instr_reg_out[3:0] == OP_ADD || instr_reg_out[3:0] == OP_SUB ||
                     instr_reg_out[3:0] == OP_NAND || instr_reg_out[2:0] == OP_SHIFT[2:0]) 
                     begin

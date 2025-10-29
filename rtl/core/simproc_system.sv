@@ -151,9 +151,11 @@ module simproc_system #(
         // Default TX
         tx_data         = 8'h00;
         tx_en           = 0;
+        tx_buffer       = 8'b0;
 
         // Default SimProc controls
         run             = step_pulse | run_reg;
+        pc_set_val      = 8'b0;
         pc_set_wr       = 0;
 
         // Default RAM Port B 
@@ -270,15 +272,6 @@ module simproc_system #(
             cmd_byte        <= 8'b0;
             addr_byte       <= 8'b0;
             data_byte       <= 8'b0;
-
-            // SimProc Debug Signals
-            pc_set_val      <= 8'b0;
-            pc_set_wr       <= 8'b0;
-            run             <= 0;
-
-            // UART
-            tx_data         <= 8'b0;
-            tx_en           <= 0;
 
             // Run logic
             run_reg         <= 0;
@@ -539,6 +532,7 @@ module simproc (
             end
 
             CYCLE_3: begin
+                next_state = IDLE;
                 if (instr_reg_out[3:0] == OP_ADD || instr_reg_out[3:0] == OP_SUB ||
                     instr_reg_out[3:0] == OP_NAND) begin
                     // Select operation
@@ -630,6 +624,7 @@ module simproc (
             end
 
             CYCLE_4: begin
+                next_state = IDLE;
                 if (instr_reg_out[3:0] == OP_ADD || instr_reg_out[3:0] == OP_SUB ||
                     instr_reg_out[3:0] == OP_NAND || instr_reg_out[2:0] == OP_SHIFT[2:0]) 
                     begin
@@ -725,7 +720,6 @@ module simproc (
             end
         end
     end
-    
 endmodule
 
 module register_file (

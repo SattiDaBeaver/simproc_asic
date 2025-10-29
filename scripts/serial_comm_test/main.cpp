@@ -211,7 +211,7 @@ int main() {
             if (userInput.back() != '\n') {
                 userInput += "\r\n";
             }
-            serial.sendData(userInput);
+            serial.sendData(std::string({char(0xF0), char(0xAA), char(0x55)}));
             
             // Wait a bit and try to read response
             Sleep(200);

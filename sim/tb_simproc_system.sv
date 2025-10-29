@@ -84,6 +84,11 @@ module tb_simproc_system_single;
         uart_send_byte(8'h10); // addr dummy
       	uart_send_byte(8'h00); // data dummy
         #(CLK_PERIOD*clk_per_bit*16);
+      	
+      	// rst = 1;
+      	// #20
+      	// rst = 0;
+      	// #20
 
         // Send only the HALT command
         uart_send_byte(DUT.CMD_HALT);
@@ -96,6 +101,11 @@ module tb_simproc_system_single;
         uart_send_byte(8'h10); // addr dummy
       	uart_send_byte(8'h00); // data dummy
         #(CLK_PERIOD*clk_per_bit*16);
+      	
+      	// rst = 1;
+      	// #20
+      	// rst = 0;
+      	// #20
 
         // Send only the SET_PC command
         uart_send_byte(DUT.CMD_SET_PC);
