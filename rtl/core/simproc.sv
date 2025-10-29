@@ -12,6 +12,7 @@ module simproc (
     input  logic    [7:0]   pc_set_val,
     input  logic            pc_set_wr,
     input  logic            run,
+    output logic    [7:0]   pc_val,
     output logic            halt,
     output logic            done
 );
@@ -108,6 +109,7 @@ module simproc (
         reg_b_in        = rf_data_b_out;
         mdr_in          = mem_dout;
         instr_reg_in    = mem_dout;
+        pc_val          = pc_out;
     end
 
     // FSM states
