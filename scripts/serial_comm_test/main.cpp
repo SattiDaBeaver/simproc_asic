@@ -43,7 +43,7 @@ public:
         // Set serial port parameters (8N1 configuration)
         dcbSerialParams.BaudRate = baudRate;        // Baud rate (9600, 115200, etc.)
         dcbSerialParams.ByteSize = 8;               // 8 data bits
-        dcbSerialParams.StopBits = ONESTOPBIT;      // 1 stop bit
+        dcbSerialParams.StopBits = TWOSTOPBITS;      // 1 stop bit
         dcbSerialParams.Parity = NOPARITY;          // No parity bit
         dcbSerialParams.fDtrControl = DTR_CONTROL_ENABLE;  // Enable DTR
         dcbSerialParams.fRtsControl = RTS_CONTROL_ENABLE;  // Enable RTS
@@ -162,7 +162,7 @@ int main() {
     // Common Windows COM port names: COM1, COM2, COM3, etc.
     // Check Device Manager -> Ports (COM & LPT) to see available ports
     std::string portName = "COM5";  // Change this to match your device
-    int baudRate = 1000000;            // Common baud rates: 9600, 19200, 38400, 57600, 115200
+    int baudRate = 115200;            // Common baud rates: 9600, 19200, 38400, 57600, 115200
 
     std::cout << "Windows Serial Communication Test" << std::endl;
     std::cout << "=================================" << std::endl;

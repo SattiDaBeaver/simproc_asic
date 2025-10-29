@@ -928,7 +928,7 @@ module UART_RX #(
     input  logic    [CLK_BITS - 1 : 0]          clk_per_bit,
     input  logic                                dataIn,
 
-    output logic    [DATA_WIDTH - 1 : 0]        RXout,
+    output logic    [DATA_WIDTH - 1 : 0]         RXout,
     output logic                                RXdone,
     output logic                                parityError
 );
