@@ -4,159 +4,115 @@
 			"name" : "Top",
 			"pins" : [
 				{
-					"name" : "mem_din[0]",
+					"name" : "HEX1[0]",
 					"strict" : false
 				},
 				{
-					"name" : "mem_din[1]",
+					"name" : "HEX1[1]",
 					"strict" : false
 				},
 				{
-					"name" : "mem_din[2]",
+					"name" : "HEX1[2]",
 					"strict" : false
 				},
 				{
-					"name" : "mem_din[3]",
+					"name" : "HEX1[3]",
 					"strict" : false
 				},
 				{
-					"name" : "mem_din[4]",
+					"name" : "HEX1[4]",
 					"strict" : false
 				},
 				{
-					"name" : "mem_din[5]",
+					"name" : "HEX1[5]",
 					"strict" : false
 				},
 				{
-					"name" : "mem_din[6]",
+					"name" : "HEX1[6]",
 					"strict" : false
 				},
 				{
-					"name" : "mem_din[7]",
+					"name" : "HEX0[0]",
 					"strict" : false
 				},
 				{
-					"name" : "mem_addr[0]",
+					"name" : "HEX0[1]",
 					"strict" : false
 				},
 				{
-					"name" : "mem_addr[1]",
+					"name" : "HEX0[2]",
 					"strict" : false
 				},
 				{
-					"name" : "mem_addr[2]",
+					"name" : "HEX0[3]",
 					"strict" : false
 				},
 				{
-					"name" : "mem_addr[3]",
+					"name" : "HEX0[4]",
 					"strict" : false
 				},
 				{
-					"name" : "mem_addr[4]",
+					"name" : "HEX0[5]",
 					"strict" : false
 				},
 				{
-					"name" : "mem_addr[5]",
+					"name" : "HEX0[6]",
 					"strict" : false
 				},
 				{
-					"name" : "mem_addr[6]",
+					"name" : "ARDUINO_IO[0]",
 					"strict" : false
 				},
 				{
-					"name" : "mem_addr[7]",
+					"name" : "ARDUINO_IO[1]",
 					"strict" : false
 				},
 				{
-					"name" : "mem_we",
+					"name" : "CLOCK_50",
 					"strict" : false
 				},
 				{
-					"name" : "halt",
+					"name" : "KEY[0]",
 					"strict" : false
 				},
 				{
-					"name" : "done",
+					"name" : "SW[9]",
 					"strict" : false
 				},
 				{
-					"name" : "clk",
+					"name" : "SW[8]",
 					"strict" : false
 				},
 				{
-					"name" : "rst",
+					"name" : "SW[7]",
 					"strict" : false
 				},
 				{
-					"name" : "mem_dout[1]",
+					"name" : "SW[6]",
 					"strict" : false
 				},
 				{
-					"name" : "mem_dout[2]",
+					"name" : "SW[5]",
 					"strict" : false
 				},
 				{
-					"name" : "mem_dout[0]",
+					"name" : "SW[4]",
 					"strict" : false
 				},
 				{
-					"name" : "mem_dout[3]",
+					"name" : "SW[3]",
 					"strict" : false
 				},
 				{
-					"name" : "run",
+					"name" : "SW[2]",
 					"strict" : false
 				},
 				{
-					"name" : "pc_set_val[0]",
+					"name" : "SW[1]",
 					"strict" : false
 				},
 				{
-					"name" : "pc_set_wr",
-					"strict" : false
-				},
-				{
-					"name" : "pc_set_val[1]",
-					"strict" : false
-				},
-				{
-					"name" : "pc_set_val[2]",
-					"strict" : false
-				},
-				{
-					"name" : "pc_set_val[3]",
-					"strict" : false
-				},
-				{
-					"name" : "pc_set_val[4]",
-					"strict" : false
-				},
-				{
-					"name" : "pc_set_val[5]",
-					"strict" : false
-				},
-				{
-					"name" : "pc_set_val[6]",
-					"strict" : false
-				},
-				{
-					"name" : "pc_set_val[7]",
-					"strict" : false
-				},
-				{
-					"name" : "mem_dout[7]",
-					"strict" : false
-				},
-				{
-					"name" : "mem_dout[6]",
-					"strict" : false
-				},
-				{
-					"name" : "mem_dout[5]",
-					"strict" : false
-				},
-				{
-					"name" : "mem_dout[4]",
+					"name" : "SW[0]",
 					"strict" : false
 				}
 			]

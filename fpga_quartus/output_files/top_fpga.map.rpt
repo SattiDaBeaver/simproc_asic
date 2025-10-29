@@ -1,5 +1,5 @@
 Analysis & Synthesis report for top_fpga
-Tue Oct 28 14:23:57 2025
+Wed Oct 29 12:02:16 2025
 Quartus Prime Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
 
 
@@ -13,13 +13,18 @@ Quartus Prime Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. State Machine - |top_fpga|curr_state
-  9. Registers Removed During Synthesis
- 10. General Register Statistics
- 11. Multiplexer Restructuring Statistics (Restructuring Performed)
- 12. Post-Synthesis Netlist Statistics for Top Partition
- 13. Elapsed Time Per Partition
- 14. Analysis & Synthesis Messages
+  8. State Machine - |top_fpga|UART_wrapper:uart0|UART_RX:UART_RX1|state
+  9. State Machine - |top_fpga|UART_wrapper:uart0|UART_TX:UART_TX1|state
+ 10. Registers Removed During Synthesis
+ 11. General Register Statistics
+ 12. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 13. Parameter Settings for User Entity Instance: UART_wrapper:uart0
+ 14. Parameter Settings for User Entity Instance: UART_wrapper:uart0|UART_TX:UART_TX1
+ 15. Parameter Settings for User Entity Instance: UART_wrapper:uart0|UART_RX:UART_RX1
+ 16. Port Connectivity Checks: "UART_wrapper:uart0"
+ 17. Post-Synthesis Netlist Statistics for Top Partition
+ 18. Elapsed Time Per Partition
+ 19. Analysis & Synthesis Messages
 
 
 
@@ -46,16 +51,16 @@ on the Quartus Prime software download page.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Oct 28 14:23:57 2025           ;
+; Analysis & Synthesis Status        ; Successful - Wed Oct 29 12:02:16 2025           ;
 ; Quartus Prime Version              ; 24.1std.0 Build 1077 03/04/2025 SC Lite Edition ;
 ; Revision Name                      ; top_fpga                                        ;
 ; Top-level Entity Name              ; top_fpga                                        ;
 ; Family                             ; MAX 10                                          ;
-; Total logic elements               ; 307                                             ;
-;     Total combinational functions  ; 275                                             ;
-;     Dedicated logic registers      ; 87                                              ;
-; Total registers                    ; 87                                              ;
-; Total pins                         ; 39                                              ;
+; Total logic elements               ; 166                                             ;
+;     Total combinational functions  ; 148                                             ;
+;     Dedicated logic registers      ; 63                                              ;
+; Total registers                    ; 63                                              ;
+; Total pins                         ; 81                                              ;
 ; Total virtual pins                 ; 0                                               ;
 ; Total memory bits                  ; 0                                               ;
 ; Embedded Multiplier 9-bit elements ; 0                                               ;
@@ -177,77 +182,89 @@ on the Quartus Prime software download page.
 +----------------------------------+-----------------+------------------------------------+---------------------------------------------------+---------+
 
 
-+---------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary             ;
-+---------------------------------------------+-----------+
-; Resource                                    ; Usage     ;
-+---------------------------------------------+-----------+
-; Estimated Total logic elements              ; 307       ;
-;                                             ;           ;
-; Total combinational functions               ; 275       ;
-; Logic element usage by number of LUT inputs ;           ;
-;     -- 4 input functions                    ; 183       ;
-;     -- 3 input functions                    ; 67        ;
-;     -- <=2 input functions                  ; 25        ;
-;                                             ;           ;
-; Logic elements by mode                      ;           ;
-;     -- normal mode                          ; 261       ;
-;     -- arithmetic mode                      ; 14        ;
-;                                             ;           ;
-; Total registers                             ; 87        ;
-;     -- Dedicated logic registers            ; 87        ;
-;     -- I/O registers                        ; 0         ;
-;                                             ;           ;
-; I/O pins                                    ; 39        ;
-;                                             ;           ;
-; Embedded Multiplier 9-bit elements          ; 0         ;
-;                                             ;           ;
-; Maximum fan-out node                        ; clk~input ;
-; Maximum fan-out                             ; 87        ;
-; Total fan-out                               ; 1339      ;
-; Average fan-out                             ; 3.04      ;
-+---------------------------------------------+-----------+
++--------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                  ;
++---------------------------------------------+----------------+
+; Resource                                    ; Usage          ;
++---------------------------------------------+----------------+
+; Estimated Total logic elements              ; 166            ;
+;                                             ;                ;
+; Total combinational functions               ; 148            ;
+; Logic element usage by number of LUT inputs ;                ;
+;     -- 4 input functions                    ; 72             ;
+;     -- 3 input functions                    ; 33             ;
+;     -- <=2 input functions                  ; 43             ;
+;                                             ;                ;
+; Logic elements by mode                      ;                ;
+;     -- normal mode                          ; 102            ;
+;     -- arithmetic mode                      ; 46             ;
+;                                             ;                ;
+; Total registers                             ; 63             ;
+;     -- Dedicated logic registers            ; 63             ;
+;     -- I/O registers                        ; 0              ;
+;                                             ;                ;
+; I/O pins                                    ; 81             ;
+;                                             ;                ;
+; Embedded Multiplier 9-bit elements          ; 0              ;
+;                                             ;                ;
+; Maximum fan-out node                        ; CLOCK_50~input ;
+; Maximum fan-out                             ; 63             ;
+; Total fan-out                               ; 760            ;
+; Average fan-out                             ; 1.95           ;
++---------------------------------------------+----------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                              ;
-+----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-------------------------------+-----------------+--------------+
-; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name           ; Entity Name     ; Library Name ;
-+----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-------------------------------+-----------------+--------------+
-; |top_fpga                  ; 275 (160)           ; 87 (47)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 39   ; 0            ; 0          ; |top_fpga                     ; top_fpga        ; work         ;
-;    |ALU:ALU1|              ; 77 (77)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_fpga|ALU:ALU1            ; ALU             ; work         ;
-;    |program_counter:PC1|   ; 13 (13)             ; 8 (8)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_fpga|program_counter:PC1 ; program_counter ; work         ;
-;    |register_file:RF1|     ; 25 (25)             ; 32 (32)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_fpga|register_file:RF1   ; register_file   ; work         ;
-+----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-------------------------------+-----------------+--------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                           ;
++----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-----------------------------------------------+--------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                           ; Entity Name  ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-----------------------------------------------+--------------+--------------+
+; |top_fpga                  ; 148 (0)             ; 63 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 81   ; 0            ; 0          ; |top_fpga                                     ; top_fpga     ; work         ;
+;    |UART_wrapper:uart0|    ; 134 (0)             ; 63 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_fpga|UART_wrapper:uart0                  ; UART_wrapper ; work         ;
+;       |UART_RX:UART_RX1|   ; 92 (92)             ; 37 (37)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_fpga|UART_wrapper:uart0|UART_RX:UART_RX1 ; UART_RX      ; work         ;
+;       |UART_TX:UART_TX1|   ; 42 (42)             ; 26 (26)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_fpga|UART_wrapper:uart0|UART_TX:UART_TX1 ; UART_TX      ; work         ;
+;    |hex7seg:H0|            ; 7 (7)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_fpga|hex7seg:H0                          ; hex7seg      ; work         ;
+;    |hex7seg:H1|            ; 7 (7)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_fpga|hex7seg:H1                          ; hex7seg      ; work         ;
++----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-----------------------------------------------+--------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
 Encoding Type:  One-Hot
-+-----------------------------------------------------------------------------------------------------------------------------------------------+
-; State Machine - |top_fpga|curr_state                                                                                                          ;
-+--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+-----------------+
-; Name               ; curr_state.CYCLE_5 ; curr_state.CYCLE_4 ; curr_state.CYCLE_3 ; curr_state.CYCLE_2 ; curr_state.CYCLE_1 ; curr_state.IDLE ;
-+--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+-----------------+
-; curr_state.IDLE    ; 0                  ; 0                  ; 0                  ; 0                  ; 0                  ; 0               ;
-; curr_state.CYCLE_1 ; 0                  ; 0                  ; 0                  ; 0                  ; 1                  ; 1               ;
-; curr_state.CYCLE_2 ; 0                  ; 0                  ; 0                  ; 1                  ; 0                  ; 1               ;
-; curr_state.CYCLE_3 ; 0                  ; 0                  ; 1                  ; 0                  ; 0                  ; 1               ;
-; curr_state.CYCLE_4 ; 0                  ; 1                  ; 0                  ; 0                  ; 0                  ; 1               ;
-; curr_state.CYCLE_5 ; 1                  ; 0                  ; 0                  ; 0                  ; 0                  ; 1               ;
-+--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+-----------------+
++-----------------------------------------------------------------------+
+; State Machine - |top_fpga|UART_wrapper:uart0|UART_RX:UART_RX1|state   ;
++---------------+------------+---------------+-------------+------------+
+; Name          ; state.DONE ; state.RECEIVE ; state.START ; state.IDLE ;
++---------------+------------+---------------+-------------+------------+
+; state.IDLE    ; 0          ; 0             ; 0           ; 0          ;
+; state.START   ; 0          ; 0             ; 1           ; 1          ;
+; state.RECEIVE ; 0          ; 1             ; 0           ; 1          ;
+; state.DONE    ; 1          ; 0             ; 0           ; 1          ;
++---------------+------------+---------------+-------------+------------+
 
 
-+--------------------------------------------------------------------+
-; Registers Removed During Synthesis                                 ;
-+---------------------------------------+----------------------------+
-; Register name                         ; Reason for Removal         ;
-+---------------------------------------+----------------------------+
-; n_flag_out                            ; Merged with alu_reg_out[7] ;
-; curr_state~2                          ; Lost fanout                ;
-; curr_state~3                          ; Lost fanout                ;
-; curr_state~4                          ; Lost fanout                ;
-; Total Number of Removed Registers = 4 ;                            ;
-+---------------------------------------+----------------------------+
+Encoding Type:  One-Hot
++---------------------------------------------------------------------+
+; State Machine - |top_fpga|UART_wrapper:uart0|UART_TX:UART_TX1|state ;
++----------------+------------+------------+--------------------------+
+; Name           ; state.IDLE ; state.DONE ; state.TRANSMIT           ;
++----------------+------------+------------+--------------------------+
+; state.IDLE     ; 0          ; 0          ; 0                        ;
+; state.TRANSMIT ; 1          ; 0          ; 1                        ;
+; state.DONE     ; 1          ; 1          ; 0                        ;
++----------------+------------+------------+--------------------------+
+
+
++----------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                     ;
++-----------------------------------------------+----------------------------------------+
+; Register name                                 ; Reason for Removal                     ;
++-----------------------------------------------+----------------------------------------+
+; UART_wrapper:uart0|UART_TX:UART_TX1|packet[0] ; Stuck at GND due to stuck port data_in ;
+; UART_wrapper:uart0|UART_TX:UART_TX1|packet[9] ; Stuck at VCC due to stuck port data_in ;
+; UART_wrapper:uart0|UART_RX:UART_RX1|state~2   ; Lost fanout                            ;
+; UART_wrapper:uart0|UART_RX:UART_RX1|state~3   ; Lost fanout                            ;
+; Total Number of Removed Registers = 4         ;                                        ;
++-----------------------------------------------+----------------------------------------+
 
 
 +------------------------------------------------------+
@@ -255,44 +272,78 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 87    ;
-; Number of registers using Synchronous Clear  ; 27    ;
-; Number of registers using Synchronous Load   ; 8     ;
+; Total registers                              ; 63    ;
+; Number of registers using Synchronous Clear  ; 33    ;
+; Number of registers using Synchronous Load   ; 1     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 81    ;
+; Number of registers using Clock Enable       ; 19    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                        ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output              ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------+
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|instr_reg_out[2]              ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|register_file:RF1|rf[0][3]    ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|register_file:RF1|rf[1][2]    ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|register_file:RF1|rf[2][1]    ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|register_file:RF1|rf[3][0]    ;
-; 3:1                ; 9 bits    ; 18 LEs        ; 9 LEs                ; 9 LEs                  ; Yes        ; |top_fpga|z_flag_out                    ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|mdr_out[0]                    ;
-; 6:1                ; 8 bits    ; 32 LEs        ; 24 LEs               ; 8 LEs                  ; Yes        ; |top_fpga|reg_a_out[7]                  ;
-; 6:1                ; 8 bits    ; 32 LEs        ; 24 LEs               ; 8 LEs                  ; Yes        ; |top_fpga|reg_b_out[6]                  ;
-; 6:1                ; 8 bits    ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |top_fpga|program_counter:PC1|pc_out[7] ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |top_fpga|rf_data_w_in                  ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |top_fpga|rf_reg_w_in[1]                ;
-; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; No         ; |top_fpga|mem_addr                      ;
-; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; No         ; |top_fpga|alu_in_b                      ;
-; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |top_fpga|next_state                    ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; No         ; |top_fpga|alu_in_b                      ;
-; 10:1               ; 4 bits    ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; No         ; |top_fpga|ALU:ALU1|Mux5                 ;
-; 7:1                ; 3 bits    ; 12 LEs        ; 9 LEs                ; 3 LEs                  ; No         ; |top_fpga|alu_in_b[5]                   ;
-; 11:1               ; 2 bits    ; 14 LEs        ; 12 LEs               ; 2 LEs                  ; No         ; |top_fpga|ALU:ALU1|Mux7                 ;
-; 11:1               ; 2 bits    ; 14 LEs        ; 12 LEs               ; 2 LEs                  ; No         ; |top_fpga|ALU:ALU1|Mux0                 ;
-; 11:1               ; 8 bits    ; 56 LEs        ; 16 LEs               ; 40 LEs                 ; No         ; |top_fpga|Selector23                    ;
-; 11:1               ; 2 bits    ; 14 LEs        ; 6 LEs                ; 8 LEs                  ; No         ; |top_fpga|curr_state                    ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                          ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------+
+; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top_fpga|UART_wrapper:uart0|UART_TX:UART_TX1|index[2]    ;
+; 4:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |top_fpga|UART_wrapper:uart0|UART_TX:UART_TX1|clkCount[1] ;
+; 6:1                ; 10 bits   ; 40 LEs        ; 10 LEs               ; 30 LEs                 ; Yes        ; |top_fpga|UART_wrapper:uart0|UART_RX:UART_RX1|clkCount[6] ;
+; 7:1                ; 4 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |top_fpga|UART_wrapper:uart0|UART_RX:UART_RX1|index[2]    ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------+
+
+
++-----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: UART_wrapper:uart0 ;
++----------------+-------+----------------------------------------+
+; Parameter Name ; Value ; Type                                   ;
++----------------+-------+----------------------------------------+
+; CLK_BITS       ; 10    ; Signed Integer                         ;
+; DATA_WIDTH     ; 8     ; Signed Integer                         ;
+; PARITY_BITS    ; 0     ; Signed Integer                         ;
+; STOP_BITS      ; 1     ; Signed Integer                         ;
++----------------+-------+----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: UART_wrapper:uart0|UART_TX:UART_TX1 ;
++----------------+-------+---------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                    ;
++----------------+-------+---------------------------------------------------------+
+; CLK_BITS       ; 10    ; Signed Integer                                          ;
+; DATA_WIDTH     ; 8     ; Signed Integer                                          ;
+; STOP_BITS      ; 1     ; Signed Integer                                          ;
+; PARITY_BITS    ; 0     ; Signed Integer                                          ;
+; PACKET_SIZE    ; 10    ; Signed Integer                                          ;
++----------------+-------+---------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: UART_wrapper:uart0|UART_RX:UART_RX1 ;
++----------------+-------+---------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                    ;
++----------------+-------+---------------------------------------------------------+
+; CLK_BITS       ; 10    ; Signed Integer                                          ;
+; DATA_WIDTH     ; 8     ; Signed Integer                                          ;
+; STOP_BITS      ; 1     ; Signed Integer                                          ;
+; PARITY_BITS    ; 0     ; Signed Integer                                          ;
+; PACKET_SIZE    ; 10    ; Signed Integer                                          ;
++----------------+-------+---------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "UART_wrapper:uart0"                                                                           ;
++----------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port           ; Type   ; Severity ; Details                                                                             ;
++----------------+--------+----------+-------------------------------------------------------------------------------------+
+; TX_done        ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; TX_busy        ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; RX_parityError ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++----------------+--------+----------+-------------------------------------------------------------------------------------+
 
 
 +-----------------------------------------------------+
@@ -300,24 +351,26 @@ Encoding Type:  One-Hot
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 39                          ;
-; cycloneiii_ff         ; 87                          ;
-;     ENA               ; 56                          ;
-;     ENA SCLR          ; 17                          ;
-;     ENA SCLR SLD      ; 8                           ;
-;     SCLR              ; 2                           ;
-;     plain             ; 4                           ;
-; cycloneiii_lcell_comb ; 276                         ;
-;     arith             ; 14                          ;
-;         3 data inputs ; 14                          ;
-;     normal            ; 262                         ;
-;         1 data inputs ; 1                           ;
-;         2 data inputs ; 25                          ;
-;         3 data inputs ; 53                          ;
-;         4 data inputs ; 183                         ;
+; boundary_port         ; 81                          ;
+; cycloneiii_ff         ; 63                          ;
+;     ENA               ; 19                          ;
+;     SCLR              ; 33                          ;
+;     SLD               ; 1                           ;
+;     plain             ; 10                          ;
+; cycloneiii_io_obuf    ; 16                          ;
+; cycloneiii_lcell_comb ; 152                         ;
+;     arith             ; 46                          ;
+;         2 data inputs ; 28                          ;
+;         3 data inputs ; 18                          ;
+;     normal            ; 106                         ;
+;         0 data inputs ; 3                           ;
+;         1 data inputs ; 4                           ;
+;         2 data inputs ; 12                          ;
+;         3 data inputs ; 15                          ;
+;         4 data inputs ; 72                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 11.00                       ;
-; Average LUT depth     ; 5.86                        ;
+; Max LUT depth         ; 5.90                        ;
+; Average LUT depth     ; 3.39                        ;
 +-----------------------+-----------------------------+
 
 
@@ -336,22 +389,89 @@ Encoding Type:  One-Hot
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
-    Info: Processing started: Tue Oct 28 14:23:50 2025
+    Info: Processing started: Wed Oct 29 12:02:09 2025
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off top_fpga -c top_fpga
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 14 of the 14 processors detected
-Warning (12125): Using design file top_fpga.sv, which is not specified as a design file for the current project, but contains definitions for 4 design units and 4 entities in project
+Warning (12125): Using design file top_fpga.sv, which is not specified as a design file for the current project, but contains definitions for 5 design units and 5 entities in project
     Info (12023): Found entity 1: top_fpga File: C:/Projects/simproc_asic/fpga_quartus/top_fpga.sv Line: 1
-    Info (12023): Found entity 2: register_file File: C:/Projects/simproc_asic/fpga_quartus/top_fpga.sv Line: 410
-    Info (12023): Found entity 3: program_counter File: C:/Projects/simproc_asic/fpga_quartus/top_fpga.sv Line: 443
-    Info (12023): Found entity 4: ALU File: C:/Projects/simproc_asic/fpga_quartus/top_fpga.sv Line: 461
+    Info (12023): Found entity 2: UART_wrapper File: C:/Projects/simproc_asic/fpga_quartus/top_fpga.sv Line: 63
+    Info (12023): Found entity 3: UART_RX File: C:/Projects/simproc_asic/fpga_quartus/top_fpga.sv Line: 127
+    Info (12023): Found entity 4: UART_TX File: C:/Projects/simproc_asic/fpga_quartus/top_fpga.sv Line: 269
+    Info (12023): Found entity 5: hex7seg File: C:/Projects/simproc_asic/fpga_quartus/top_fpga.sv Line: 380
 Info (12127): Elaborating entity "top_fpga" for the top level hierarchy
-Warning (10270): Verilog HDL Case Statement warning at top_fpga.sv(281): incomplete case statement has no default case item File: C:/Projects/simproc_asic/fpga_quartus/top_fpga.sv Line: 281
-Info (12128): Elaborating entity "ALU" for hierarchy "ALU:ALU1" File: C:/Projects/simproc_asic/fpga_quartus/top_fpga.sv Line: 50
-Info (12128): Elaborating entity "register_file" for hierarchy "register_file:RF1" File: C:/Projects/simproc_asic/fpga_quartus/top_fpga.sv Line: 64
-Info (12128): Elaborating entity "program_counter" for hierarchy "program_counter:PC1" File: C:/Projects/simproc_asic/fpga_quartus/top_fpga.sv Line: 74
+Warning (10034): Output port "LEDR" at top_fpga.sv(14) has no driver File: C:/Projects/simproc_asic/fpga_quartus/top_fpga.sv Line: 14
+Info (12128): Elaborating entity "hex7seg" for hierarchy "hex7seg:H0" File: C:/Projects/simproc_asic/fpga_quartus/top_fpga.sv Line: 32
+Info (12128): Elaborating entity "UART_wrapper" for hierarchy "UART_wrapper:uart0" File: C:/Projects/simproc_asic/fpga_quartus/top_fpga.sv Line: 59
+Info (12128): Elaborating entity "UART_TX" for hierarchy "UART_wrapper:uart0|UART_TX:UART_TX1" File: C:/Projects/simproc_asic/fpga_quartus/top_fpga.sv Line: 105
+Warning (10230): Verilog HDL assignment warning at top_fpga.sv(348): truncated value with size 32 to match size of target (10) File: C:/Projects/simproc_asic/fpga_quartus/top_fpga.sv Line: 348
+Warning (10230): Verilog HDL assignment warning at top_fpga.sv(358): truncated value with size 32 to match size of target (4) File: C:/Projects/simproc_asic/fpga_quartus/top_fpga.sv Line: 358
+Info (12128): Elaborating entity "UART_RX" for hierarchy "UART_wrapper:uart0|UART_RX:UART_RX1" File: C:/Projects/simproc_asic/fpga_quartus/top_fpga.sv Line: 124
+Warning (10230): Verilog HDL assignment warning at top_fpga.sv(206): truncated value with size 32 to match size of target (10) File: C:/Projects/simproc_asic/fpga_quartus/top_fpga.sv Line: 206
+Warning (10230): Verilog HDL assignment warning at top_fpga.sv(215): truncated value with size 32 to match size of target (10) File: C:/Projects/simproc_asic/fpga_quartus/top_fpga.sv Line: 215
+Warning (10230): Verilog HDL assignment warning at top_fpga.sv(223): truncated value with size 32 to match size of target (4) File: C:/Projects/simproc_asic/fpga_quartus/top_fpga.sv Line: 223
+Warning (10230): Verilog HDL assignment warning at top_fpga.sv(238): truncated value with size 32 to match size of target (10) File: C:/Projects/simproc_asic/fpga_quartus/top_fpga.sv Line: 238
+Warning (13034): The following nodes have both tri-state and non-tri-state drivers
+    Warning (13035): Inserted always-enabled tri-state buffer between "ARDUINO_IO[1]" and its non-tri-state driver. File: C:/Projects/simproc_asic/fpga_quartus/top_fpga.sv Line: 5
+Warning (13039): The following bidirectional pins have no drivers
+    Warning (13040): bidirectional pin "ARDUINO_IO[0]" has no driver File: C:/Projects/simproc_asic/fpga_quartus/top_fpga.sv Line: 5
+    Warning (13040): bidirectional pin "ARDUINO_IO[2]" has no driver File: C:/Projects/simproc_asic/fpga_quartus/top_fpga.sv Line: 5
+    Warning (13040): bidirectional pin "ARDUINO_IO[3]" has no driver File: C:/Projects/simproc_asic/fpga_quartus/top_fpga.sv Line: 5
+    Warning (13040): bidirectional pin "ARDUINO_IO[4]" has no driver File: C:/Projects/simproc_asic/fpga_quartus/top_fpga.sv Line: 5
+    Warning (13040): bidirectional pin "ARDUINO_IO[5]" has no driver File: C:/Projects/simproc_asic/fpga_quartus/top_fpga.sv Line: 5
+    Warning (13040): bidirectional pin "ARDUINO_IO[6]" has no driver File: C:/Projects/simproc_asic/fpga_quartus/top_fpga.sv Line: 5
+    Warning (13040): bidirectional pin "ARDUINO_IO[7]" has no driver File: C:/Projects/simproc_asic/fpga_quartus/top_fpga.sv Line: 5
+    Warning (13040): bidirectional pin "ARDUINO_IO[8]" has no driver File: C:/Projects/simproc_asic/fpga_quartus/top_fpga.sv Line: 5
+    Warning (13040): bidirectional pin "ARDUINO_IO[9]" has no driver File: C:/Projects/simproc_asic/fpga_quartus/top_fpga.sv Line: 5
+    Warning (13040): bidirectional pin "ARDUINO_IO[10]" has no driver File: C:/Projects/simproc_asic/fpga_quartus/top_fpga.sv Line: 5
+    Warning (13040): bidirectional pin "ARDUINO_IO[11]" has no driver File: C:/Projects/simproc_asic/fpga_quartus/top_fpga.sv Line: 5
+    Warning (13040): bidirectional pin "ARDUINO_IO[12]" has no driver File: C:/Projects/simproc_asic/fpga_quartus/top_fpga.sv Line: 5
+    Warning (13040): bidirectional pin "ARDUINO_IO[13]" has no driver File: C:/Projects/simproc_asic/fpga_quartus/top_fpga.sv Line: 5
+    Warning (13040): bidirectional pin "ARDUINO_IO[14]" has no driver File: C:/Projects/simproc_asic/fpga_quartus/top_fpga.sv Line: 5
+    Warning (13040): bidirectional pin "ARDUINO_IO[15]" has no driver File: C:/Projects/simproc_asic/fpga_quartus/top_fpga.sv Line: 5
+Warning (13009): TRI or OPNDRN buffers permanently enabled
+    Warning (13010): Node "ARDUINO_IO[1]~synth" File: C:/Projects/simproc_asic/fpga_quartus/top_fpga.sv Line: 5
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "HEX5[0]" is stuck at VCC File: C:/Projects/simproc_asic/fpga_quartus/top_fpga.sv Line: 7
+    Warning (13410): Pin "HEX5[1]" is stuck at VCC File: C:/Projects/simproc_asic/fpga_quartus/top_fpga.sv Line: 7
+    Warning (13410): Pin "HEX5[2]" is stuck at VCC File: C:/Projects/simproc_asic/fpga_quartus/top_fpga.sv Line: 7
+    Warning (13410): Pin "HEX5[3]" is stuck at VCC File: C:/Projects/simproc_asic/fpga_quartus/top_fpga.sv Line: 7
+    Warning (13410): Pin "HEX5[4]" is stuck at VCC File: C:/Projects/simproc_asic/fpga_quartus/top_fpga.sv Line: 7
+    Warning (13410): Pin "HEX5[5]" is stuck at VCC File: C:/Projects/simproc_asic/fpga_quartus/top_fpga.sv Line: 7
+    Warning (13410): Pin "HEX5[6]" is stuck at VCC File: C:/Projects/simproc_asic/fpga_quartus/top_fpga.sv Line: 7
+    Warning (13410): Pin "HEX4[0]" is stuck at VCC File: C:/Projects/simproc_asic/fpga_quartus/top_fpga.sv Line: 8
+    Warning (13410): Pin "HEX4[1]" is stuck at VCC File: C:/Projects/simproc_asic/fpga_quartus/top_fpga.sv Line: 8
+    Warning (13410): Pin "HEX4[2]" is stuck at VCC File: C:/Projects/simproc_asic/fpga_quartus/top_fpga.sv Line: 8
+    Warning (13410): Pin "HEX4[3]" is stuck at VCC File: C:/Projects/simproc_asic/fpga_quartus/top_fpga.sv Line: 8
+    Warning (13410): Pin "HEX4[4]" is stuck at VCC File: C:/Projects/simproc_asic/fpga_quartus/top_fpga.sv Line: 8
+    Warning (13410): Pin "HEX4[5]" is stuck at VCC File: C:/Projects/simproc_asic/fpga_quartus/top_fpga.sv Line: 8
+    Warning (13410): Pin "HEX4[6]" is stuck at VCC File: C:/Projects/simproc_asic/fpga_quartus/top_fpga.sv Line: 8
+    Warning (13410): Pin "HEX3[0]" is stuck at VCC File: C:/Projects/simproc_asic/fpga_quartus/top_fpga.sv Line: 9
+    Warning (13410): Pin "HEX3[1]" is stuck at VCC File: C:/Projects/simproc_asic/fpga_quartus/top_fpga.sv Line: 9
+    Warning (13410): Pin "HEX3[2]" is stuck at VCC File: C:/Projects/simproc_asic/fpga_quartus/top_fpga.sv Line: 9
+    Warning (13410): Pin "HEX3[3]" is stuck at VCC File: C:/Projects/simproc_asic/fpga_quartus/top_fpga.sv Line: 9
+    Warning (13410): Pin "HEX3[4]" is stuck at VCC File: C:/Projects/simproc_asic/fpga_quartus/top_fpga.sv Line: 9
+    Warning (13410): Pin "HEX3[5]" is stuck at VCC File: C:/Projects/simproc_asic/fpga_quartus/top_fpga.sv Line: 9
+    Warning (13410): Pin "HEX3[6]" is stuck at VCC File: C:/Projects/simproc_asic/fpga_quartus/top_fpga.sv Line: 9
+    Warning (13410): Pin "HEX2[0]" is stuck at VCC File: C:/Projects/simproc_asic/fpga_quartus/top_fpga.sv Line: 10
+    Warning (13410): Pin "HEX2[1]" is stuck at VCC File: C:/Projects/simproc_asic/fpga_quartus/top_fpga.sv Line: 10
+    Warning (13410): Pin "HEX2[2]" is stuck at VCC File: C:/Projects/simproc_asic/fpga_quartus/top_fpga.sv Line: 10
+    Warning (13410): Pin "HEX2[3]" is stuck at VCC File: C:/Projects/simproc_asic/fpga_quartus/top_fpga.sv Line: 10
+    Warning (13410): Pin "HEX2[4]" is stuck at VCC File: C:/Projects/simproc_asic/fpga_quartus/top_fpga.sv Line: 10
+    Warning (13410): Pin "HEX2[5]" is stuck at VCC File: C:/Projects/simproc_asic/fpga_quartus/top_fpga.sv Line: 10
+    Warning (13410): Pin "HEX2[6]" is stuck at VCC File: C:/Projects/simproc_asic/fpga_quartus/top_fpga.sv Line: 10
+    Warning (13410): Pin "LEDR[0]" is stuck at GND File: C:/Projects/simproc_asic/fpga_quartus/top_fpga.sv Line: 14
+    Warning (13410): Pin "LEDR[1]" is stuck at GND File: C:/Projects/simproc_asic/fpga_quartus/top_fpga.sv Line: 14
+    Warning (13410): Pin "LEDR[2]" is stuck at GND File: C:/Projects/simproc_asic/fpga_quartus/top_fpga.sv Line: 14
+    Warning (13410): Pin "LEDR[3]" is stuck at GND File: C:/Projects/simproc_asic/fpga_quartus/top_fpga.sv Line: 14
+    Warning (13410): Pin "LEDR[4]" is stuck at GND File: C:/Projects/simproc_asic/fpga_quartus/top_fpga.sv Line: 14
+    Warning (13410): Pin "LEDR[5]" is stuck at GND File: C:/Projects/simproc_asic/fpga_quartus/top_fpga.sv Line: 14
+    Warning (13410): Pin "LEDR[6]" is stuck at GND File: C:/Projects/simproc_asic/fpga_quartus/top_fpga.sv Line: 14
+    Warning (13410): Pin "LEDR[7]" is stuck at GND File: C:/Projects/simproc_asic/fpga_quartus/top_fpga.sv Line: 14
+    Warning (13410): Pin "LEDR[8]" is stuck at GND File: C:/Projects/simproc_asic/fpga_quartus/top_fpga.sv Line: 14
+    Warning (13410): Pin "LEDR[9]" is stuck at GND File: C:/Projects/simproc_asic/fpga_quartus/top_fpga.sv Line: 14
 Info (286030): Timing-Driven Synthesis is running
-Info (17049): 3 registers lost all their fanouts during netlist optimizations.
+Info (17049): 2 registers lost all their fanouts during netlist optimizations.
 Warning (20013): Ignored 185 assignments for entity "DE10_Lite" -- entity does not exist in design
     Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ARDUINO_IO[0] -entity DE10_Lite was ignored
     Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ARDUINO_IO[10] -entity DE10_Lite was ignored
@@ -565,13 +685,16 @@ Warning (20013): Ignored 24 assignments for entity "top" -- entity does not exis
     Warning (20014): Assignment for entity set_global_assignment -name PARTITION_ENABLE_STRICT_PRESERVATION OFF -entity top -section_id Top was ignored
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 362 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 20 input pins
-    Info (21059): Implemented 19 output pins
-    Info (21061): Implemented 323 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 214 warnings
-    Info: Peak virtual memory: 4856 megabytes
-    Info: Processing ended: Tue Oct 28 14:23:57 2025
+Warning (21074): Design contains 1 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "KEY[1]" File: C:/Projects/simproc_asic/fpga_quartus/top_fpga.sv Line: 3
+Info (21057): Implemented 247 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 13 input pins
+    Info (21059): Implemented 52 output pins
+    Info (21060): Implemented 16 bidirectional pins
+    Info (21061): Implemented 166 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 281 warnings
+    Info: Peak virtual memory: 4853 megabytes
+    Info: Processing ended: Wed Oct 29 12:02:16 2025
     Info: Elapsed time: 00:00:07
     Info: Total CPU time (on all processors): 00:00:15
 
