@@ -4,12 +4,12 @@ module top_fpga (
     input  logic            CLOCK_50,
     inout  logic    [15:0]  ARDUINO_IO,
 
-    // output logic    [6:0]   HEX5,
-    // output logic    [6:0]   HEX4,
-    // output logic    [6:0]   HEX3,
-    // output logic    [6:0]   HEX2,
-    // output logic    [6:0]   HEX1,
-    // output logic    [6:0]   HEX0,
+    output logic    [6:0]   HEX5,
+    output logic    [6:0]   HEX4,
+    output logic    [6:0]   HEX3,
+    output logic    [6:0]   HEX2,
+    output logic    [6:0]   HEX1,
+    output logic    [6:0]   HEX0,
     output logic    [9:0]   LEDR
 );
     logic [9:0] clk_per_bit;
@@ -19,6 +19,23 @@ module top_fpga (
     assign uart_rx          = ARDUINO_IO[0];
     assign ARDUINO_IO[1]    = uart_tx;
     assign LEDR[9:2]        = SW[9:2];
+
+    // Debug wires
+    logic [7:0] cmd_byte;
+    logic [7:0] addr_byte;
+    logic [7:0] data_byte;
+
+    assign cmd_byte = SIMPROC_SYS1.cmd_byte;
+    assign addr_byte = SIMPROC_SYS1.addr_byte;
+    assign data_byte = SIMPROC_SYS1.data_byte;
+
+    hex7seg H0 (data_byte[3:0], HEX0);
+    hex7seg H1 (data_byte[7:4], HEX1);
+    hex7seg H2 (addr_byte[3:0], HEX2);
+    hex7seg H3 (addr_byte[7:4], HEX3);
+    hex7seg H4 (cmd_byte[3:0], HEX4);
+    hex7seg H5 (cmd_byte[7:4], HEX5);
+    //=================
 
     simproc_system #(
         .CLK_BITS(10)
@@ -1200,3 +1217,29 @@ module UART_TX #(
     end
 endmodule
 
+module hex7seg (hex, display);
+    input   [3:0] hex;
+    output  [6:0] display;
+
+    logic   [6:0] display;
+
+    always @ (hex)
+        case (hex)
+            4'h0: display = 7'b1000000;
+            4'h1: display = 7'b1111001;
+            4'h2: display = 7'b0100100;
+            4'h3: display = 7'b0110000;
+            4'h4: display = 7'b0011001;
+            4'h5: display = 7'b0010010;
+            4'h6: display = 7'b0000010;
+            4'h7: display = 7'b1111000;
+            4'h8: display = 7'b0000000;
+            4'h9: display = 7'b0011000;
+            4'hA: display = 7'b0001000;
+            4'hB: display = 7'b0000011;
+            4'hC: display = 7'b1000110;
+            4'hD: display = 7'b0100001;
+            4'hE: display = 7'b0000110;
+            4'hF: display = 7'b0001110;
+        endcase
+endmodule
