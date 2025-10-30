@@ -1,5 +1,5 @@
 Analysis & Synthesis report for top_fpga
-Wed Oct 29 17:17:53 2025
+Thu Oct 30 09:42:59 2025
 Quartus Prime Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
 
 
@@ -26,11 +26,9 @@ Quartus Prime Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
  18. Parameter Settings for User Entity Instance: simproc_system:SIMPROC_SYS1|UART_wrapper:UART1|UART_TX:UART_TX1
  19. Parameter Settings for User Entity Instance: simproc_system:SIMPROC_SYS1|UART_wrapper:UART1|UART_RX:UART_RX1
  20. Port Connectivity Checks: "simproc_system:SIMPROC_SYS1|UART_wrapper:UART1"
- 21. Port Connectivity Checks: "simproc_system:SIMPROC_SYS1|simproc:CPU1"
- 22. Port Connectivity Checks: "simproc_system:SIMPROC_SYS1|dp_ram:RAM1"
- 23. Post-Synthesis Netlist Statistics for Top Partition
- 24. Elapsed Time Per Partition
- 25. Analysis & Synthesis Messages
+ 21. Post-Synthesis Netlist Statistics for Top Partition
+ 22. Elapsed Time Per Partition
+ 23. Analysis & Synthesis Messages
 
 
 
@@ -57,16 +55,16 @@ on the Quartus Prime software download page.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Wed Oct 29 17:17:53 2025           ;
+; Analysis & Synthesis Status        ; Successful - Thu Oct 30 09:42:59 2025           ;
 ; Quartus Prime Version              ; 24.1std.0 Build 1077 03/04/2025 SC Lite Edition ;
 ; Revision Name                      ; top_fpga                                        ;
 ; Top-level Entity Name              ; top_fpga                                        ;
 ; Family                             ; MAX 10                                          ;
-; Total logic elements               ; 4,754                                           ;
-;     Total combinational functions  ; 4,695                                           ;
-;     Dedicated logic registers      ; 2,224                                           ;
-; Total registers                    ; 2224                                            ;
-; Total pins                         ; 39                                              ;
+; Total logic elements               ; 6,166                                           ;
+;     Total combinational functions  ; 6,099                                           ;
+;     Dedicated logic registers      ; 2,240                                           ;
+; Total registers                    ; 2240                                            ;
+; Total pins                         ; 81                                              ;
 ; Total virtual pins                 ; 0                                               ;
 ; Total memory bits                  ; 0                                               ;
 ; Embedded Multiplier 9-bit elements ; 0                                               ;
@@ -181,8 +179,7 @@ on the Quartus Prime software download page.
 ;     Processor 5            ;   0.1%      ;
 ;     Processor 6            ;   0.1%      ;
 ;     Processor 7            ;   0.1%      ;
-;     Processor 8            ;   0.1%      ;
-;     Processors 9-14        ;   0.1%      ;
+;     Processors 8-14        ;   0.1%      ;
 +----------------------------+-------------+
 
 
@@ -200,30 +197,30 @@ on the Quartus Prime software download page.
 +---------------------------------------------+----------------+
 ; Resource                                    ; Usage          ;
 +---------------------------------------------+----------------+
-; Estimated Total logic elements              ; 4,754          ;
+; Estimated Total logic elements              ; 6,166          ;
 ;                                             ;                ;
-; Total combinational functions               ; 4695           ;
+; Total combinational functions               ; 6099           ;
 ; Logic element usage by number of LUT inputs ;                ;
-;     -- 4 input functions                    ; 4481           ;
-;     -- 3 input functions                    ; 120            ;
-;     -- <=2 input functions                  ; 94             ;
+;     -- 4 input functions                    ; 5909           ;
+;     -- 3 input functions                    ; 99             ;
+;     -- <=2 input functions                  ; 91             ;
 ;                                             ;                ;
 ; Logic elements by mode                      ;                ;
-;     -- normal mode                          ; 4635           ;
+;     -- normal mode                          ; 6039           ;
 ;     -- arithmetic mode                      ; 60             ;
 ;                                             ;                ;
-; Total registers                             ; 2224           ;
-;     -- Dedicated logic registers            ; 2224           ;
+; Total registers                             ; 2240           ;
+;     -- Dedicated logic registers            ; 2240           ;
 ;     -- I/O registers                        ; 0              ;
 ;                                             ;                ;
-; I/O pins                                    ; 39             ;
+; I/O pins                                    ; 81             ;
 ;                                             ;                ;
 ; Embedded Multiplier 9-bit elements          ; 0              ;
 ;                                             ;                ;
 ; Maximum fan-out node                        ; CLOCK_50~input ;
-; Maximum fan-out                             ; 2224           ;
-; Total fan-out                               ; 25229          ;
-; Average fan-out                             ; 3.60           ;
+; Maximum fan-out                             ; 2240           ;
+; Total fan-out                               ; 31004          ;
+; Average fan-out                             ; 3.64           ;
 +---------------------------------------------+----------------+
 
 
@@ -232,16 +229,22 @@ on the Quartus Prime software download page.
 +----------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------------------------------------------------------------+-----------------+--------------+
 ; Compilation Hierarchy Node       ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                                                       ; Entity Name     ; Library Name ;
 +----------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------------------------------------------------------------+-----------------+--------------+
-; |top_fpga                        ; 4695 (0)            ; 2224 (0)                  ; 0           ; 0          ; 0            ; 0       ; 0         ; 39   ; 0            ; 0          ; |top_fpga                                                                 ; top_fpga        ; work         ;
-;    |simproc_system:SIMPROC_SYS1| ; 4695 (44)           ; 2224 (33)                 ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_fpga|simproc_system:SIMPROC_SYS1                                     ; simproc_system  ; work         ;
-;       |UART_wrapper:UART1|       ; 129 (0)             ; 56 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_fpga|simproc_system:SIMPROC_SYS1|UART_wrapper:UART1                  ; UART_wrapper    ; work         ;
-;          |UART_RX:UART_RX1|      ; 92 (92)             ; 37 (37)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_fpga|simproc_system:SIMPROC_SYS1|UART_wrapper:UART1|UART_RX:UART_RX1 ; UART_RX         ; work         ;
-;          |UART_TX:UART_TX1|      ; 37 (37)             ; 19 (19)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_fpga|simproc_system:SIMPROC_SYS1|UART_wrapper:UART1|UART_TX:UART_TX1 ; UART_TX         ; work         ;
-;       |dp_ram:RAM1|              ; 4240 (4240)         ; 2048 (2048)               ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1                         ; dp_ram          ; work         ;
-;       |simproc:CPU1|             ; 282 (163)           ; 87 (47)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_fpga|simproc_system:SIMPROC_SYS1|simproc:CPU1                        ; simproc         ; work         ;
-;          |ALU:ALU1|              ; 76 (76)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_fpga|simproc_system:SIMPROC_SYS1|simproc:CPU1|ALU:ALU1               ; ALU             ; work         ;
-;          |program_counter:PC1|   ; 18 (18)             ; 8 (8)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_fpga|simproc_system:SIMPROC_SYS1|simproc:CPU1|program_counter:PC1    ; program_counter ; work         ;
-;          |register_file:RF1|     ; 25 (25)             ; 32 (32)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_fpga|simproc_system:SIMPROC_SYS1|simproc:CPU1|register_file:RF1      ; register_file   ; work         ;
+; |top_fpga                        ; 6099 (0)            ; 2240 (0)                  ; 0           ; 0          ; 0            ; 0       ; 0         ; 81   ; 0            ; 0          ; |top_fpga                                                                 ; top_fpga        ; work         ;
+;    |hex7seg:H0|                  ; 7 (7)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_fpga|hex7seg:H0                                                      ; hex7seg         ; work         ;
+;    |hex7seg:H1|                  ; 7 (7)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_fpga|hex7seg:H1                                                      ; hex7seg         ; work         ;
+;    |hex7seg:H2|                  ; 7 (7)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_fpga|hex7seg:H2                                                      ; hex7seg         ; work         ;
+;    |hex7seg:H3|                  ; 7 (7)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_fpga|hex7seg:H3                                                      ; hex7seg         ; work         ;
+;    |hex7seg:H4|                  ; 7 (7)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_fpga|hex7seg:H4                                                      ; hex7seg         ; work         ;
+;    |hex7seg:H5|                  ; 7 (7)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_fpga|hex7seg:H5                                                      ; hex7seg         ; work         ;
+;    |simproc_system:SIMPROC_SYS1| ; 6057 (1426)         ; 2240 (41)                 ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_fpga|simproc_system:SIMPROC_SYS1                                     ; simproc_system  ; work         ;
+;       |UART_wrapper:UART1|       ; 128 (0)             ; 64 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_fpga|simproc_system:SIMPROC_SYS1|UART_wrapper:UART1                  ; UART_wrapper    ; work         ;
+;          |UART_RX:UART_RX1|      ; 85 (85)             ; 37 (37)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_fpga|simproc_system:SIMPROC_SYS1|UART_wrapper:UART1|UART_RX:UART_RX1 ; UART_RX         ; work         ;
+;          |UART_TX:UART_TX1|      ; 43 (43)             ; 27 (27)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_fpga|simproc_system:SIMPROC_SYS1|UART_wrapper:UART1|UART_TX:UART_TX1 ; UART_TX         ; work         ;
+;       |dp_ram:RAM1|              ; 4224 (4224)         ; 2048 (2048)               ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1                         ; dp_ram          ; work         ;
+;       |simproc:CPU1|             ; 279 (163)           ; 87 (47)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_fpga|simproc_system:SIMPROC_SYS1|simproc:CPU1                        ; simproc         ; work         ;
+;          |ALU:ALU1|              ; 77 (77)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_fpga|simproc_system:SIMPROC_SYS1|simproc:CPU1|ALU:ALU1               ; ALU             ; work         ;
+;          |program_counter:PC1|   ; 15 (15)             ; 8 (8)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_fpga|simproc_system:SIMPROC_SYS1|simproc:CPU1|program_counter:PC1    ; program_counter ; work         ;
+;          |register_file:RF1|     ; 24 (24)             ; 32 (32)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_fpga|simproc_system:SIMPROC_SYS1|simproc:CPU1|register_file:RF1      ; register_file   ; work         ;
 +----------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------------------------------------------------------------+-----------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -302,24 +305,24 @@ Encoding Type:  One-Hot
 +--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+-----------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                                                                                 ;
-+------------------------------------------------------------------------------+---------------------------------------------------------------------+
-; Register name                                                                ; Reason for Removal                                                  ;
-+------------------------------------------------------------------------------+---------------------------------------------------------------------+
-; simproc_system:SIMPROC_SYS1|UART_wrapper:UART1|UART_TX:UART_TX1|packet[0..8] ; Stuck at GND due to stuck port data_in                              ;
-; simproc_system:SIMPROC_SYS1|UART_wrapper:UART1|UART_TX:UART_TX1|packet[9]    ; Stuck at VCC due to stuck port data_in                              ;
-; simproc_system:SIMPROC_SYS1|simproc:CPU1|n_flag_out                          ; Merged with simproc_system:SIMPROC_SYS1|simproc:CPU1|alu_reg_out[7] ;
-; simproc_system:SIMPROC_SYS1|uart_curr_state~2                                ; Lost fanout                                                         ;
-; simproc_system:SIMPROC_SYS1|uart_curr_state~3                                ; Lost fanout                                                         ;
-; simproc_system:SIMPROC_SYS1|uart_curr_state~4                                ; Lost fanout                                                         ;
-; simproc_system:SIMPROC_SYS1|UART_wrapper:UART1|UART_RX:UART_RX1|state~2      ; Lost fanout                                                         ;
-; simproc_system:SIMPROC_SYS1|UART_wrapper:UART1|UART_RX:UART_RX1|state~3      ; Lost fanout                                                         ;
-; simproc_system:SIMPROC_SYS1|simproc:CPU1|curr_state~2                        ; Lost fanout                                                         ;
-; simproc_system:SIMPROC_SYS1|simproc:CPU1|curr_state~3                        ; Lost fanout                                                         ;
-; simproc_system:SIMPROC_SYS1|simproc:CPU1|curr_state~4                        ; Lost fanout                                                         ;
-; Total Number of Removed Registers = 19                                       ;                                                                     ;
-+------------------------------------------------------------------------------+---------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                                              ;
++---------------------------------------------------------------------------+---------------------------------------------------------------------+
+; Register name                                                             ; Reason for Removal                                                  ;
++---------------------------------------------------------------------------+---------------------------------------------------------------------+
+; simproc_system:SIMPROC_SYS1|UART_wrapper:UART1|UART_TX:UART_TX1|packet[0] ; Stuck at GND due to stuck port data_in                              ;
+; simproc_system:SIMPROC_SYS1|UART_wrapper:UART1|UART_TX:UART_TX1|packet[9] ; Stuck at VCC due to stuck port data_in                              ;
+; simproc_system:SIMPROC_SYS1|simproc:CPU1|n_flag_out                       ; Merged with simproc_system:SIMPROC_SYS1|simproc:CPU1|alu_reg_out[7] ;
+; simproc_system:SIMPROC_SYS1|uart_curr_state~2                             ; Lost fanout                                                         ;
+; simproc_system:SIMPROC_SYS1|uart_curr_state~3                             ; Lost fanout                                                         ;
+; simproc_system:SIMPROC_SYS1|uart_curr_state~4                             ; Lost fanout                                                         ;
+; simproc_system:SIMPROC_SYS1|UART_wrapper:UART1|UART_RX:UART_RX1|state~2   ; Lost fanout                                                         ;
+; simproc_system:SIMPROC_SYS1|UART_wrapper:UART1|UART_RX:UART_RX1|state~3   ; Lost fanout                                                         ;
+; simproc_system:SIMPROC_SYS1|simproc:CPU1|curr_state~2                     ; Lost fanout                                                         ;
+; simproc_system:SIMPROC_SYS1|simproc:CPU1|curr_state~3                     ; Lost fanout                                                         ;
+; simproc_system:SIMPROC_SYS1|simproc:CPU1|curr_state~4                     ; Lost fanout                                                         ;
+; Total Number of Removed Registers = 11                                    ;                                                                     ;
++---------------------------------------------------------------------------+---------------------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -327,12 +330,12 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 2224  ;
+; Total registers                              ; 2240  ;
 ; Number of registers using Synchronous Clear  ; 64    ;
 ; Number of registers using Synchronous Load   ; 9     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 2166  ;
+; Number of registers using Clock Enable       ; 2182  ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -342,291 +345,292 @@ Encoding Type:  One-Hot
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                            ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------------------+
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|simproc:CPU1|instr_reg_out[1]                   ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|cmd_byte[6]                                     ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[0][3]                           ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[1][1]                           ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[2][2]                           ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|simproc:CPU1|instr_reg_out[3]                   ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|cmd_byte[7]                                     ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|addr_byte[5]                                    ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|data_byte[5]                                    ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[0][7]                           ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[1][7]                           ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[2][7]                           ;
 ; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[3][1]                           ;
 ; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[4][1]                           ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[5][1]                           ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[6][1]                           ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[7][1]                           ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[8][1]                           ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[9][1]                           ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[10][0]                          ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[11][3]                          ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[12][2]                          ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[13][4]                          ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[14][6]                          ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[15][1]                          ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[16][3]                          ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[17][0]                          ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[18][3]                          ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[19][6]                          ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[20][6]                          ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[21][0]                          ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[22][2]                          ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[23][7]                          ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[24][1]                          ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[25][6]                          ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[26][2]                          ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[5][7]                           ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[6][7]                           ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[7][2]                           ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[8][6]                           ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[9][6]                           ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[10][5]                          ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[11][1]                          ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[12][0]                          ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[13][0]                          ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[14][2]                          ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[15][0]                          ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[16][7]                          ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[17][3]                          ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[18][7]                          ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[19][4]                          ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[20][0]                          ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[21][5]                          ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[22][4]                          ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[23][4]                          ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[24][3]                          ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[25][1]                          ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[26][4]                          ;
 ; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[27][4]                          ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[28][3]                          ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[29][4]                          ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[30][2]                          ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[31][7]                          ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[32][4]                          ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[33][4]                          ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[34][6]                          ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[35][2]                          ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[36][2]                          ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[28][0]                          ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[29][2]                          ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[30][0]                          ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[31][6]                          ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[32][3]                          ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[33][1]                          ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[34][1]                          ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[35][3]                          ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[36][7]                          ;
 ; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[37][7]                          ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[38][7]                          ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[39][7]                          ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[40][5]                          ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[41][3]                          ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[38][2]                          ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[39][5]                          ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[40][1]                          ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[41][7]                          ;
 ; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[42][7]                          ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[43][5]                          ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[44][7]                          ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[45][6]                          ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[46][7]                          ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[47][5]                          ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[48][3]                          ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[49][6]                          ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[50][7]                          ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[51][6]                          ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[52][6]                          ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[53][6]                          ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[54][6]                          ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[55][6]                          ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[56][6]                          ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[43][3]                          ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[44][0]                          ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[45][2]                          ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[46][2]                          ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[47][1]                          ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[48][0]                          ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[49][3]                          ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[50][6]                          ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[51][3]                          ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[52][3]                          ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[53][2]                          ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[54][2]                          ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[55][2]                          ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[56][5]                          ;
 ; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[57][6]                          ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[58][6]                          ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[59][6]                          ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[60][6]                          ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[61][6]                          ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[62][2]                          ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[63][4]                          ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[64][7]                          ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[65][2]                          ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[66][7]                          ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[67][3]                          ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[68][3]                          ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[69][5]                          ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[70][0]                          ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[71][2]                          ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[72][1]                          ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[73][2]                          ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[74][3]                          ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[58][5]                          ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[59][2]                          ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[60][4]                          ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[61][7]                          ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[62][6]                          ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[63][1]                          ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[64][4]                          ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[65][5]                          ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[66][3]                          ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[67][6]                          ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[68][6]                          ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[69][2]                          ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[70][5]                          ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[71][4]                          ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[72][4]                          ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[73][4]                          ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[74][4]                          ;
 ; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[75][4]                          ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[76][4]                          ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[77][2]                          ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[78][2]                          ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[79][6]                          ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[80][3]                          ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[81][7]                          ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[82][3]                          ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[83][6]                          ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[84][6]                          ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[85][6]                          ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[86][6]                          ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[87][6]                          ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[88][6]                          ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[89][7]                          ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[76][6]                          ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[77][0]                          ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[78][5]                          ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[79][5]                          ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[80][5]                          ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[81][4]                          ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[82][6]                          ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[83][7]                          ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[84][4]                          ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[85][0]                          ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[86][0]                          ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[87][0]                          ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[88][3]                          ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[89][2]                          ;
 ; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[90][3]                          ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[91][2]                          ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[92][3]                          ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[93][5]                          ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[94][6]                          ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[95][6]                          ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[96][6]                          ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[97][4]                          ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[98][5]                          ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[99][7]                          ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[100][3]                         ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[101][2]                         ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[102][5]                         ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[103][0]                         ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[104][5]                         ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[105][5]                         ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[106][5]                         ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[91][0]                          ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[92][7]                          ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[93][6]                          ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[94][3]                          ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[95][7]                          ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[96][7]                          ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[97][2]                          ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[98][0]                          ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[99][5]                          ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[100][7]                         ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[101][0]                         ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[102][4]                         ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[103][2]                         ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[104][0]                         ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[105][0]                         ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[106][3]                         ;
 ; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[107][2]                         ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[108][5]                         ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[109][5]                         ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[108][2]                         ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[109][2]                         ;
 ; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[110][2]                         ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[111][5]                         ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[111][2]                         ;
 ; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[112][6]                         ;
 ; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[113][3]                         ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[114][6]                         ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[115][1]                         ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[116][1]                         ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[117][5]                         ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[118][4]                         ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[119][6]                         ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[120][2]                         ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[121][2]                         ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[122][2]                         ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[123][2]                         ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[124][2]                         ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[125][2]                         ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[126][2]                         ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[127][2]                         ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[114][5]                         ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[115][4]                         ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[116][3]                         ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[117][3]                         ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[118][3]                         ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[119][1]                         ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[120][1]                         ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[121][1]                         ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[122][3]                         ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[123][0]                         ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[124][3]                         ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[125][0]                         ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[126][3]                         ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[127][4]                         ;
 ; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[128][2]                         ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[129][2]                         ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[130][1]                         ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[131][0]                         ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[132][0]                         ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[133][1]                         ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[134][2]                         ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[135][3]                         ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[136][3]                         ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[137][4]                         ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[129][3]                         ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[130][3]                         ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[131][3]                         ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[132][4]                         ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[133][3]                         ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[134][4]                         ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[135][2]                         ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[136][0]                         ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[137][1]                         ;
 ; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[138][0]                         ;
 ; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[139][1]                         ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[140][1]                         ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[141][6]                         ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[142][5]                         ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[143][2]                         ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[144][5]                         ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[145][2]                         ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[146][3]                         ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[147][0]                         ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[148][7]                         ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[140][4]                         ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[141][1]                         ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[142][1]                         ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[143][1]                         ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[144][1]                         ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[145][6]                         ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[146][4]                         ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[147][1]                         ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[148][1]                         ;
 ; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[149][4]                         ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[150][3]                         ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[151][7]                         ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[150][1]                         ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[151][0]                         ;
 ; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[152][5]                         ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[153][6]                         ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[154][3]                         ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[155][5]                         ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[156][5]                         ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[157][7]                         ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[158][1]                         ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[159][3]                         ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[160][4]                         ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[161][5]                         ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[162][3]                         ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[163][4]                         ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[164][1]                         ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[165][0]                         ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[166][0]                         ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[167][0]                         ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[168][2]                         ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[153][2]                         ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[154][2]                         ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[155][2]                         ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[156][2]                         ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[157][0]                         ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[158][7]                         ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[159][7]                         ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[160][3]                         ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[161][3]                         ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[162][4]                         ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[163][5]                         ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[164][0]                         ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[165][3]                         ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[166][4]                         ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[167][4]                         ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[168][4]                         ;
 ; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[169][4]                         ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[170][2]                         ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[170][4]                         ;
 ; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[171][7]                         ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[172][7]                         ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[173][7]                         ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[172][2]                         ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[173][1]                         ;
 ; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[174][7]                         ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[175][7]                         ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[176][7]                         ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[175][6]                         ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[176][2]                         ;
 ; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[177][7]                         ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[178][7]                         ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[179][7]                         ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[180][1]                         ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[181][3]                         ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[178][5]                         ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[179][4]                         ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[180][5]                         ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[181][7]                         ;
 ; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[182][3]                         ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[183][2]                         ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[184][1]                         ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[185][2]                         ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[186][0]                         ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[183][7]                         ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[184][0]                         ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[185][6]                         ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[186][6]                         ;
 ; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[187][5]                         ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[188][5]                         ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[189][5]                         ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[190][4]                         ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[191][1]                         ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[188][3]                         ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[189][4]                         ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[190][5]                         ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[191][5]                         ;
 ; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[192][1]                         ;
 ; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[193][1]                         ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[194][1]                         ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[195][2]                         ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[194][0]                         ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[195][3]                         ;
 ; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[196][0]                         ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[197][4]                         ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[198][0]                         ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[199][0]                         ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[200][7]                         ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[201][7]                         ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[197][3]                         ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[198][5]                         ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[199][5]                         ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[200][5]                         ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[201][5]                         ;
 ; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[202][4]                         ;
 ; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[203][1]                         ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[204][3]                         ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[205][4]                         ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[206][5]                         ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[207][7]                         ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[208][5]                         ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[204][1]                         ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[205][5]                         ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[206][7]                         ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[207][2]                         ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[208][0]                         ;
 ; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[209][7]                         ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[210][7]                         ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[210][0]                         ;
 ; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[211][7]                         ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[212][5]                         ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[213][2]                         ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[214][7]                         ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[215][5]                         ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[216][5]                         ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[217][5]                         ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[212][2]                         ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[213][6]                         ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[214][5]                         ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[215][6]                         ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[216][4]                         ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[217][4]                         ;
 ; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[218][5]                         ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[219][5]                         ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[220][5]                         ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[219][2]                         ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[220][4]                         ;
 ; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[221][4]                         ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[222][0]                         ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[223][4]                         ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[224][3]                         ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[225][6]                         ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[226][5]                         ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[227][6]                         ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[228][2]                         ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[229][2]                         ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[230][2]                         ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[231][3]                         ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[222][4]                         ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[223][3]                         ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[224][7]                         ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[225][0]                         ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[226][1]                         ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[227][0]                         ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[228][4]                         ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[229][7]                         ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[230][5]                         ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[231][4]                         ;
 ; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[232][0]                         ;
 ; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[233][0]                         ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[234][2]                         ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[235][6]                         ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[236][1]                         ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[237][5]                         ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[238][5]                         ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[239][4]                         ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[240][6]                         ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[241][6]                         ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[234][5]                         ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[235][2]                         ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[236][3]                         ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[237][4]                         ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[238][3]                         ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[239][1]                         ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[240][1]                         ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[241][0]                         ;
 ; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[242][0]                         ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[243][6]                         ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[243][0]                         ;
 ; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[244][0]                         ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[245][4]                         ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[246][7]                         ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[245][0]                         ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[246][0]                         ;
 ; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[247][0]                         ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[248][7]                         ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[249][4]                         ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[250][4]                         ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[251][2]                         ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[252][5]                         ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[253][3]                         ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[254][5]                         ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[255][3]                         ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|simproc:CPU1|register_file:RF1|rf[0][7]         ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|simproc:CPU1|register_file:RF1|rf[1][4]         ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|simproc:CPU1|register_file:RF1|rf[2][3]         ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|simproc:CPU1|register_file:RF1|rf[3][3]         ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|addr_byte[3]                                    ;
-; 3:1                ; 9 bits    ; 18 LEs        ; 9 LEs                ; 9 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|simproc:CPU1|alu_reg_out[5]                     ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|data_byte[5]                                    ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[248][0]                         ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[249][0]                         ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[250][0]                         ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[251][1]                         ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[252][7]                         ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[253][0]                         ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[254][0]                         ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|mem[255][0]                         ;
+; 3:1                ; 9 bits    ; 18 LEs        ; 9 LEs                ; 9 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|simproc:CPU1|alu_reg_out[2]                     ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|simproc:CPU1|register_file:RF1|rf[0][4]         ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|simproc:CPU1|register_file:RF1|rf[1][7]         ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|simproc:CPU1|register_file:RF1|rf[2][2]         ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|simproc:CPU1|register_file:RF1|rf[3][1]         ;
 ; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|simproc:CPU1|mdr_out[0]                         ;
-; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|UART_wrapper:UART1|UART_TX:UART_TX1|index[2]    ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|UART_wrapper:UART1|UART_TX:UART_TX1|index[3]    ;
 ; 4:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|UART_wrapper:UART1|UART_TX:UART_TX1|clkCount[9] ;
-; 6:1                ; 8 bits    ; 32 LEs        ; 24 LEs               ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|simproc:CPU1|reg_b_out[7]                       ;
-; 6:1                ; 8 bits    ; 32 LEs        ; 24 LEs               ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|simproc:CPU1|reg_a_out[4]                       ;
-; 6:1                ; 10 bits   ; 40 LEs        ; 10 LEs               ; 30 LEs                 ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|UART_wrapper:UART1|UART_RX:UART_RX1|clkCount[1] ;
-; 7:1                ; 4 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|UART_wrapper:UART1|UART_RX:UART_RX1|index[3]    ;
+; 6:1                ; 8 bits    ; 32 LEs        ; 24 LEs               ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|simproc:CPU1|reg_b_out[5]                       ;
+; 6:1                ; 8 bits    ; 32 LEs        ; 24 LEs               ; 8 LEs                  ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|simproc:CPU1|reg_a_out[7]                       ;
+; 6:1                ; 10 bits   ; 40 LEs        ; 10 LEs               ; 30 LEs                 ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|UART_wrapper:UART1|UART_RX:UART_RX1|clkCount[0] ;
+; 7:1                ; 4 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|UART_wrapper:UART1|UART_RX:UART_RX1|index[1]    ;
 ; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|simproc:CPU1|program_counter:PC1|pc_out[2]      ;
+; 514:1              ; 8 bits    ; 2736 LEs      ; 1424 LEs             ; 1312 LEs               ; Yes        ; |top_fpga|simproc_system:SIMPROC_SYS1|tx_reg[2]                                       ;
 ; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |top_fpga|simproc_system:SIMPROC_SYS1|simproc:CPU1|rf_data_w_in                       ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |top_fpga|simproc_system:SIMPROC_SYS1|simproc:CPU1|rf_reg_w_in[0]                     ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; No         ; |top_fpga|simproc_system:SIMPROC_SYS1|din_b[6]                                        ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; No         ; |top_fpga|simproc_system:SIMPROC_SYS1|addr_b[3]                                       ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |top_fpga|simproc_system:SIMPROC_SYS1|simproc:CPU1|rf_reg_w_in[1]                     ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; No         ; |top_fpga|simproc_system:SIMPROC_SYS1|din_b[2]                                        ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; No         ; |top_fpga|simproc_system:SIMPROC_SYS1|addr_b[7]                                       ;
 ; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; No         ; |top_fpga|simproc_system:SIMPROC_SYS1|simproc:CPU1|alu_in_b                           ;
 ; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; No         ; |top_fpga|simproc_system:SIMPROC_SYS1|simproc:CPU1|mem_addr                           ;
 ; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; No         ; |top_fpga|simproc_system:SIMPROC_SYS1|simproc:CPU1|alu_in_b                           ;
-; 10:1               ; 4 bits    ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; No         ; |top_fpga|simproc_system:SIMPROC_SYS1|simproc:CPU1|ALU:ALU1|Mux5                      ;
+; 10:1               ; 4 bits    ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; No         ; |top_fpga|simproc_system:SIMPROC_SYS1|simproc:CPU1|ALU:ALU1|Mux3                      ;
 ; 7:1                ; 3 bits    ; 12 LEs        ; 9 LEs                ; 3 LEs                  ; No         ; |top_fpga|simproc_system:SIMPROC_SYS1|simproc:CPU1|alu_in_b[5]                        ;
 ; 11:1               ; 2 bits    ; 14 LEs        ; 12 LEs               ; 2 LEs                  ; No         ; |top_fpga|simproc_system:SIMPROC_SYS1|simproc:CPU1|ALU:ALU1|Mux6                      ;
-; 11:1               ; 2 bits    ; 14 LEs        ; 12 LEs               ; 2 LEs                  ; No         ; |top_fpga|simproc_system:SIMPROC_SYS1|simproc:CPU1|ALU:ALU1|Mux1                      ;
-; 256:1              ; 8 bits    ; 1360 LEs      ; 1360 LEs             ; 0 LEs                  ; No         ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|Mux7                                ;
+; 11:1               ; 2 bits    ; 14 LEs        ; 12 LEs               ; 2 LEs                  ; No         ; |top_fpga|simproc_system:SIMPROC_SYS1|simproc:CPU1|ALU:ALU1|Mux0                      ;
+; 256:1              ; 8 bits    ; 1360 LEs      ; 1360 LEs             ; 0 LEs                  ; No         ; |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1|Mux4                                ;
 ; 11:1               ; 8 bits    ; 56 LEs        ; 16 LEs               ; 40 LEs                 ; No         ; |top_fpga|simproc_system:SIMPROC_SYS1|simproc:CPU1|Selector19                         ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------------------+
 
@@ -698,28 +702,9 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------+----------+-------------------------------------------------------------------------------------+
 ; Port           ; Type   ; Severity ; Details                                                                             ;
 +----------------+--------+----------+-------------------------------------------------------------------------------------+
-; TX_dataIn      ; Input  ; Info     ; Stuck at GND                                                                        ;
 ; TX_busy        ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
 ; RX_parityError ; Output ; Info     ; Explicitly unconnected                                                              ;
 +----------------+--------+----------+-------------------------------------------------------------------------------------+
-
-
-+------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "simproc_system:SIMPROC_SYS1|simproc:CPU1"                                             ;
-+--------+--------+----------+-------------------------------------------------------------------------------------+
-; Port   ; Type   ; Severity ; Details                                                                             ;
-+--------+--------+----------+-------------------------------------------------------------------------------------+
-; pc_val ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+--------+--------+----------+-------------------------------------------------------------------------------------+
-
-
-+------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "simproc_system:SIMPROC_SYS1|dp_ram:RAM1"                                              ;
-+--------+--------+----------+-------------------------------------------------------------------------------------+
-; Port   ; Type   ; Severity ; Details                                                                             ;
-+--------+--------+----------+-------------------------------------------------------------------------------------+
-; dout_b ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+--------+--------+----------+-------------------------------------------------------------------------------------+
 
 
 +-----------------------------------------------------+
@@ -727,28 +712,28 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 39                          ;
-; cycloneiii_ff         ; 2224                        ;
-;     ENA               ; 2141                        ;
+; boundary_port         ; 81                          ;
+; cycloneiii_ff         ; 2240                        ;
+;     ENA               ; 2157                        ;
 ;     ENA SCLR          ; 17                          ;
 ;     ENA SCLR SLD      ; 8                           ;
 ;     SCLR              ; 39                          ;
 ;     SLD               ; 1                           ;
 ;     plain             ; 18                          ;
 ; cycloneiii_io_obuf    ; 16                          ;
-; cycloneiii_lcell_comb ; 4696                        ;
+; cycloneiii_lcell_comb ; 6106                        ;
 ;     arith             ; 60                          ;
 ;         2 data inputs ; 28                          ;
 ;         3 data inputs ; 32                          ;
-;     normal            ; 4636                        ;
+;     normal            ; 6046                        ;
 ;         0 data inputs ; 1                           ;
-;         1 data inputs ; 3                           ;
-;         2 data inputs ; 63                          ;
-;         3 data inputs ; 88                          ;
-;         4 data inputs ; 4481                        ;
+;         1 data inputs ; 9                           ;
+;         2 data inputs ; 60                          ;
+;         3 data inputs ; 67                          ;
+;         4 data inputs ; 5909                        ;
 ;                       ;                             ;
-; Max LUT depth         ; 11.00                       ;
-; Average LUT depth     ; 7.65                        ;
+; Max LUT depth         ; 12.00                       ;
+; Average LUT depth     ; 7.85                        ;
 +-----------------------+-----------------------------+
 
 
@@ -757,7 +742,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:10     ;
+; Top            ; 00:00:09     ;
 +----------------+--------------+
 
 
@@ -767,39 +752,42 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
-    Info: Processing started: Wed Oct 29 17:17:35 2025
+    Info: Processing started: Thu Oct 30 09:42:44 2025
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off top_fpga -c top_fpga
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 14 of the 14 processors detected
-Warning (12125): Using design file top_fpga.sv, which is not specified as a design file for the current project, but contains definitions for 10 design units and 10 entities in project
+Warning (10275): Verilog HDL Module Instantiation warning at top_fpga.sv(53): ignored dangling comma in List of Port Connections File: C:/Projects/simproc_asic/fpga_quartus/top_fpga.sv Line: 53
+Warning (12125): Using design file top_fpga.sv, which is not specified as a design file for the current project, but contains definitions for 11 design units and 11 entities in project
     Info (12023): Found entity 1: top_fpga File: C:/Projects/simproc_asic/fpga_quartus/top_fpga.sv Line: 1
-    Info (12023): Found entity 2: simproc_system File: C:/Projects/simproc_asic/fpga_quartus/top_fpga.sv Line: 38
-    Info (12023): Found entity 3: simproc File: C:/Projects/simproc_asic/fpga_quartus/top_fpga.sv Line: 353
-    Info (12023): Found entity 4: register_file File: C:/Projects/simproc_asic/fpga_quartus/top_fpga.sv Line: 764
-    Info (12023): Found entity 5: program_counter File: C:/Projects/simproc_asic/fpga_quartus/top_fpga.sv Line: 796
-    Info (12023): Found entity 6: ALU File: C:/Projects/simproc_asic/fpga_quartus/top_fpga.sv Line: 813
-    Info (12023): Found entity 7: dp_ram File: C:/Projects/simproc_asic/fpga_quartus/top_fpga.sv Line: 850
-    Info (12023): Found entity 8: UART_wrapper File: C:/Projects/simproc_asic/fpga_quartus/top_fpga.sv Line: 886
-    Info (12023): Found entity 9: UART_RX File: C:/Projects/simproc_asic/fpga_quartus/top_fpga.sv Line: 950
-    Info (12023): Found entity 10: UART_TX File: C:/Projects/simproc_asic/fpga_quartus/top_fpga.sv Line: 1092
+    Info (12023): Found entity 2: simproc_system File: C:/Projects/simproc_asic/fpga_quartus/top_fpga.sv Line: 56
+    Info (12023): Found entity 3: simproc File: C:/Projects/simproc_asic/fpga_quartus/top_fpga.sv Line: 384
+    Info (12023): Found entity 4: register_file File: C:/Projects/simproc_asic/fpga_quartus/top_fpga.sv Line: 795
+    Info (12023): Found entity 5: program_counter File: C:/Projects/simproc_asic/fpga_quartus/top_fpga.sv Line: 827
+    Info (12023): Found entity 6: ALU File: C:/Projects/simproc_asic/fpga_quartus/top_fpga.sv Line: 844
+    Info (12023): Found entity 7: dp_ram File: C:/Projects/simproc_asic/fpga_quartus/top_fpga.sv Line: 881
+    Info (12023): Found entity 8: UART_wrapper File: C:/Projects/simproc_asic/fpga_quartus/top_fpga.sv Line: 917
+    Info (12023): Found entity 9: UART_RX File: C:/Projects/simproc_asic/fpga_quartus/top_fpga.sv Line: 981
+    Info (12023): Found entity 10: UART_TX File: C:/Projects/simproc_asic/fpga_quartus/top_fpga.sv Line: 1123
+    Info (12023): Found entity 11: hex7seg File: C:/Projects/simproc_asic/fpga_quartus/top_fpga.sv Line: 1234
 Info (12127): Elaborating entity "top_fpga" for the top level hierarchy
-Info (12128): Elaborating entity "simproc_system" for hierarchy "simproc_system:SIMPROC_SYS1" File: C:/Projects/simproc_asic/fpga_quartus/top_fpga.sv Line: 35
-Info (10264): Verilog HDL Case Statement information at top_fpga.sv(324): all case item expressions in this case statement are onehot File: C:/Projects/simproc_asic/fpga_quartus/top_fpga.sv Line: 324
-Info (12128): Elaborating entity "dp_ram" for hierarchy "simproc_system:SIMPROC_SYS1|dp_ram:RAM1" File: C:/Projects/simproc_asic/fpga_quartus/top_fpga.sv Line: 100
-Info (12128): Elaborating entity "simproc" for hierarchy "simproc_system:SIMPROC_SYS1|simproc:CPU1" File: C:/Projects/simproc_asic/fpga_quartus/top_fpga.sv Line: 120
-Warning (10270): Verilog HDL Case Statement warning at top_fpga.sv(636): incomplete case statement has no default case item File: C:/Projects/simproc_asic/fpga_quartus/top_fpga.sv Line: 636
-Info (12128): Elaborating entity "ALU" for hierarchy "simproc_system:SIMPROC_SYS1|simproc:CPU1|ALU:ALU1" File: C:/Projects/simproc_asic/fpga_quartus/top_fpga.sv Line: 403
-Info (12128): Elaborating entity "register_file" for hierarchy "simproc_system:SIMPROC_SYS1|simproc:CPU1|register_file:RF1" File: C:/Projects/simproc_asic/fpga_quartus/top_fpga.sv Line: 417
-Info (12128): Elaborating entity "program_counter" for hierarchy "simproc_system:SIMPROC_SYS1|simproc:CPU1|program_counter:PC1" File: C:/Projects/simproc_asic/fpga_quartus/top_fpga.sv Line: 427
-Info (12128): Elaborating entity "UART_wrapper" for hierarchy "simproc_system:SIMPROC_SYS1|UART_wrapper:UART1" File: C:/Projects/simproc_asic/fpga_quartus/top_fpga.sv Line: 147
-Info (12128): Elaborating entity "UART_TX" for hierarchy "simproc_system:SIMPROC_SYS1|UART_wrapper:UART1|UART_TX:UART_TX1" File: C:/Projects/simproc_asic/fpga_quartus/top_fpga.sv Line: 928
-Warning (10230): Verilog HDL assignment warning at top_fpga.sv(1171): truncated value with size 32 to match size of target (10) File: C:/Projects/simproc_asic/fpga_quartus/top_fpga.sv Line: 1171
-Warning (10230): Verilog HDL assignment warning at top_fpga.sv(1181): truncated value with size 32 to match size of target (4) File: C:/Projects/simproc_asic/fpga_quartus/top_fpga.sv Line: 1181
-Info (12128): Elaborating entity "UART_RX" for hierarchy "simproc_system:SIMPROC_SYS1|UART_wrapper:UART1|UART_RX:UART_RX1" File: C:/Projects/simproc_asic/fpga_quartus/top_fpga.sv Line: 947
-Warning (10230): Verilog HDL assignment warning at top_fpga.sv(1029): truncated value with size 32 to match size of target (10) File: C:/Projects/simproc_asic/fpga_quartus/top_fpga.sv Line: 1029
-Warning (10230): Verilog HDL assignment warning at top_fpga.sv(1038): truncated value with size 32 to match size of target (10) File: C:/Projects/simproc_asic/fpga_quartus/top_fpga.sv Line: 1038
-Warning (10230): Verilog HDL assignment warning at top_fpga.sv(1046): truncated value with size 32 to match size of target (4) File: C:/Projects/simproc_asic/fpga_quartus/top_fpga.sv Line: 1046
-Warning (10230): Verilog HDL assignment warning at top_fpga.sv(1061): truncated value with size 32 to match size of target (10) File: C:/Projects/simproc_asic/fpga_quartus/top_fpga.sv Line: 1061
+Info (12128): Elaborating entity "hex7seg" for hierarchy "hex7seg:H0" File: C:/Projects/simproc_asic/fpga_quartus/top_fpga.sv Line: 28
+Info (12128): Elaborating entity "simproc_system" for hierarchy "simproc_system:SIMPROC_SYS1" File: C:/Projects/simproc_asic/fpga_quartus/top_fpga.sv Line: 53
+Info (10264): Verilog HDL Case Statement information at top_fpga.sv(350): all case item expressions in this case statement are onehot File: C:/Projects/simproc_asic/fpga_quartus/top_fpga.sv Line: 350
+Info (12128): Elaborating entity "dp_ram" for hierarchy "simproc_system:SIMPROC_SYS1|dp_ram:RAM1" File: C:/Projects/simproc_asic/fpga_quartus/top_fpga.sv Line: 122
+Info (12128): Elaborating entity "simproc" for hierarchy "simproc_system:SIMPROC_SYS1|simproc:CPU1" File: C:/Projects/simproc_asic/fpga_quartus/top_fpga.sv Line: 142
+Warning (10270): Verilog HDL Case Statement warning at top_fpga.sv(667): incomplete case statement has no default case item File: C:/Projects/simproc_asic/fpga_quartus/top_fpga.sv Line: 667
+Info (12128): Elaborating entity "ALU" for hierarchy "simproc_system:SIMPROC_SYS1|simproc:CPU1|ALU:ALU1" File: C:/Projects/simproc_asic/fpga_quartus/top_fpga.sv Line: 434
+Info (12128): Elaborating entity "register_file" for hierarchy "simproc_system:SIMPROC_SYS1|simproc:CPU1|register_file:RF1" File: C:/Projects/simproc_asic/fpga_quartus/top_fpga.sv Line: 448
+Info (12128): Elaborating entity "program_counter" for hierarchy "simproc_system:SIMPROC_SYS1|simproc:CPU1|program_counter:PC1" File: C:/Projects/simproc_asic/fpga_quartus/top_fpga.sv Line: 458
+Info (12128): Elaborating entity "UART_wrapper" for hierarchy "simproc_system:SIMPROC_SYS1|UART_wrapper:UART1" File: C:/Projects/simproc_asic/fpga_quartus/top_fpga.sv Line: 169
+Info (12128): Elaborating entity "UART_TX" for hierarchy "simproc_system:SIMPROC_SYS1|UART_wrapper:UART1|UART_TX:UART_TX1" File: C:/Projects/simproc_asic/fpga_quartus/top_fpga.sv Line: 959
+Warning (10230): Verilog HDL assignment warning at top_fpga.sv(1202): truncated value with size 32 to match size of target (10) File: C:/Projects/simproc_asic/fpga_quartus/top_fpga.sv Line: 1202
+Warning (10230): Verilog HDL assignment warning at top_fpga.sv(1212): truncated value with size 32 to match size of target (4) File: C:/Projects/simproc_asic/fpga_quartus/top_fpga.sv Line: 1212
+Info (12128): Elaborating entity "UART_RX" for hierarchy "simproc_system:SIMPROC_SYS1|UART_wrapper:UART1|UART_RX:UART_RX1" File: C:/Projects/simproc_asic/fpga_quartus/top_fpga.sv Line: 978
+Warning (10230): Verilog HDL assignment warning at top_fpga.sv(1060): truncated value with size 32 to match size of target (10) File: C:/Projects/simproc_asic/fpga_quartus/top_fpga.sv Line: 1060
+Warning (10230): Verilog HDL assignment warning at top_fpga.sv(1069): truncated value with size 32 to match size of target (10) File: C:/Projects/simproc_asic/fpga_quartus/top_fpga.sv Line: 1069
+Warning (10230): Verilog HDL assignment warning at top_fpga.sv(1077): truncated value with size 32 to match size of target (4) File: C:/Projects/simproc_asic/fpga_quartus/top_fpga.sv Line: 1077
+Warning (10230): Verilog HDL assignment warning at top_fpga.sv(1092): truncated value with size 32 to match size of target (10) File: C:/Projects/simproc_asic/fpga_quartus/top_fpga.sv Line: 1092
 Warning (13034): The following nodes have both tri-state and non-tri-state drivers
     Warning (13035): Inserted always-enabled tri-state buffer between "ARDUINO_IO[1]" and its non-tri-state driver. File: C:/Projects/simproc_asic/fpga_quartus/top_fpga.sv Line: 5
 Warning (13039): The following bidirectional pins have no drivers
@@ -1037,15 +1025,15 @@ Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
 Warning (21074): Design contains 1 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "KEY[1]" File: C:/Projects/simproc_asic/fpga_quartus/top_fpga.sv Line: 3
-Info (21057): Implemented 4817 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 6271 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 13 input pins
-    Info (21059): Implemented 10 output pins
+    Info (21059): Implemented 52 output pins
     Info (21060): Implemented 16 bidirectional pins
-    Info (21061): Implemented 4778 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 242 warnings
-    Info: Peak virtual memory: 4902 megabytes
-    Info: Processing ended: Wed Oct 29 17:17:53 2025
-    Info: Elapsed time: 00:00:18
-    Info: Total CPU time (on all processors): 00:00:26
+    Info (21061): Implemented 6190 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 243 warnings
+    Info: Peak virtual memory: 4909 megabytes
+    Info: Processing ended: Thu Oct 30 09:42:59 2025
+    Info: Elapsed time: 00:00:15
+    Info: Total CPU time (on all processors): 00:00:24
 
 

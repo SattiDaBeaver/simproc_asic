@@ -4,12 +4,12 @@ module top_fpga (
     input  logic            CLOCK_50,
     inout  logic    [15:0]  ARDUINO_IO,
 
-    // output logic    [6:0]   HEX5,
-    // output logic    [6:0]   HEX4,
-    // output logic    [6:0]   HEX3,
-    // output logic    [6:0]   HEX2,
-    // output logic    [6:0]   HEX1,
-    // output logic    [6:0]   HEX0,
+    output logic    [6:0]   HEX5,
+    output logic    [6:0]   HEX4,
+    output logic    [6:0]   HEX3,
+    output logic    [6:0]   HEX2,
+    output logic    [6:0]   HEX1,
+    output logic    [6:0]   HEX0,
     output logic    [9:0]   LEDR
 );
     logic [9:0] clk_per_bit;
@@ -18,7 +18,20 @@ module top_fpga (
     assign clk_per_bit      = SW;
     assign uart_rx          = ARDUINO_IO[0];
     assign ARDUINO_IO[1]    = uart_tx;
-    assign LEDR[9:2]        = SW[9:2];
+    // assign LEDR[9:2]        = SW[9:2];
+
+    // Debug wires
+    logic [7:0] cmd_byte;
+    logic [7:0] addr_byte;
+    logic [7:0] data_byte;
+
+    hex7seg H0 (data_byte[3:0], HEX0);
+    hex7seg H1 (data_byte[7:4], HEX1);
+    hex7seg H2 (addr_byte[3:0], HEX2);
+    hex7seg H3 (addr_byte[7:4], HEX3);
+    hex7seg H4 (cmd_byte[3:0], HEX4);
+    hex7seg H5 (cmd_byte[7:4], HEX5);
+    //=================
 
     simproc_system #(
         .CLK_BITS(10)
@@ -30,8 +43,13 @@ module top_fpga (
         .uart_rx(uart_rx),
 
         .uart_tx(uart_tx),
-        .halt(LEDR[1]),
-        .done(LEDR[0])
+        // Debug wires
+        .halt(LEDR[9]),
+        .done(LEDR[8]),
+        .cmd_byte(cmd_byte),
+        .addr_byte(addr_byte),
+        .data_byte(data_byte),
+        .tx_reg(LEDR[7:0]),
     );
 endmodule
 
@@ -48,7 +66,11 @@ module simproc_system #(
 
     // Debug outputs
     output logic                        halt,
-    output logic                        done
+    output logic                        done,
+    output logic    [7:0]               cmd_byte,
+    output logic    [7:0]               addr_byte,
+    output logic    [7:0]               data_byte,
+    output logic    [7:0]               tx_reg
 );
 
     // Internal Signals
@@ -170,13 +192,15 @@ module simproc_system #(
 
     uart_state_t uart_curr_state, uart_next_state;
 
-    logic [7:0] cmd_byte;
-    logic [7:0] addr_byte;
-    logic [7:0] data_byte;
+    // logic [7:0] cmd_byte;
+    // logic [7:0] addr_byte;
+    // logic [7:0] data_byte;
 
     // Handshake for TX
     logic       tx_start;
     logic [7:0] tx_buffer;
+    // logic [7:0] tx_reg;
+
 
     // Run Logic
     logic       run_reg;
@@ -285,13 +309,14 @@ module simproc_system #(
             end
 
             SEND_RESP: begin
-                tx_data = tx_buffer;
+                tx_data = tx_reg;
                 tx_en   = 1;
 
                 uart_next_state = SEND_WAIT;
             end
 
             SEND_WAIT: begin
+                tx_data = tx_reg;
                 if (tx_done) begin
                     uart_next_state = WAIT_CMD;
                 end
@@ -311,6 +336,7 @@ module simproc_system #(
             cmd_byte        <= 8'b0;
             addr_byte       <= 8'b0;
             data_byte       <= 8'b0;
+            tx_reg          <= 8'b0;
 
             // Run logic
             run_reg         <= 0;
@@ -326,6 +352,11 @@ module simproc_system #(
                     WAIT_ADDR:  addr_byte   <= rx_data;
                     WAIT_DATA:  data_byte   <= rx_data;
                 endcase
+            end
+
+            // Latch tx_buffer when entering SEND_RESP
+            if (uart_curr_state == EXEC && uart_next_state == SEND_RESP) begin
+                tx_reg <= tx_buffer;
             end
 
             // CMD_RUN: latch run to 1
@@ -1200,3 +1231,29 @@ module UART_TX #(
     end
 endmodule
 
+module hex7seg (hex, display);
+    input   [3:0] hex;
+    output  [6:0] display;
+
+    logic   [6:0] display;
+
+    always @ (hex)
+        case (hex)
+            4'h0: display = 7'b1000000;
+            4'h1: display = 7'b1111001;
+            4'h2: display = 7'b0100100;
+            4'h3: display = 7'b0110000;
+            4'h4: display = 7'b0011001;
+            4'h5: display = 7'b0010010;
+            4'h6: display = 7'b0000010;
+            4'h7: display = 7'b1111000;
+            4'h8: display = 7'b0000000;
+            4'h9: display = 7'b0011000;
+            4'hA: display = 7'b0001000;
+            4'hB: display = 7'b0000011;
+            4'hC: display = 7'b1000110;
+            4'hD: display = 7'b0100001;
+            4'hE: display = 7'b0000110;
+            4'hF: display = 7'b0001110;
+        endcase
+endmodule

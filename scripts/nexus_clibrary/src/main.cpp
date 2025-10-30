@@ -1,4 +1,5 @@
 #include <iostream>
+#include <iomanip>
 #include <string>
 #include <windows.h>
 
@@ -45,7 +46,7 @@ public:
         // Set serial port parameters (8N1 configuration)
         dcbSerialParams.BaudRate = baudRate;        // Baud rate (9600, 115200, etc.)
         dcbSerialParams.ByteSize = 8;               // 8 data bits
-        dcbSerialParams.StopBits = ONESTOPBIT;      // 1 stop bit
+        dcbSerialParams.StopBits = TWOSTOPBITS;      // 1 stop bit
         dcbSerialParams.Parity = NOPARITY;          // No parity bit
         dcbSerialParams.fDtrControl = DTR_CONTROL_ENABLE;  // Enable DTR
         dcbSerialParams.fRtsControl = RTS_CONTROL_ENABLE;  // Enable RTS
@@ -167,7 +168,7 @@ int main(int argc, char* argv[]) {
     // Common Windows COM port names: COM1, COM2, COM3, etc.
     // Check Device Manager -> Ports (COM & LPT) to see available ports
     string portName = argv[1];  // Change this to match your device
-    int baudRate = 921600;            // Common baud rates: 9600, 19200, 38400, 57600, 115200
+    int baudRate = 115200;            // Common baud rates: 9600, 19200, 38400, 57600, 115200
 
     cout << "Windows Serial Communication Test" << endl;
     cout << "=================================" << endl;
@@ -196,14 +197,51 @@ int main(int argc, char* argv[]) {
         
         // Send user input (add line ending if not present)
         if (!userInput.empty()) {
-            if (userInput.back() != '\n') {
-                userInput += "\r\n";
+            if (userInput == "ping") {
+                serial.sendData(std::string({char(0xF0), char(0xAA), char(0x55)}));
+                Sleep(1);
             }
-            serial.sendData(userInput);
+            else if (userInput == "read") {
+                serial.sendData(std::string({char(0xA3), char(0x00), char(0x00)}));
+                Sleep(1);
+            }
+            else if (userInput == "write") {
+                serial.sendData(std::string({char(0x5C), char(0x00), char(0xF1)}));
+                Sleep(1);
+            }
+            else if (userInput == "run") {
+                serial.sendData(std::string({char(0x3F), char(0x00), char(0x00)}));
+                Sleep(1);
+            }
+            else if (userInput == "halt") {
+                serial.sendData(std::string({char(0xC7), char(0x00), char(0x00)}));
+                Sleep(1);
+            }
+            else if (userInput == "step") {
+                serial.sendData(std::string({char(0x6D), char(0x00), char(0x00)}));
+                Sleep(1);
+            }
+            else if (userInput == "setpc") {
+                serial.sendData(std::string({char(0x99), char(0x00), char(0x00)}));
+                Sleep(1);
+            }
+            else if (userInput == "getpc") {
+                serial.sendData(std::string({char(0xB2), char(0x00), char(0x00)}));
+                Sleep(1);
+            }
+            // serial.sendData(std::string({char(0xA3), char(0x00), char(0x00)}));
+            // Sleep(1);
+            // serial.sendData(std::string({char(0x3F), char(0x00), char(0x00)}));
             
             // Wait a bit and try to read response
             Sleep(200);
-            serial.readData();
+            std::string resp = serial.readData();
+            cout << "Response (" << resp.size() << " bytes): ";
+            for (unsigned char c : resp) {
+                cout << "0x" << hex << setw(2) << setfill('0') << (int)c << " ";
+            }
+            cout << dec << endl; // switch back to decimal
+
         }
     }
     

@@ -27,16 +27,142 @@ ARDUINO_IO[12] <> <UNC>
 ARDUINO_IO[13] <> <UNC>
 ARDUINO_IO[14] <> <UNC>
 ARDUINO_IO[15] <> <UNC>
-LEDR[0] <= simproc_system:SIMPROC_SYS1.done
-LEDR[1] <= simproc_system:SIMPROC_SYS1.halt
-LEDR[2] <= clk_per_bit[2].DB_MAX_OUTPUT_PORT_TYPE
-LEDR[3] <= clk_per_bit[3].DB_MAX_OUTPUT_PORT_TYPE
-LEDR[4] <= clk_per_bit[4].DB_MAX_OUTPUT_PORT_TYPE
-LEDR[5] <= clk_per_bit[5].DB_MAX_OUTPUT_PORT_TYPE
-LEDR[6] <= clk_per_bit[6].DB_MAX_OUTPUT_PORT_TYPE
-LEDR[7] <= clk_per_bit[7].DB_MAX_OUTPUT_PORT_TYPE
-LEDR[8] <= clk_per_bit[8].DB_MAX_OUTPUT_PORT_TYPE
-LEDR[9] <= clk_per_bit[9].DB_MAX_OUTPUT_PORT_TYPE
+HEX5[0] <= hex7seg:H5.port1
+HEX5[1] <= hex7seg:H5.port1
+HEX5[2] <= hex7seg:H5.port1
+HEX5[3] <= hex7seg:H5.port1
+HEX5[4] <= hex7seg:H5.port1
+HEX5[5] <= hex7seg:H5.port1
+HEX5[6] <= hex7seg:H5.port1
+HEX4[0] <= hex7seg:H4.port1
+HEX4[1] <= hex7seg:H4.port1
+HEX4[2] <= hex7seg:H4.port1
+HEX4[3] <= hex7seg:H4.port1
+HEX4[4] <= hex7seg:H4.port1
+HEX4[5] <= hex7seg:H4.port1
+HEX4[6] <= hex7seg:H4.port1
+HEX3[0] <= hex7seg:H3.port1
+HEX3[1] <= hex7seg:H3.port1
+HEX3[2] <= hex7seg:H3.port1
+HEX3[3] <= hex7seg:H3.port1
+HEX3[4] <= hex7seg:H3.port1
+HEX3[5] <= hex7seg:H3.port1
+HEX3[6] <= hex7seg:H3.port1
+HEX2[0] <= hex7seg:H2.port1
+HEX2[1] <= hex7seg:H2.port1
+HEX2[2] <= hex7seg:H2.port1
+HEX2[3] <= hex7seg:H2.port1
+HEX2[4] <= hex7seg:H2.port1
+HEX2[5] <= hex7seg:H2.port1
+HEX2[6] <= hex7seg:H2.port1
+HEX1[0] <= hex7seg:H1.port1
+HEX1[1] <= hex7seg:H1.port1
+HEX1[2] <= hex7seg:H1.port1
+HEX1[3] <= hex7seg:H1.port1
+HEX1[4] <= hex7seg:H1.port1
+HEX1[5] <= hex7seg:H1.port1
+HEX1[6] <= hex7seg:H1.port1
+HEX0[0] <= hex7seg:H0.port1
+HEX0[1] <= hex7seg:H0.port1
+HEX0[2] <= hex7seg:H0.port1
+HEX0[3] <= hex7seg:H0.port1
+HEX0[4] <= hex7seg:H0.port1
+HEX0[5] <= hex7seg:H0.port1
+HEX0[6] <= hex7seg:H0.port1
+LEDR[0] <= simproc_system:SIMPROC_SYS1.tx_reg
+LEDR[1] <= simproc_system:SIMPROC_SYS1.tx_reg
+LEDR[2] <= simproc_system:SIMPROC_SYS1.tx_reg
+LEDR[3] <= simproc_system:SIMPROC_SYS1.tx_reg
+LEDR[4] <= simproc_system:SIMPROC_SYS1.tx_reg
+LEDR[5] <= simproc_system:SIMPROC_SYS1.tx_reg
+LEDR[6] <= simproc_system:SIMPROC_SYS1.tx_reg
+LEDR[7] <= simproc_system:SIMPROC_SYS1.tx_reg
+LEDR[8] <= simproc_system:SIMPROC_SYS1.done
+LEDR[9] <= simproc_system:SIMPROC_SYS1.halt
+
+
+|top_fpga|hex7seg:H0
+hex[0] => Decoder0.IN3
+hex[1] => Decoder0.IN2
+hex[2] => Decoder0.IN1
+hex[3] => Decoder0.IN0
+display[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+display[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+display[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+display[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+display[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+display[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+display[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top_fpga|hex7seg:H1
+hex[0] => Decoder0.IN3
+hex[1] => Decoder0.IN2
+hex[2] => Decoder0.IN1
+hex[3] => Decoder0.IN0
+display[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+display[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+display[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+display[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+display[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+display[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+display[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top_fpga|hex7seg:H2
+hex[0] => Decoder0.IN3
+hex[1] => Decoder0.IN2
+hex[2] => Decoder0.IN1
+hex[3] => Decoder0.IN0
+display[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+display[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+display[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+display[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+display[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+display[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+display[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top_fpga|hex7seg:H3
+hex[0] => Decoder0.IN3
+hex[1] => Decoder0.IN2
+hex[2] => Decoder0.IN1
+hex[3] => Decoder0.IN0
+display[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+display[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+display[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+display[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+display[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+display[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+display[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top_fpga|hex7seg:H4
+hex[0] => Decoder0.IN3
+hex[1] => Decoder0.IN2
+hex[2] => Decoder0.IN1
+hex[3] => Decoder0.IN0
+display[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+display[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+display[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+display[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+display[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+display[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+display[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top_fpga|hex7seg:H5
+hex[0] => Decoder0.IN3
+hex[1] => Decoder0.IN2
+hex[2] => Decoder0.IN1
+hex[3] => Decoder0.IN0
+display[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+display[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+display[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+display[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+display[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+display[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+display[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |top_fpga|simproc_system:SIMPROC_SYS1
@@ -56,6 +182,38 @@ uart_rx => uart_rx.IN1
 uart_tx <= UART_wrapper:UART1.TX_out
 halt <= simproc:CPU1.halt
 done <= simproc:CPU1.done
+cmd_byte[0] <= cmd_byte[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+cmd_byte[1] <= cmd_byte[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+cmd_byte[2] <= cmd_byte[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+cmd_byte[3] <= cmd_byte[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+cmd_byte[4] <= cmd_byte[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+cmd_byte[5] <= cmd_byte[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+cmd_byte[6] <= cmd_byte[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+cmd_byte[7] <= cmd_byte[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+addr_byte[0] <= addr_byte[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+addr_byte[1] <= addr_byte[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+addr_byte[2] <= addr_byte[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+addr_byte[3] <= addr_byte[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+addr_byte[4] <= addr_byte[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+addr_byte[5] <= addr_byte[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+addr_byte[6] <= addr_byte[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+addr_byte[7] <= addr_byte[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data_byte[0] <= data_byte[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data_byte[1] <= data_byte[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data_byte[2] <= data_byte[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data_byte[3] <= data_byte[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data_byte[4] <= data_byte[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data_byte[5] <= data_byte[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data_byte[6] <= data_byte[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data_byte[7] <= data_byte[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+tx_reg[0] <= tx_reg[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+tx_reg[1] <= tx_reg[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+tx_reg[2] <= tx_reg[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+tx_reg[3] <= tx_reg[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+tx_reg[4] <= tx_reg[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+tx_reg[5] <= tx_reg[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+tx_reg[6] <= tx_reg[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+tx_reg[7] <= tx_reg[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |top_fpga|simproc_system:SIMPROC_SYS1|dp_ram:RAM1

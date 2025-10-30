@@ -18,16 +18,12 @@ module top_fpga (
     assign clk_per_bit      = SW;
     assign uart_rx          = ARDUINO_IO[0];
     assign ARDUINO_IO[1]    = uart_tx;
-    assign LEDR[9:2]        = SW[9:2];
+    // assign LEDR[9:2]        = SW[9:2];
 
     // Debug wires
     logic [7:0] cmd_byte;
     logic [7:0] addr_byte;
     logic [7:0] data_byte;
-
-    assign cmd_byte = SIMPROC_SYS1.cmd_byte;
-    assign addr_byte = SIMPROC_SYS1.addr_byte;
-    assign data_byte = SIMPROC_SYS1.data_byte;
 
     hex7seg H0 (data_byte[3:0], HEX0);
     hex7seg H1 (data_byte[7:4], HEX1);
@@ -47,8 +43,13 @@ module top_fpga (
         .uart_rx(uart_rx),
 
         .uart_tx(uart_tx),
-        .halt(LEDR[1]),
-        .done(LEDR[0])
+        // Debug wires
+        .halt(LEDR[9]),
+        .done(LEDR[8]),
+        .cmd_byte(cmd_byte),
+        .addr_byte(addr_byte),
+        .data_byte(data_byte),
+        .tx_reg(LEDR[7:0]),
     );
 endmodule
 
@@ -65,7 +66,11 @@ module simproc_system #(
 
     // Debug outputs
     output logic                        halt,
-    output logic                        done
+    output logic                        done,
+    output logic    [7:0]               cmd_byte,
+    output logic    [7:0]               addr_byte,
+    output logic    [7:0]               data_byte,
+    output logic    [7:0]               tx_reg
 );
 
     // Internal Signals
@@ -187,13 +192,15 @@ module simproc_system #(
 
     uart_state_t uart_curr_state, uart_next_state;
 
-    logic [7:0] cmd_byte;
-    logic [7:0] addr_byte;
-    logic [7:0] data_byte;
+    // logic [7:0] cmd_byte;
+    // logic [7:0] addr_byte;
+    // logic [7:0] data_byte;
 
     // Handshake for TX
     logic       tx_start;
     logic [7:0] tx_buffer;
+    // logic [7:0] tx_reg;
+
 
     // Run Logic
     logic       run_reg;
@@ -302,13 +309,14 @@ module simproc_system #(
             end
 
             SEND_RESP: begin
-                tx_data = tx_buffer;
+                tx_data = tx_reg;
                 tx_en   = 1;
 
                 uart_next_state = SEND_WAIT;
             end
 
             SEND_WAIT: begin
+                tx_data = tx_reg;
                 if (tx_done) begin
                     uart_next_state = WAIT_CMD;
                 end
@@ -328,6 +336,7 @@ module simproc_system #(
             cmd_byte        <= 8'b0;
             addr_byte       <= 8'b0;
             data_byte       <= 8'b0;
+            tx_reg          <= 8'b0;
 
             // Run logic
             run_reg         <= 0;
@@ -343,6 +352,11 @@ module simproc_system #(
                     WAIT_ADDR:  addr_byte   <= rx_data;
                     WAIT_DATA:  data_byte   <= rx_data;
                 endcase
+            end
+
+            // Latch tx_buffer when entering SEND_RESP
+            if (uart_curr_state == EXEC && uart_next_state == SEND_RESP) begin
+                tx_reg <= tx_buffer;
             end
 
             // CMD_RUN: latch run to 1
