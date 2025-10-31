@@ -2,8 +2,37 @@
 #include <iomanip>
 #include <string>
 #include <windows.h>
+#include <stdint.h>
 
 using namespace std;
+uint8_t program[26] = {
+    0b00000110,
+    0b01010110,
+    0b10100110,
+    0b11110110,
+    0b00001111,
+    0b10000100,
+    0b00000110,
+    0b11000111,
+    0b00111011,
+    0b01000010,
+    0b01100100,
+    0b00011010,
+    0b11000001,
+    0b00100100,
+    0b11000000,
+    0b11100100,
+    0b11000010,
+    0b00101010,
+    0b00100110,
+    0b10000001,
+    0b00100100,
+    0b11000000,
+    0b11100100,
+    0b11000010,
+    0b00100110,
+    0b10000001
+};
 
 class SerialPort {
 private:
@@ -99,7 +128,7 @@ public:
             return false;
         }
 
-        cout << "Sent " << bytesWritten << " bytes: \"" << data << "\"" << endl;
+        // cout << "Sent " << bytesWritten << " bytes: \"" << data << "\"" << endl;
         return true;
     }
 
@@ -128,7 +157,7 @@ public:
         if (success && bytesRead > 0) {
             buffer[bytesRead] = '\0';  // Null-terminate the string
             result = string(buffer, bytesRead);
-            cout << "Received " << bytesRead << " bytes: \"" << result << "\"" << endl;
+            // cout << "Received " << bytesRead << " bytes: \"" << result << "\"" << endl;
         } else if (!success) {
             DWORD error = GetLastError();
             cerr << "Error reading from port (Error code: " << error << ")" << endl;
@@ -168,7 +197,8 @@ int main(int argc, char* argv[]) {
     // Common Windows COM port names: COM1, COM2, COM3, etc.
     // Check Device Manager -> Ports (COM & LPT) to see available ports
     string portName = argv[1];  // Change this to match your device
-    int baudRate = 115200;            // Common baud rates: 9600, 19200, 38400, 57600, 115200
+    // int baudRate = 115200;            // Common baud rates: 9600, 19200, 38400, 57600, 115200
+    int baudRate = 1000000;            
 
     cout << "Windows Serial Communication Test" << endl;
     cout << "=================================" << endl;
@@ -200,10 +230,22 @@ int main(int argc, char* argv[]) {
             if (userInput == "ping") {
                 serial.sendData(std::string({char(0xF0), char(0xAA), char(0x55)}));
                 Sleep(1);
+
+                std::string resp = serial.readData();
+                cout << "Response (" << resp.size() << " bytes): ";
+                for (unsigned char c : resp) {
+                    cout << "0x" << hex << setw(2) << setfill('0') << (int)c << " ";
+                }
             }
             else if (userInput == "read") {
                 serial.sendData(std::string({char(0xA3), char(0x00), char(0x00)}));
                 Sleep(1);
+
+                std::string resp = serial.readData();
+                cout << "Response (" << resp.size() << " bytes): ";
+                for (unsigned char c : resp) {
+                    cout << "0x" << hex << setw(2) << setfill('0') << (int)c << " ";
+                }
             }
             else if (userInput == "write") {
                 serial.sendData(std::string({char(0x5C), char(0x00), char(0xF1)}));
@@ -228,18 +270,41 @@ int main(int argc, char* argv[]) {
             else if (userInput == "getpc") {
                 serial.sendData(std::string({char(0xB2), char(0x00), char(0x00)}));
                 Sleep(1);
+                
+                std::string resp = serial.readData();
+                cout << "Response (" << resp.size() << " bytes): ";
+                for (unsigned char c : resp) {
+                    cout << "0x" << hex << setw(2) << setfill('0') << (int)c << " ";
+                }
+            }
+
+            else if (userInput == "readall") {
+                for (int i = 0xc2; i >= 0xc0; i--) {
+                    serial.sendData(std::string({char(0xA3), char(i), char(0x00)}));
+                    std::string resp = serial.readData();
+                    cout << "0x" << hex << setw(2) << setfill('0') << i << ": ";
+                    for (unsigned char c : resp) {
+                        cout << "0x" << hex << setw(2) << setfill('0') << (int)c << endl;
+                    }
+                    if (i % 8 == 7) {
+                    cout << endl;
+                    }
+                }
+                Sleep(1);
+            }
+
+            else if (userInput == "prog") {
+                for (int i = 0; i < 26; i++) {
+                    serial.sendData(std::string({char(0x5C), char(i), char(program[i])}));
+                    Sleep(1);
+                }
+                Sleep(1);
             }
             // serial.sendData(std::string({char(0xA3), char(0x00), char(0x00)}));
             // Sleep(1);
             // serial.sendData(std::string({char(0x3F), char(0x00), char(0x00)}));
             
             // Wait a bit and try to read response
-            Sleep(200);
-            std::string resp = serial.readData();
-            cout << "Response (" << resp.size() << " bytes): ";
-            for (unsigned char c : resp) {
-                cout << "0x" << hex << setw(2) << setfill('0') << (int)c << " ";
-            }
             cout << dec << endl; // switch back to decimal
 
         }
