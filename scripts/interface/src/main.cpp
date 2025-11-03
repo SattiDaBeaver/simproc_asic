@@ -4,7 +4,10 @@
 #include <windows.h>
 #include <stdint.h>
 
+#include "./headers/simproc_interface.h"
+
 using namespace std;
+// Program to count uo on 0xC0, 0xC1, 0xC2
 uint8_t program[26] = {
     0b00000110,
     0b01010110,
@@ -33,6 +36,8 @@ uint8_t program[26] = {
     0b00100110,
     0b10000001
 };
+
+uint8_t read_buf[256] = {0};
 
 class SerialPort {
 private:
