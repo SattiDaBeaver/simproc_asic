@@ -4,7 +4,7 @@
 #include <windows.h>
 #include <stdint.h>
 
-#include "./headers/simproc_interface.h"
+#include "../headers/simproc_interface.h"
 
 using namespace std;
 // Program to count uo on 0xC0, 0xC1, 0xC2
@@ -233,7 +233,7 @@ int main(int argc, char* argv[]) {
         // Send user input (add line ending if not present)
         if (!userInput.empty()) {
             if (userInput == "ping") {
-                serial.sendData(std::string({char(0xF0), char(0xAA), char(0x55)}));
+                serial.sendData(std::string({char(0xF0), char(0x00), char(0x00)}));
                 Sleep(1);
 
                 std::string resp = serial.readData();
@@ -241,6 +241,10 @@ int main(int argc, char* argv[]) {
                 for (unsigned char c : resp) {
                     cout << "0x" << hex << setw(2) << setfill('0') << (int)c << " ";
                 }
+            }
+            else if (userInput == "align") {
+                serial.sendData(std::string({char(0x00)}));
+                Sleep(1);
             }
             else if (userInput == "read") {
                 serial.sendData(std::string({char(0xA3), char(0x00), char(0x00)}));
