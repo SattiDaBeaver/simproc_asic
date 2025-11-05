@@ -202,8 +202,8 @@ int main(int argc, char* argv[]) {
     // Common Windows COM port names: COM1, COM2, COM3, etc.
     // Check Device Manager -> Ports (COM & LPT) to see available ports
     string portName = argv[1];  // Change this to match your device
-    // int baudRate = 115200;            // Common baud rates: 9600, 19200, 38400, 57600, 115200
-    int baudRate = 1000000;            
+    int baudRate = 1000000;            // Common baud rates: 9600, 19200, 38400, 57600, 115200
+    //int baudRate = 1000000;            
 
     cout << "Windows Serial Communication Test" << endl;
     cout << "=================================" << endl;
@@ -226,7 +226,7 @@ int main(int argc, char* argv[]) {
         cout << "Send> ";
         getline(cin, userInput);
         
-        if (userInput == "quit" || userInput == "exit") {
+        if (userInput == "q" || userInput == "exit") {
             break;
         }
         
@@ -287,7 +287,7 @@ int main(int argc, char* argv[]) {
                 }
             }
 
-            else if (userInput == "readall") {
+            else if (userInput == "readdata") {
                 for (int i = 0xc2; i >= 0xc0; i--) {
                     serial.sendData(std::string({char(0xA3), char(i), char(0x00)}));
                     std::string resp = serial.readData();
@@ -300,6 +300,23 @@ int main(int argc, char* argv[]) {
                     }
                 }
                 Sleep(1);
+            }
+            else if (userInput == "readall") {
+                for (int i = 0x00; i <= 0xFF; i++) {
+                    serial.sendData(std::string({char(0xA3), char(i), char(0x00)}));
+                    std::string resp = serial.readData();
+                    for (unsigned char c : resp) {
+                        read_buf[i] = (uint8_t)c;
+                    }
+                }
+                Sleep(1);
+                for (int i = 0x00; i <= 0xFF; i++) {
+                    cout << "0x" << hex << setw(2) << setfill('0') << i << ": ";
+                    cout << "0x" << hex << setw(2) << setfill('0') << (int)read_buf[i] << "  ";
+                    if (i % 8 == 7) {
+                    cout << endl;
+                    }
+                }
             }
 
             else if (userInput == "prog") {
