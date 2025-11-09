@@ -1,0 +1,19 @@
+Design Name: simproc_system
+Run Directory: /openlane/designs/simproc_system/runs/RUN_2025.11.09_18.29.08
+----------------------------------------
+
+Magic DRC Summary:
+Source: /openlane/designs/simproc_system/runs/RUN_2025.11.09_18.29.08/reports/signoff/drc.rpt
+Total Magic DRC violations is 0
+----------------------------------------
+
+LVS Summary:
+Source: /openlane/designs/simproc_system/runs/RUN_2025.11.09_18.29.08/logs/signoff/39-simproc_system.lef.lvs.log
+Number of nets: 15869                      |Number of nets: 15869                      
+Design is LVS clean.
+----------------------------------------
+
+Antenna Summary:
+Source: /openlane/designs/simproc_system/runs/RUN_2025.11.09_18.29.08/logs/signoff/41-arc.log
+Pin violations: 306
+Net violations: 213

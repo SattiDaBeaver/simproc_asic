@@ -1,0 +1,932 @@
+
+Magic 8.3 revision 413 - Compiled on Wed Jul 12 10:04:40 UTC 2023.
+Starting magic under Tcl interpreter
+Using the terminal as the console.
+Using NULL graphics device.
+Processing system .magicrc file
+Sourcing design .magicrc for technology sky130A ...
+2 Magic internal units = 1 Lambda
+Input style sky130(): scaleFactor=2, multiplier=2
+The following types are not handled by extraction and will be treated as non-electrical types:
+    ubm 
+Scaled tech values by 2 / 1 to match internal grid scaling
+Loading sky130A Device Generator Menu ...
+Using technology "sky130A", version 1.0.424-0-g78b7bc3
+Reading LEF data from file /home/zerotoasic/asic_tools/pdk/sky130A/libs.ref/sky130_fd_sc_hd/techlef/sky130_fd_sc_hd__nom.tlef.
+This action cannot be undone.
+LEF read, Line 78 (Message): Unknown keyword "ANTENNAMODEL" in LEF file; ignoring.
+LEF read, Line 79 (Message): Unknown keyword "ANTENNADIFFSIDEAREARATIO" in LEF file; ignoring.
+LEF read, Line 112 (Message): Unknown keyword "MINENCLOSEDAREA" in LEF file; ignoring.
+LEF read, Line 114 (Message): Unknown keyword "ANTENNAMODEL" in LEF file; ignoring.
+LEF read, Line 115 (Message): Unknown keyword "ANTENNADIFFSIDEAREARATIO" in LEF file; ignoring.
+LEF read, Line 121 (Message): Unknown keyword "MAXIMUMDENSITY" in LEF file; ignoring.
+LEF read, Line 122 (Message): Unknown keyword "DENSITYCHECKWINDOW" in LEF file; ignoring.
+LEF read, Line 123 (Message): Unknown keyword "DENSITYCHECKSTEP" in LEF file; ignoring.
+LEF read, Line 156 (Message): Unknown keyword "MINENCLOSEDAREA" in LEF file; ignoring.
+LEF read, Line 164 (Message): Unknown keyword "ANTENNAMODEL" in LEF file; ignoring.
+LEF read, Line 165 (Message): Unknown keyword "ANTENNADIFFSIDEAREARATIO" in LEF file; ignoring.
+LEF read, Line 167 (Message): Unknown keyword "MAXIMUMDENSITY" in LEF file; ignoring.
+LEF read, Line 168 (Message): Unknown keyword "DENSITYCHECKWINDOW" in LEF file; ignoring.
+LEF read, Line 169 (Message): Unknown keyword "DENSITYCHECKSTEP" in LEF file; ignoring.
+LEF read, Line 206 (Message): Unknown keyword "ANTENNAMODEL" in LEF file; ignoring.
+LEF read, Line 207 (Message): Unknown keyword "ANTENNADIFFSIDEAREARATIO" in LEF file; ignoring.
+LEF read, Line 209 (Message): Unknown keyword "MAXIMUMDENSITY" in LEF file; ignoring.
+LEF read, Line 210 (Message): Unknown keyword "DENSITYCHECKWINDOW" in LEF file; ignoring.
+LEF read, Line 211 (Message): Unknown keyword "DENSITYCHECKSTEP" in LEF file; ignoring.
+LEF read, Line 248 (Message): Unknown keyword "ANTENNAMODEL" in LEF file; ignoring.
+LEF read, Line 249 (Message): Unknown keyword "ANTENNADIFFSIDEAREARATIO" in LEF file; ignoring.
+LEF read, Line 251 (Message): Unknown keyword "MAXIMUMDENSITY" in LEF file; ignoring.
+LEF read, Line 252 (Message): Unknown keyword "DENSITYCHECKWINDOW" in LEF file; ignoring.
+LEF read, Line 253 (Message): Unknown keyword "DENSITYCHECKSTEP" in LEF file; ignoring.
+LEF read, Line 290 (Message): Unknown keyword "ANTENNAMODEL" in LEF file; ignoring.
+LEF read, Line 291 (Message): Unknown keyword "ANTENNADIFFSIDEAREARATIO" in LEF file; ignoring.
+LEF read: Processed 797 lines.
+Reading DEF data from file /openlane/designs/simproc_system/runs/RUN_2025.11.09_18.29.08/results/routing/simproc_system.def.
+This action cannot be undone.
+  Processed 4 vias total.
+Cell sky130_fd_sc_hd__diode_2 read from path /home/zerotoasic/asic_tools/pdk/sky130A/libs.ref/sky130_fd_sc_hd/maglef
+Cell sky130_fd_sc_hd__decap_6 read from path /home/zerotoasic/asic_tools/pdk/sky130A/libs.ref/sky130_fd_sc_hd/maglef
+Cell sky130_fd_sc_hd__fill_1 read from path /home/zerotoasic/asic_tools/pdk/sky130A/libs.ref/sky130_fd_sc_hd/maglef
+Cell sky130_ef_sc_hd__decap_12 read from path /home/zerotoasic/asic_tools/pdk/sky130A/libs.ref/sky130_fd_sc_hd/maglef
+Cell sky130_fd_sc_hd__decap_3 read from path /home/zerotoasic/asic_tools/pdk/sky130A/libs.ref/sky130_fd_sc_hd/maglef
+Cell sky130_fd_sc_hd__decap_8 read from path /home/zerotoasic/asic_tools/pdk/sky130A/libs.ref/sky130_fd_sc_hd/maglef
+Cell sky130_fd_sc_hd__fill_2 read from path /home/zerotoasic/asic_tools/pdk/sky130A/libs.ref/sky130_fd_sc_hd/maglef
+Cell sky130_fd_sc_hd__decap_4 read from path /home/zerotoasic/asic_tools/pdk/sky130A/libs.ref/sky130_fd_sc_hd/maglef
+Cell sky130_fd_sc_hd__tapvpwrvgnd_1 read from path /home/zerotoasic/asic_tools/pdk/sky130A/libs.ref/sky130_fd_sc_hd/maglef
+Cell sky130_fd_sc_hd__or4b_4 read from path /home/zerotoasic/asic_tools/pdk/sky130A/libs.ref/sky130_fd_sc_hd/maglef
+Cell sky130_fd_sc_hd__and2_1 read from path /home/zerotoasic/asic_tools/pdk/sky130A/libs.ref/sky130_fd_sc_hd/maglef
+Cell sky130_fd_sc_hd__and4bb_1 read from path /home/zerotoasic/asic_tools/pdk/sky130A/libs.ref/sky130_fd_sc_hd/maglef
+Cell sky130_fd_sc_hd__buf_2 read from path /home/zerotoasic/asic_tools/pdk/sky130A/libs.ref/sky130_fd_sc_hd/maglef
+Cell sky130_fd_sc_hd__or3b_1 read from path /home/zerotoasic/asic_tools/pdk/sky130A/libs.ref/sky130_fd_sc_hd/maglef
+Cell sky130_fd_sc_hd__nand2_1 read from path /home/zerotoasic/asic_tools/pdk/sky130A/libs.ref/sky130_fd_sc_hd/maglef
+Cell sky130_fd_sc_hd__or4_4 read from path /home/zerotoasic/asic_tools/pdk/sky130A/libs.ref/sky130_fd_sc_hd/maglef
+Cell sky130_fd_sc_hd__and4bb_4 read from path /home/zerotoasic/asic_tools/pdk/sky130A/libs.ref/sky130_fd_sc_hd/maglef
+Cell sky130_fd_sc_hd__clkinv_4 read from path /home/zerotoasic/asic_tools/pdk/sky130A/libs.ref/sky130_fd_sc_hd/maglef
+Cell sky130_fd_sc_hd__and3b_2 read from path /home/zerotoasic/asic_tools/pdk/sky130A/libs.ref/sky130_fd_sc_hd/maglef
+Cell sky130_fd_sc_hd__buf_4 read from path /home/zerotoasic/asic_tools/pdk/sky130A/libs.ref/sky130_fd_sc_hd/maglef
+Cell sky130_fd_sc_hd__or2b_1 read from path /home/zerotoasic/asic_tools/pdk/sky130A/libs.ref/sky130_fd_sc_hd/maglef
+Cell sky130_fd_sc_hd__nor2_1 read from path /home/zerotoasic/asic_tools/pdk/sky130A/libs.ref/sky130_fd_sc_hd/maglef
+Cell sky130_fd_sc_hd__nand2_4 read from path /home/zerotoasic/asic_tools/pdk/sky130A/libs.ref/sky130_fd_sc_hd/maglef
+Cell sky130_fd_sc_hd__inv_2 read from path /home/zerotoasic/asic_tools/pdk/sky130A/libs.ref/sky130_fd_sc_hd/maglef
+Cell sky130_fd_sc_hd__a21oi_1 read from path /home/zerotoasic/asic_tools/pdk/sky130A/libs.ref/sky130_fd_sc_hd/maglef
+Cell sky130_fd_sc_hd__or3_1 read from path /home/zerotoasic/asic_tools/pdk/sky130A/libs.ref/sky130_fd_sc_hd/maglef
+Cell sky130_fd_sc_hd__clkbuf_1 read from path /home/zerotoasic/asic_tools/pdk/sky130A/libs.ref/sky130_fd_sc_hd/maglef
+Cell sky130_fd_sc_hd__and2b_1 read from path /home/zerotoasic/asic_tools/pdk/sky130A/libs.ref/sky130_fd_sc_hd/maglef
+Cell sky130_fd_sc_hd__clkbuf_4 read from path /home/zerotoasic/asic_tools/pdk/sky130A/libs.ref/sky130_fd_sc_hd/maglef
+Cell sky130_fd_sc_hd__o31a_1 read from path /home/zerotoasic/asic_tools/pdk/sky130A/libs.ref/sky130_fd_sc_hd/maglef
+Cell sky130_fd_sc_hd__a211o_1 read from path /home/zerotoasic/asic_tools/pdk/sky130A/libs.ref/sky130_fd_sc_hd/maglef
+Cell sky130_fd_sc_hd__and2_2 read from path /home/zerotoasic/asic_tools/pdk/sky130A/libs.ref/sky130_fd_sc_hd/maglef
+Cell sky130_fd_sc_hd__or2_1 read from path /home/zerotoasic/asic_tools/pdk/sky130A/libs.ref/sky130_fd_sc_hd/maglef
+Cell sky130_fd_sc_hd__o41a_1 read from path /home/zerotoasic/asic_tools/pdk/sky130A/libs.ref/sky130_fd_sc_hd/maglef
+Cell sky130_fd_sc_hd__or4_2 read from path /home/zerotoasic/asic_tools/pdk/sky130A/libs.ref/sky130_fd_sc_hd/maglef
+Cell sky130_fd_sc_hd__or2_2 read from path /home/zerotoasic/asic_tools/pdk/sky130A/libs.ref/sky130_fd_sc_hd/maglef
+Cell sky130_fd_sc_hd__nand2_2 read from path /home/zerotoasic/asic_tools/pdk/sky130A/libs.ref/sky130_fd_sc_hd/maglef
+Cell sky130_fd_sc_hd__o21ai_1 read from path /home/zerotoasic/asic_tools/pdk/sky130A/libs.ref/sky130_fd_sc_hd/maglef
+Cell sky130_fd_sc_hd__xor2_2 read from path /home/zerotoasic/asic_tools/pdk/sky130A/libs.ref/sky130_fd_sc_hd/maglef
+Cell sky130_fd_sc_hd__a22o_1 read from path /home/zerotoasic/asic_tools/pdk/sky130A/libs.ref/sky130_fd_sc_hd/maglef
+Cell sky130_fd_sc_hd__xor2_4 read from path /home/zerotoasic/asic_tools/pdk/sky130A/libs.ref/sky130_fd_sc_hd/maglef
+Cell sky130_fd_sc_hd__o22a_1 read from path /home/zerotoasic/asic_tools/pdk/sky130A/libs.ref/sky130_fd_sc_hd/maglef
+Cell sky130_fd_sc_hd__a221o_1 read from path /home/zerotoasic/asic_tools/pdk/sky130A/libs.ref/sky130_fd_sc_hd/maglef
+Cell sky130_fd_sc_hd__o221a_1 read from path /home/zerotoasic/asic_tools/pdk/sky130A/libs.ref/sky130_fd_sc_hd/maglef
+Cell sky130_fd_sc_hd__o211a_1 read from path /home/zerotoasic/asic_tools/pdk/sky130A/libs.ref/sky130_fd_sc_hd/maglef
+Cell sky130_fd_sc_hd__and3_1 read from path /home/zerotoasic/asic_tools/pdk/sky130A/libs.ref/sky130_fd_sc_hd/maglef
+Cell sky130_fd_sc_hd__a31o_1 read from path /home/zerotoasic/asic_tools/pdk/sky130A/libs.ref/sky130_fd_sc_hd/maglef
+Cell sky130_fd_sc_hd__o211a_2 read from path /home/zerotoasic/asic_tools/pdk/sky130A/libs.ref/sky130_fd_sc_hd/maglef
+Cell sky130_fd_sc_hd__nand3_1 read from path /home/zerotoasic/asic_tools/pdk/sky130A/libs.ref/sky130_fd_sc_hd/maglef
+Cell sky130_fd_sc_hd__xnor2_1 read from path /home/zerotoasic/asic_tools/pdk/sky130A/libs.ref/sky130_fd_sc_hd/maglef
+Cell sky130_fd_sc_hd__o21bai_1 read from path /home/zerotoasic/asic_tools/pdk/sky130A/libs.ref/sky130_fd_sc_hd/maglef
+Cell sky130_fd_sc_hd__a2111o_1 read from path /home/zerotoasic/asic_tools/pdk/sky130A/libs.ref/sky130_fd_sc_hd/maglef
+Cell sky130_fd_sc_hd__or4b_1 read from path /home/zerotoasic/asic_tools/pdk/sky130A/libs.ref/sky130_fd_sc_hd/maglef
+Cell sky130_fd_sc_hd__a21o_1 read from path /home/zerotoasic/asic_tools/pdk/sky130A/libs.ref/sky130_fd_sc_hd/maglef
+Cell sky130_fd_sc_hd__o21ai_2 read from path /home/zerotoasic/asic_tools/pdk/sky130A/libs.ref/sky130_fd_sc_hd/maglef
+Cell sky130_fd_sc_hd__a21bo_1 read from path /home/zerotoasic/asic_tools/pdk/sky130A/libs.ref/sky130_fd_sc_hd/maglef
+Cell sky130_fd_sc_hd__nor3_4 read from path /home/zerotoasic/asic_tools/pdk/sky130A/libs.ref/sky130_fd_sc_hd/maglef
+Cell sky130_fd_sc_hd__a31o_2 read from path /home/zerotoasic/asic_tools/pdk/sky130A/libs.ref/sky130_fd_sc_hd/maglef
+Cell sky130_fd_sc_hd__nor2_4 read from path /home/zerotoasic/asic_tools/pdk/sky130A/libs.ref/sky130_fd_sc_hd/maglef
+Cell sky130_fd_sc_hd__or3b_2 read from path /home/zerotoasic/asic_tools/pdk/sky130A/libs.ref/sky130_fd_sc_hd/maglef
+Cell sky130_fd_sc_hd__o31a_2 read from path /home/zerotoasic/asic_tools/pdk/sky130A/libs.ref/sky130_fd_sc_hd/maglef
+Cell sky130_fd_sc_hd__a211o_4 read from path /home/zerotoasic/asic_tools/pdk/sky130A/libs.ref/sky130_fd_sc_hd/maglef
+Cell sky130_fd_sc_hd__a41o_1 read from path /home/zerotoasic/asic_tools/pdk/sky130A/libs.ref/sky130_fd_sc_hd/maglef
+Cell sky130_fd_sc_hd__o311a_1 read from path /home/zerotoasic/asic_tools/pdk/sky130A/libs.ref/sky130_fd_sc_hd/maglef
+Cell sky130_fd_sc_hd__and4_1 read from path /home/zerotoasic/asic_tools/pdk/sky130A/libs.ref/sky130_fd_sc_hd/maglef
+Cell sky130_fd_sc_hd__and4b_1 read from path /home/zerotoasic/asic_tools/pdk/sky130A/libs.ref/sky130_fd_sc_hd/maglef
+Cell sky130_fd_sc_hd__and4b_4 read from path /home/zerotoasic/asic_tools/pdk/sky130A/libs.ref/sky130_fd_sc_hd/maglef
+Cell sky130_fd_sc_hd__and3_4 read from path /home/zerotoasic/asic_tools/pdk/sky130A/libs.ref/sky130_fd_sc_hd/maglef
+Cell sky130_fd_sc_hd__and3_2 read from path /home/zerotoasic/asic_tools/pdk/sky130A/libs.ref/sky130_fd_sc_hd/maglef
+Cell sky130_fd_sc_hd__clkbuf_8 read from path /home/zerotoasic/asic_tools/pdk/sky130A/libs.ref/sky130_fd_sc_hd/maglef
+Cell sky130_fd_sc_hd__buf_6 read from path /home/zerotoasic/asic_tools/pdk/sky130A/libs.ref/sky130_fd_sc_hd/maglef
+Cell sky130_fd_sc_hd__a21oi_2 read from path /home/zerotoasic/asic_tools/pdk/sky130A/libs.ref/sky130_fd_sc_hd/maglef
+Cell sky130_fd_sc_hd__a21oi_4 read from path /home/zerotoasic/asic_tools/pdk/sky130A/libs.ref/sky130_fd_sc_hd/maglef
+Cell sky130_fd_sc_hd__a22oi_4 read from path /home/zerotoasic/asic_tools/pdk/sky130A/libs.ref/sky130_fd_sc_hd/maglef
+Cell sky130_fd_sc_hd__a22o_4 read from path /home/zerotoasic/asic_tools/pdk/sky130A/libs.ref/sky130_fd_sc_hd/maglef
+Cell sky130_fd_sc_hd__nor2_2 read from path /home/zerotoasic/asic_tools/pdk/sky130A/libs.ref/sky130_fd_sc_hd/maglef
+Cell sky130_fd_sc_hd__clkbuf_16 read from path /home/zerotoasic/asic_tools/pdk/sky130A/libs.ref/sky130_fd_sc_hd/maglef
+Cell sky130_fd_sc_hd__buf_8 read from path /home/zerotoasic/asic_tools/pdk/sky130A/libs.ref/sky130_fd_sc_hd/maglef
+Cell sky130_fd_sc_hd__buf_12 read from path /home/zerotoasic/asic_tools/pdk/sky130A/libs.ref/sky130_fd_sc_hd/maglef
+Cell sky130_fd_sc_hd__or3b_4 read from path /home/zerotoasic/asic_tools/pdk/sky130A/libs.ref/sky130_fd_sc_hd/maglef
+Cell sky130_fd_sc_hd__a22oi_2 read from path /home/zerotoasic/asic_tools/pdk/sky130A/libs.ref/sky130_fd_sc_hd/maglef
+Cell sky130_fd_sc_hd__a22o_2 read from path /home/zerotoasic/asic_tools/pdk/sky130A/libs.ref/sky130_fd_sc_hd/maglef
+Cell sky130_fd_sc_hd__mux2_1 read from path /home/zerotoasic/asic_tools/pdk/sky130A/libs.ref/sky130_fd_sc_hd/maglef
+Cell sky130_fd_sc_hd__nand3_4 read from path /home/zerotoasic/asic_tools/pdk/sky130A/libs.ref/sky130_fd_sc_hd/maglef
+Cell sky130_fd_sc_hd__or3_4 read from path /home/zerotoasic/asic_tools/pdk/sky130A/libs.ref/sky130_fd_sc_hd/maglef
+Cell sky130_fd_sc_hd__a31o_4 read from path /home/zerotoasic/asic_tools/pdk/sky130A/libs.ref/sky130_fd_sc_hd/maglef
+Cell sky130_fd_sc_hd__nor2_8 read from path /home/zerotoasic/asic_tools/pdk/sky130A/libs.ref/sky130_fd_sc_hd/maglef
+Cell sky130_fd_sc_hd__nand2_8 read from path /home/zerotoasic/asic_tools/pdk/sky130A/libs.ref/sky130_fd_sc_hd/maglef
+Cell sky130_fd_sc_hd__and4_4 read from path /home/zerotoasic/asic_tools/pdk/sky130A/libs.ref/sky130_fd_sc_hd/maglef
+Cell sky130_fd_sc_hd__or2_4 read from path /home/zerotoasic/asic_tools/pdk/sky130A/libs.ref/sky130_fd_sc_hd/maglef
+Cell sky130_fd_sc_hd__or3_2 read from path /home/zerotoasic/asic_tools/pdk/sky130A/libs.ref/sky130_fd_sc_hd/maglef
+Cell sky130_fd_sc_hd__o21a_4 read from path /home/zerotoasic/asic_tools/pdk/sky130A/libs.ref/sky130_fd_sc_hd/maglef
+Cell sky130_fd_sc_hd__and3b_1 read from path /home/zerotoasic/asic_tools/pdk/sky130A/libs.ref/sky130_fd_sc_hd/maglef
+Cell sky130_fd_sc_hd__inv_12 read from path /home/zerotoasic/asic_tools/pdk/sky130A/libs.ref/sky130_fd_sc_hd/maglef
+Cell sky130_fd_sc_hd__nand2b_4 read from path /home/zerotoasic/asic_tools/pdk/sky130A/libs.ref/sky130_fd_sc_hd/maglef
+Cell sky130_fd_sc_hd__a2bb2o_1 read from path /home/zerotoasic/asic_tools/pdk/sky130A/libs.ref/sky130_fd_sc_hd/maglef
+Cell sky130_fd_sc_hd__o32a_1 read from path /home/zerotoasic/asic_tools/pdk/sky130A/libs.ref/sky130_fd_sc_hd/maglef
+Cell sky130_fd_sc_hd__mux2_2 read from path /home/zerotoasic/asic_tools/pdk/sky130A/libs.ref/sky130_fd_sc_hd/maglef
+Cell sky130_fd_sc_hd__a211o_2 read from path /home/zerotoasic/asic_tools/pdk/sky130A/libs.ref/sky130_fd_sc_hd/maglef
+Cell sky130_fd_sc_hd__o21a_1 read from path /home/zerotoasic/asic_tools/pdk/sky130A/libs.ref/sky130_fd_sc_hd/maglef
+Cell sky130_fd_sc_hd__nand3_2 read from path /home/zerotoasic/asic_tools/pdk/sky130A/libs.ref/sky130_fd_sc_hd/maglef
+Cell sky130_fd_sc_hd__o311a_2 read from path /home/zerotoasic/asic_tools/pdk/sky130A/libs.ref/sky130_fd_sc_hd/maglef
+Cell sky130_fd_sc_hd__a311o_1 read from path /home/zerotoasic/asic_tools/pdk/sky130A/libs.ref/sky130_fd_sc_hd/maglef
+Cell sky130_fd_sc_hd__mux2_4 read from path /home/zerotoasic/asic_tools/pdk/sky130A/libs.ref/sky130_fd_sc_hd/maglef
+Cell sky130_fd_sc_hd__a31oi_4 read from path /home/zerotoasic/asic_tools/pdk/sky130A/libs.ref/sky130_fd_sc_hd/maglef
+Cell sky130_fd_sc_hd__a311o_4 read from path /home/zerotoasic/asic_tools/pdk/sky130A/libs.ref/sky130_fd_sc_hd/maglef
+Cell sky130_fd_sc_hd__o221a_2 read from path /home/zerotoasic/asic_tools/pdk/sky130A/libs.ref/sky130_fd_sc_hd/maglef
+Cell sky130_fd_sc_hd__a31oi_2 read from path /home/zerotoasic/asic_tools/pdk/sky130A/libs.ref/sky130_fd_sc_hd/maglef
+Cell sky130_fd_sc_hd__a221o_2 read from path /home/zerotoasic/asic_tools/pdk/sky130A/libs.ref/sky130_fd_sc_hd/maglef
+Cell sky130_fd_sc_hd__a21o_4 read from path /home/zerotoasic/asic_tools/pdk/sky130A/libs.ref/sky130_fd_sc_hd/maglef
+Cell sky130_fd_sc_hd__a32o_1 read from path /home/zerotoasic/asic_tools/pdk/sky130A/libs.ref/sky130_fd_sc_hd/maglef
+Cell sky130_fd_sc_hd__o211ai_2 read from path /home/zerotoasic/asic_tools/pdk/sky130A/libs.ref/sky130_fd_sc_hd/maglef
+Cell sky130_fd_sc_hd__mux2_8 read from path /home/zerotoasic/asic_tools/pdk/sky130A/libs.ref/sky130_fd_sc_hd/maglef
+Cell sky130_fd_sc_hd__o311a_4 read from path /home/zerotoasic/asic_tools/pdk/sky130A/libs.ref/sky130_fd_sc_hd/maglef
+Cell sky130_fd_sc_hd__o21a_2 read from path /home/zerotoasic/asic_tools/pdk/sky130A/libs.ref/sky130_fd_sc_hd/maglef
+Cell sky130_fd_sc_hd__and4_2 read from path /home/zerotoasic/asic_tools/pdk/sky130A/libs.ref/sky130_fd_sc_hd/maglef
+Cell sky130_fd_sc_hd__a21o_2 read from path /home/zerotoasic/asic_tools/pdk/sky130A/libs.ref/sky130_fd_sc_hd/maglef
+Cell sky130_fd_sc_hd__nor2b_4 read from path /home/zerotoasic/asic_tools/pdk/sky130A/libs.ref/sky130_fd_sc_hd/maglef
+Cell sky130_fd_sc_hd__a32o_4 read from path /home/zerotoasic/asic_tools/pdk/sky130A/libs.ref/sky130_fd_sc_hd/maglef
+Cell sky130_fd_sc_hd__a221o_4 read from path /home/zerotoasic/asic_tools/pdk/sky130A/libs.ref/sky130_fd_sc_hd/maglef
+Cell sky130_fd_sc_hd__a221oi_2 read from path /home/zerotoasic/asic_tools/pdk/sky130A/libs.ref/sky130_fd_sc_hd/maglef
+Cell sky130_fd_sc_hd__a211oi_4 read from path /home/zerotoasic/asic_tools/pdk/sky130A/libs.ref/sky130_fd_sc_hd/maglef
+Cell sky130_fd_sc_hd__nor3_1 read from path /home/zerotoasic/asic_tools/pdk/sky130A/libs.ref/sky130_fd_sc_hd/maglef
+Cell sky130_fd_sc_hd__a32oi_4 read from path /home/zerotoasic/asic_tools/pdk/sky130A/libs.ref/sky130_fd_sc_hd/maglef
+Cell sky130_fd_sc_hd__a21boi_1 read from path /home/zerotoasic/asic_tools/pdk/sky130A/libs.ref/sky130_fd_sc_hd/maglef
+Cell sky130_fd_sc_hd__a32o_2 read from path /home/zerotoasic/asic_tools/pdk/sky130A/libs.ref/sky130_fd_sc_hd/maglef
+Cell sky130_fd_sc_hd__a211oi_1 read from path /home/zerotoasic/asic_tools/pdk/sky130A/libs.ref/sky130_fd_sc_hd/maglef
+Cell sky130_fd_sc_hd__o41ai_4 read from path /home/zerotoasic/asic_tools/pdk/sky130A/libs.ref/sky130_fd_sc_hd/maglef
+Cell sky130_fd_sc_hd__xor2_1 read from path /home/zerotoasic/asic_tools/pdk/sky130A/libs.ref/sky130_fd_sc_hd/maglef
+Cell sky130_fd_sc_hd__o31ai_1 read from path /home/zerotoasic/asic_tools/pdk/sky130A/libs.ref/sky130_fd_sc_hd/maglef
+Cell sky130_fd_sc_hd__xnor2_2 read from path /home/zerotoasic/asic_tools/pdk/sky130A/libs.ref/sky130_fd_sc_hd/maglef
+Cell sky130_fd_sc_hd__a211oi_2 read from path /home/zerotoasic/asic_tools/pdk/sky130A/libs.ref/sky130_fd_sc_hd/maglef
+Cell sky130_fd_sc_hd__o21bai_2 read from path /home/zerotoasic/asic_tools/pdk/sky130A/libs.ref/sky130_fd_sc_hd/maglef
+Cell sky130_fd_sc_hd__mux4_1 read from path /home/zerotoasic/asic_tools/pdk/sky130A/libs.ref/sky130_fd_sc_hd/maglef
+Cell sky130_fd_sc_hd__mux4_2 read from path /home/zerotoasic/asic_tools/pdk/sky130A/libs.ref/sky130_fd_sc_hd/maglef
+Cell sky130_fd_sc_hd__o22a_2 read from path /home/zerotoasic/asic_tools/pdk/sky130A/libs.ref/sky130_fd_sc_hd/maglef
+Cell sky130_fd_sc_hd__o211a_4 read from path /home/zerotoasic/asic_tools/pdk/sky130A/libs.ref/sky130_fd_sc_hd/maglef
+Cell sky130_fd_sc_hd__clkbuf_2 read from path /home/zerotoasic/asic_tools/pdk/sky130A/libs.ref/sky130_fd_sc_hd/maglef
+Cell sky130_fd_sc_hd__or4bb_1 read from path /home/zerotoasic/asic_tools/pdk/sky130A/libs.ref/sky130_fd_sc_hd/maglef
+Cell sky130_fd_sc_hd__o21ba_1 read from path /home/zerotoasic/asic_tools/pdk/sky130A/libs.ref/sky130_fd_sc_hd/maglef
+Cell sky130_fd_sc_hd__o2bb2a_1 read from path /home/zerotoasic/asic_tools/pdk/sky130A/libs.ref/sky130_fd_sc_hd/maglef
+Cell sky130_fd_sc_hd__o211ai_1 read from path /home/zerotoasic/asic_tools/pdk/sky130A/libs.ref/sky130_fd_sc_hd/maglef
+Cell sky130_fd_sc_hd__dfxtp_1 read from path /home/zerotoasic/asic_tools/pdk/sky130A/libs.ref/sky130_fd_sc_hd/maglef
+Cell sky130_fd_sc_hd__dfxtp_2 read from path /home/zerotoasic/asic_tools/pdk/sky130A/libs.ref/sky130_fd_sc_hd/maglef
+Cell sky130_fd_sc_hd__dfxtp_4 read from path /home/zerotoasic/asic_tools/pdk/sky130A/libs.ref/sky130_fd_sc_hd/maglef
+Cell sky130_fd_sc_hd__dlygate4sd3_1 read from path /home/zerotoasic/asic_tools/pdk/sky130A/libs.ref/sky130_fd_sc_hd/maglef
+Cell sky130_fd_sc_hd__buf_1 read from path /home/zerotoasic/asic_tools/pdk/sky130A/libs.ref/sky130_fd_sc_hd/maglef
+Cell sky130_fd_sc_hd__dlymetal6s2s_1 read from path /home/zerotoasic/asic_tools/pdk/sky130A/libs.ref/sky130_fd_sc_hd/maglef
+Cell sky130_fd_sc_hd__dlygate4sd1_1 read from path /home/zerotoasic/asic_tools/pdk/sky130A/libs.ref/sky130_fd_sc_hd/maglef
+  Processed 80036 subcell instances total.
+  Processed 50 pins total.
+  Processed 2 special nets total.
+  Processed 15867 nets total.
+DEF read: Processed 455361 lines.
+Moving label "CPU1.PC1.pc_out\[4\]" from metal1 to viali in cell simproc_system.
+Moving label "RAM1.mem\[0\]\[1\]" from metal1 to via1 in cell simproc_system.
+Moving label "RAM1.mem\[0\]\[6\]" from metal1 to via1 in cell simproc_system.
+Moving label "RAM1.mem\[104\]\[5\]" from metal2 to via2 in cell simproc_system.
+Moving label "RAM1.mem\[112\]\[3\]" from metal2 to via2 in cell simproc_system.
+Moving label "RAM1.mem\[117\]\[7\]" from metal1 to viali in cell simproc_system.
+Moving label "RAM1.mem\[120\]\[0\]" from metal2 to via2 in cell simproc_system.
+Moving label "RAM1.mem\[120\]\[2\]" from metal2 to via2 in cell simproc_system.
+Moving label "RAM1.mem\[123\]\[0\]" from metal2 to via2 in cell simproc_system.
+Moving label "RAM1.mem\[124\]\[6\]" from metal1 to via1 in cell simproc_system.
+Moving label "RAM1.mem\[126\]\[5\]" from metal2 to via2 in cell simproc_system.
+Moving label "RAM1.mem\[127\]\[5\]" from metal2 to via2 in cell simproc_system.
+Moving label "RAM1.mem\[127\]\[6\]" from metal2 to via2 in cell simproc_system.
+Moving label "RAM1.mem\[130\]\[1\]" from metal1 to via1 in cell simproc_system.
+Moving label "RAM1.mem\[130\]\[5\]" from metal1 to via1 in cell simproc_system.
+Moving label "RAM1.mem\[158\]\[2\]" from metal1 to via1 in cell simproc_system.
+Moving label "RAM1.mem\[159\]\[4\]" from metal1 to via1 in cell simproc_system.
+Moving label "RAM1.mem\[15\]\[5\]" from metal1 to via1 in cell simproc_system.
+Moving label "RAM1.mem\[164\]\[2\]" from metal1 to viali in cell simproc_system.
+Moving label "RAM1.mem\[164\]\[7\]" from metal1 to via1 in cell simproc_system.
+Moving label "RAM1.mem\[168\]\[5\]" from metal1 to viali in cell simproc_system.
+Moving label "RAM1.mem\[187\]\[0\]" from metal2 to via2 in cell simproc_system.
+Moving label "RAM1.mem\[187\]\[3\]" from metal2 to via2 in cell simproc_system.
+Moving label "RAM1.mem\[194\]\[1\]" from metal1 to viali in cell simproc_system.
+Moving label "RAM1.mem\[194\]\[3\]" from metal1 to via1 in cell simproc_system.
+Moving label "RAM1.mem\[194\]\[6\]" from metal1 to via1 in cell simproc_system.
+Moving label "RAM1.mem\[194\]\[7\]" from metal1 to via1 in cell simproc_system.
+Moving label "RAM1.mem\[196\]\[3\]" from metal1 to viali in cell simproc_system.
+Moving label "RAM1.mem\[200\]\[0\]" from metal2 to via1 in cell simproc_system.
+Moving label "RAM1.mem\[213\]\[5\]" from metal2 to via1 in cell simproc_system.
+Moving label "RAM1.mem\[228\]\[1\]" from metal1 to via1 in cell simproc_system.
+Moving label "RAM1.mem\[235\]\[1\]" from metal2 to via2 in cell simproc_system.
+Moving label "RAM1.mem\[23\]\[4\]" from metal1 to via1 in cell simproc_system.
+Moving label "RAM1.mem\[245\]\[6\]" from metal1 to via1 in cell simproc_system.
+Moving label "RAM1.mem\[249\]\[4\]" from metal2 to via2 in cell simproc_system.
+Moving label "RAM1.mem\[24\]\[1\]" from metal1 to viali in cell simproc_system.
+Moving label "RAM1.mem\[24\]\[5\]" from metal1 to via1 in cell simproc_system.
+Moving label "RAM1.mem\[253\]\[3\]" from metal2 to via2 in cell simproc_system.
+Moving label "RAM1.mem\[254\]\[0\]" from metal2 to via2 in cell simproc_system.
+Moving label "RAM1.mem\[255\]\[2\]" from metal2 to via2 in cell simproc_system.
+Moving label "RAM1.mem\[255\]\[4\]" from metal2 to via2 in cell simproc_system.
+Moving label "RAM1.mem\[38\]\[7\]" from metal3 to via2 in cell simproc_system.
+Moving label "RAM1.mem\[40\]\[6\]" from metal2 to via2 in cell simproc_system.
+Moving label "RAM1.mem\[41\]\[3\]" from metal1 to viali in cell simproc_system.
+Moving label "RAM1.mem\[43\]\[1\]" from metal2 to via2 in cell simproc_system.
+Moving label "RAM1.mem\[53\]\[1\]" from metal1 to via1 in cell simproc_system.
+Moving label "RAM1.mem\[53\]\[4\]" from metal1 to via1 in cell simproc_system.
+Moving label "RAM1.mem\[56\]\[1\]" from metal2 to via2 in cell simproc_system.
+Moving label "RAM1.mem\[56\]\[5\]" from metal2 to via1 in cell simproc_system.
+Moving label "RAM1.mem\[5\]\[3\]" from metal2 to via2 in cell simproc_system.
+Moving label "RAM1.mem\[73\]\[1\]" from metal1 to via1 in cell simproc_system.
+Moving label "RAM1.mem\[74\]\[6\]" from metal1 to via1 in cell simproc_system.
+Moving label "RAM1.mem\[7\]\[1\]" from metal2 to via2 in cell simproc_system.
+Moving label "RAM1.mem\[88\]\[0\]" from metal1 to viali in cell simproc_system.
+Moving label "RAM1.mem\[88\]\[1\]" from metal2 to via2 in cell simproc_system.
+Moving label "RAM1.mem\[88\]\[5\]" from metal1 to via1 in cell simproc_system.
+Moving label "RAM1.mem\[8\]\[6\]" from metal2 to via2 in cell simproc_system.
+Moving label "RAM1.mem\[94\]\[1\]" from metal1 to via1 in cell simproc_system.
+Moving label "RAM1.mem\[94\]\[3\]" from metal1 to via1 in cell simproc_system.
+Moving label "UART1.TX_done" from metal1 to via1 in cell simproc_system.
+Moving label "UART1.UART_RX1.dataOut\[1\]" from metal2 to via1 in cell simproc_system.
+Moving label "UART1.UART_RX1.index\[2\]" from metal1 to via1 in cell simproc_system.
+Moving label "_00002_" from metal1 to via1 in cell simproc_system.
+Moving label "_00026_" from metal1 to via1 in cell simproc_system.
+Moving label "_00035_" from metal1 to via1 in cell simproc_system.
+Moving label "_00041_" from metal1 to via1 in cell simproc_system.
+Moving label "_00045_" from metal1 to via1 in cell simproc_system.
+Moving label "_00051_" from metal1 to via1 in cell simproc_system.
+Moving label "_00062_" from metal1 to viali in cell simproc_system.
+Moving label "_00067_" from metal1 to via1 in cell simproc_system.
+Moving label "_00073_" from metal1 to via1 in cell simproc_system.
+Moving label "_00105_" from metal1 to viali in cell simproc_system.
+Moving label "_00107_" from metal1 to via1 in cell simproc_system.
+Moving label "_00111_" from metal1 to via1 in cell simproc_system.
+Moving label "_00114_" from metal1 to via1 in cell simproc_system.
+Moving label "_00117_" from metal1 to via1 in cell simproc_system.
+Moving label "_00125_" from metal1 to via1 in cell simproc_system.
+Moving label "_00133_" from metal1 to via1 in cell simproc_system.
+Moving label "_00134_" from metal1 to viali in cell simproc_system.
+Moving label "_00138_" from metal1 to via1 in cell simproc_system.
+Moving label "_00139_" from metal1 to via1 in cell simproc_system.
+Moving label "_00146_" from metal1 to via1 in cell simproc_system.
+Moving label "_00149_" from metal1 to via1 in cell simproc_system.
+Moving label "_00150_" from metal1 to via1 in cell simproc_system.
+Moving label "_00151_" from metal1 to via1 in cell simproc_system.
+Moving label "_00166_" from metal1 to via1 in cell simproc_system.
+Moving label "_00170_" from metal1 to via1 in cell simproc_system.
+Moving label "_00184_" from metal1 to via1 in cell simproc_system.
+Moving label "_00190_" from metal1 to via1 in cell simproc_system.
+Moving label "_00214_" from metal1 to via1 in cell simproc_system.
+Moving label "_00238_" from metal1 to viali in cell simproc_system.
+Moving label "_00244_" from metal1 to via1 in cell simproc_system.
+Moving label "_00248_" from metal1 to via1 in cell simproc_system.
+Moving label "_00250_" from metal1 to via1 in cell simproc_system.
+Moving label "_00264_" from metal1 to via1 in cell simproc_system.
+Moving label "_00272_" from metal1 to via1 in cell simproc_system.
+Moving label "_00275_" from metal1 to via1 in cell simproc_system.
+Moving label "_00280_" from metal1 to viali in cell simproc_system.
+Moving label "_00282_" from metal1 to via1 in cell simproc_system.
+Moving label "_00285_" from metal1 to via1 in cell simproc_system.
+Moving label "_00326_" from metal1 to via1 in cell simproc_system.
+Moving label "_00336_" from metal1 to via1 in cell simproc_system.
+Moving label "_00376_" from metal1 to via1 in cell simproc_system.
+Moving label "_00386_" from metal1 to via1 in cell simproc_system.
+Moving label "_00388_" from metal1 to via1 in cell simproc_system.
+Moving label "_00395_" from metal1 to via1 in cell simproc_system.
+Moving label "_00405_" from metal1 to via1 in cell simproc_system.
+Moving label "_00407_" from metal1 to viali in cell simproc_system.
+Moving label "_00411_" from metal1 to via1 in cell simproc_system.
+Moving label "_00413_" from metal1 to via1 in cell simproc_system.
+Moving label "_00417_" from metal1 to via1 in cell simproc_system.
+Moving label "_00450_" from metal1 to via1 in cell simproc_system.
+Moving label "_00459_" from metal1 to via1 in cell simproc_system.
+Moving label "_00460_" from metal1 to via1 in cell simproc_system.
+Moving label "_00461_" from metal1 to via1 in cell simproc_system.
+Moving label "_00465_" from metal1 to via1 in cell simproc_system.
+Moving label "_00468_" from metal1 to via1 in cell simproc_system.
+Moving label "_00470_" from metal1 to via1 in cell simproc_system.
+Moving label "_00475_" from metal1 to via1 in cell simproc_system.
+Moving label "_00484_" from metal1 to via1 in cell simproc_system.
+Moving label "_00491_" from metal1 to via1 in cell simproc_system.
+Moving label "_00500_" from metal1 to via1 in cell simproc_system.
+Moving label "_00502_" from metal1 to via1 in cell simproc_system.
+Moving label "_00503_" from metal1 to via1 in cell simproc_system.
+Moving label "_00508_" from metal1 to via1 in cell simproc_system.
+Moving label "_00520_" from metal1 to via1 in cell simproc_system.
+Moving label "_00524_" from metal1 to via1 in cell simproc_system.
+Moving label "_00536_" from metal1 to via1 in cell simproc_system.
+Moving label "_00538_" from metal1 to via1 in cell simproc_system.
+Moving label "_00552_" from metal1 to via1 in cell simproc_system.
+Moving label "_00562_" from metal1 to via1 in cell simproc_system.
+Moving label "_00566_" from metal1 to via1 in cell simproc_system.
+Moving label "_00572_" from metal1 to via1 in cell simproc_system.
+Moving label "_00573_" from metal1 to via1 in cell simproc_system.
+Moving label "_00574_" from metal1 to via1 in cell simproc_system.
+Moving label "_00583_" from metal1 to via1 in cell simproc_system.
+Moving label "_00592_" from metal1 to via1 in cell simproc_system.
+Moving label "_00605_" from metal1 to via1 in cell simproc_system.
+Moving label "_00606_" from metal1 to via1 in cell simproc_system.
+Moving label "_00614_" from metal1 to via1 in cell simproc_system.
+Moving label "_00619_" from metal1 to via1 in cell simproc_system.
+Moving label "_00628_" from metal1 to via1 in cell simproc_system.
+Moving label "_00631_" from metal1 to via1 in cell simproc_system.
+Moving label "_00646_" from metal1 to viali in cell simproc_system.
+Moving label "_00648_" from metal1 to via1 in cell simproc_system.
+Moving label "_00657_" from metal1 to via1 in cell simproc_system.
+Moving label "_00658_" from metal1 to via1 in cell simproc_system.
+Moving label "_00659_" from metal1 to via1 in cell simproc_system.
+Moving label "_00665_" from metal1 to via1 in cell simproc_system.
+Moving label "_00680_" from metal1 to via1 in cell simproc_system.
+Moving label "_00688_" from metal1 to via1 in cell simproc_system.
+Moving label "_00693_" from metal1 to via1 in cell simproc_system.
+Moving label "_00704_" from metal1 to via1 in cell simproc_system.
+Moving label "_00714_" from metal1 to via1 in cell simproc_system.
+Moving label "_00726_" from metal1 to via1 in cell simproc_system.
+Moving label "_00731_" from metal1 to via1 in cell simproc_system.
+Moving label "_00748_" from metal1 to via1 in cell simproc_system.
+Moving label "_00754_" from metal1 to via1 in cell simproc_system.
+Moving label "_00755_" from metal1 to via1 in cell simproc_system.
+Moving label "_00766_" from metal1 to via1 in cell simproc_system.
+Moving label "_00792_" from metal1 to via1 in cell simproc_system.
+Moving label "_00798_" from metal1 to via1 in cell simproc_system.
+Moving label "_00806_" from metal1 to via1 in cell simproc_system.
+Moving label "_00807_" from metal1 to via1 in cell simproc_system.
+Moving label "_00822_" from metal1 to via1 in cell simproc_system.
+Moving label "_00824_" from metal1 to via1 in cell simproc_system.
+Moving label "_00826_" from metal1 to via1 in cell simproc_system.
+Moving label "_00836_" from metal1 to via1 in cell simproc_system.
+Moving label "_00841_" from metal1 to via1 in cell simproc_system.
+Moving label "_00866_" from metal1 to viali in cell simproc_system.
+Moving label "_00877_" from metal1 to via1 in cell simproc_system.
+Moving label "_00889_" from metal1 to via1 in cell simproc_system.
+Moving label "_00891_" from metal1 to via1 in cell simproc_system.
+Moving label "_00897_" from metal1 to via1 in cell simproc_system.
+Moving label "_00910_" from metal1 to via1 in cell simproc_system.
+Moving label "_00932_" from metal1 to via1 in cell simproc_system.
+Moving label "_00938_" from metal1 to via1 in cell simproc_system.
+Moving label "_00939_" from metal1 to via1 in cell simproc_system.
+Moving label "_00948_" from metal1 to via1 in cell simproc_system.
+Moving label "_00949_" from metal1 to via1 in cell simproc_system.
+Moving label "_00953_" from metal1 to via1 in cell simproc_system.
+Moving label "_00955_" from metal1 to via1 in cell simproc_system.
+Moving label "_00959_" from metal1 to viali in cell simproc_system.
+Moving label "_00965_" from metal1 to via1 in cell simproc_system.
+Moving label "_00971_" from metal1 to via1 in cell simproc_system.
+Moving label "_00975_" from metal1 to via1 in cell simproc_system.
+Moving label "_00976_" from metal1 to via1 in cell simproc_system.
+Moving label "_00984_" from metal1 to via1 in cell simproc_system.
+Moving label "_00996_" from metal1 to via1 in cell simproc_system.
+Moving label "_01040_" from metal1 to viali in cell simproc_system.
+Moving label "_01042_" from metal1 to via1 in cell simproc_system.
+Moving label "_01043_" from metal1 to via1 in cell simproc_system.
+Moving label "_01050_" from metal1 to via1 in cell simproc_system.
+Moving label "_01052_" from metal1 to via1 in cell simproc_system.
+Moving label "_01075_" from metal1 to via1 in cell simproc_system.
+Moving label "_01120_" from metal1 to via1 in cell simproc_system.
+Moving label "_01140_" from metal1 to via1 in cell simproc_system.
+Moving label "_01176_" from metal1 to via1 in cell simproc_system.
+Moving label "_01185_" from metal1 to via1 in cell simproc_system.
+Moving label "_01192_" from metal1 to via1 in cell simproc_system.
+Moving label "_01193_" from metal1 to via1 in cell simproc_system.
+Moving label "_01211_" from metal1 to via1 in cell simproc_system.
+Moving label "_01216_" from metal1 to via1 in cell simproc_system.
+Moving label "_01224_" from metal1 to via1 in cell simproc_system.
+Moving label "_01230_" from metal1 to via1 in cell simproc_system.
+Moving label "_01236_" from metal1 to viali in cell simproc_system.
+Moving label "_01248_" from metal1 to via1 in cell simproc_system.
+Moving label "_01257_" from metal1 to via1 in cell simproc_system.
+Moving label "_01261_" from metal1 to via1 in cell simproc_system.
+Moving label "_01265_" from metal1 to via1 in cell simproc_system.
+Moving label "_01277_" from metal1 to via1 in cell simproc_system.
+Moving label "_01278_" from metal1 to viali in cell simproc_system.
+Moving label "_01285_" from metal1 to via1 in cell simproc_system.
+Moving label "_01296_" from metal1 to via1 in cell simproc_system.
+Moving label "_01297_" from metal1 to viali in cell simproc_system.
+Moving label "_01299_" from metal1 to via1 in cell simproc_system.
+Moving label "_01301_" from metal1 to via1 in cell simproc_system.
+Moving label "_01302_" from metal1 to via1 in cell simproc_system.
+Moving label "_01303_" from metal1 to viali in cell simproc_system.
+Moving label "_01322_" from metal1 to via1 in cell simproc_system.
+Moving label "_01330_" from metal1 to via1 in cell simproc_system.
+Moving label "_01338_" from metal1 to via1 in cell simproc_system.
+Moving label "_01341_" from metal1 to via1 in cell simproc_system.
+Moving label "_01345_" from metal1 to via1 in cell simproc_system.
+Moving label "_01346_" from metal1 to via1 in cell simproc_system.
+Moving label "_01357_" from metal1 to via1 in cell simproc_system.
+Moving label "_01358_" from metal1 to via1 in cell simproc_system.
+Moving label "_01383_" from metal1 to via1 in cell simproc_system.
+Moving label "_01384_" from metal1 to via1 in cell simproc_system.
+Moving label "_01387_" from metal1 to via1 in cell simproc_system.
+Moving label "_01391_" from metal1 to via1 in cell simproc_system.
+Moving label "_01392_" from metal1 to via1 in cell simproc_system.
+Moving label "_01394_" from metal1 to via1 in cell simproc_system.
+Moving label "_01409_" from metal1 to via1 in cell simproc_system.
+Moving label "_01415_" from metal1 to via1 in cell simproc_system.
+Moving label "_01420_" from metal1 to via1 in cell simproc_system.
+Moving label "_01430_" from metal1 to via1 in cell simproc_system.
+Moving label "_01434_" from metal1 to viali in cell simproc_system.
+Moving label "_01447_" from metal1 to viali in cell simproc_system.
+Moving label "_01467_" from metal1 to via1 in cell simproc_system.
+Moving label "_01472_" from metal1 to via1 in cell simproc_system.
+Moving label "_01477_" from metal1 to via1 in cell simproc_system.
+Moving label "_01494_" from metal1 to via1 in cell simproc_system.
+Moving label "_01497_" from metal1 to via1 in cell simproc_system.
+Moving label "_01503_" from metal1 to via1 in cell simproc_system.
+Moving label "_01507_" from metal1 to via1 in cell simproc_system.
+Moving label "_01512_" from metal1 to viali in cell simproc_system.
+Moving label "_01519_" from metal1 to via1 in cell simproc_system.
+Moving label "_01525_" from metal1 to via1 in cell simproc_system.
+Moving label "_01527_" from metal1 to via1 in cell simproc_system.
+Moving label "_01541_" from metal1 to via1 in cell simproc_system.
+Moving label "_01552_" from metal1 to via1 in cell simproc_system.
+Moving label "_01580_" from metal1 to via1 in cell simproc_system.
+Moving label "_01597_" from metal1 to via1 in cell simproc_system.
+Moving label "_01618_" from metal1 to via1 in cell simproc_system.
+Moving label "_01631_" from metal1 to via1 in cell simproc_system.
+Moving label "_01632_" from metal1 to viali in cell simproc_system.
+Moving label "_01636_" from metal1 to via1 in cell simproc_system.
+Moving label "_01656_" from metal1 to via1 in cell simproc_system.
+Moving label "_01658_" from metal1 to via1 in cell simproc_system.
+Moving label "_01662_" from metal1 to via1 in cell simproc_system.
+Moving label "_01672_" from metal1 to via1 in cell simproc_system.
+Moving label "_01673_" from metal1 to via1 in cell simproc_system.
+Moving label "_01675_" from metal1 to via1 in cell simproc_system.
+Moving label "_01676_" from metal1 to via1 in cell simproc_system.
+Moving label "_01685_" from metal1 to via1 in cell simproc_system.
+Moving label "_01704_" from metal1 to via1 in cell simproc_system.
+Moving label "_01717_" from metal1 to via1 in cell simproc_system.
+Moving label "_01723_" from metal1 to via1 in cell simproc_system.
+Moving label "_01725_" from metal1 to via1 in cell simproc_system.
+Moving label "_01733_" from metal1 to via1 in cell simproc_system.
+Moving label "_01735_" from metal1 to via1 in cell simproc_system.
+Moving label "_01736_" from metal1 to viali in cell simproc_system.
+Moving label "_01755_" from metal1 to via1 in cell simproc_system.
+Moving label "_01758_" from metal1 to via1 in cell simproc_system.
+Moving label "_01762_" from metal1 to via1 in cell simproc_system.
+Moving label "_01763_" from metal1 to via1 in cell simproc_system.
+Moving label "_01791_" from metal1 to via1 in cell simproc_system.
+Moving label "_01812_" from metal1 to viali in cell simproc_system.
+Moving label "_01814_" from metal1 to viali in cell simproc_system.
+Moving label "_01826_" from metal1 to via1 in cell simproc_system.
+Moving label "_01829_" from metal1 to via1 in cell simproc_system.
+Moving label "_01835_" from metal1 to via1 in cell simproc_system.
+Moving label "_01841_" from metal1 to via1 in cell simproc_system.
+Moving label "_01842_" from metal1 to via1 in cell simproc_system.
+Moving label "_01849_" from metal1 to via1 in cell simproc_system.
+Moving label "_01850_" from metal1 to via1 in cell simproc_system.
+Moving label "_01868_" from metal1 to via1 in cell simproc_system.
+Moving label "_01874_" from metal1 to via1 in cell simproc_system.
+Moving label "_01880_" from metal1 to via1 in cell simproc_system.
+Moving label "_01910_" from metal1 to viali in cell simproc_system.
+Moving label "_01921_" from metal1 to via1 in cell simproc_system.
+Moving label "_01923_" from metal1 to via1 in cell simproc_system.
+Moving label "_01924_" from metal1 to via1 in cell simproc_system.
+Moving label "_01929_" from metal1 to via1 in cell simproc_system.
+Moving label "_01941_" from metal1 to via1 in cell simproc_system.
+Moving label "_01948_" from metal1 to via1 in cell simproc_system.
+Moving label "_01960_" from metal1 to via1 in cell simproc_system.
+Moving label "_01965_" from metal1 to via1 in cell simproc_system.
+Moving label "_01967_" from metal1 to via1 in cell simproc_system.
+Moving label "_01970_" from metal1 to via1 in cell simproc_system.
+Moving label "_01978_" from metal1 to via1 in cell simproc_system.
+Moving label "_01979_" from metal1 to via1 in cell simproc_system.
+Moving label "_01987_" from metal1 to via1 in cell simproc_system.
+Moving label "_01988_" from metal1 to via1 in cell simproc_system.
+Moving label "_01993_" from metal1 to via1 in cell simproc_system.
+Moving label "_01994_" from metal1 to via1 in cell simproc_system.
+Moving label "_01998_" from metal1 to via1 in cell simproc_system.
+Moving label "_02013_" from metal1 to via1 in cell simproc_system.
+Moving label "_02019_" from metal1 to viali in cell simproc_system.
+Moving label "_02023_" from metal1 to via1 in cell simproc_system.
+Moving label "_02028_" from metal1 to via1 in cell simproc_system.
+Moving label "_02034_" from metal1 to via1 in cell simproc_system.
+Moving label "_02036_" from metal1 to via1 in cell simproc_system.
+Moving label "_02043_" from metal1 to via1 in cell simproc_system.
+Moving label "_02045_" from metal1 to via1 in cell simproc_system.
+Moving label "_02052_" from metal1 to via1 in cell simproc_system.
+Moving label "_02054_" from metal1 to via1 in cell simproc_system.
+Moving label "_02061_" from metal1 to via1 in cell simproc_system.
+Moving label "_02065_" from metal1 to via1 in cell simproc_system.
+Moving label "_02081_" from metal2 to via1 in cell simproc_system.
+Moving label "_02082_" from metal1 to via1 in cell simproc_system.
+Moving label "_02099_" from metal1 to via1 in cell simproc_system.
+Moving label "_02110_" from metal1 to via1 in cell simproc_system.
+Moving label "_02147_" from metal1 to via1 in cell simproc_system.
+Moving label "_02158_" from metal1 to via1 in cell simproc_system.
+Moving label "_02171_" from metal1 to via1 in cell simproc_system.
+Moving label "_02184_" from metal1 to via1 in cell simproc_system.
+Moving label "_02186_" from metal1 to via1 in cell simproc_system.
+Moving label "_02190_" from metal1 to via1 in cell simproc_system.
+Moving label "_02191_" from metal1 to viali in cell simproc_system.
+Moving label "_02201_" from metal1 to via1 in cell simproc_system.
+Moving label "_02203_" from metal1 to via1 in cell simproc_system.
+Moving label "_02210_" from metal1 to via1 in cell simproc_system.
+Moving label "_02760_" from metal1 to via1 in cell simproc_system.
+Moving label "_02816_" from metal2 to via2 in cell simproc_system.
+Moving label "_02965_" from metal1 to viali in cell simproc_system.
+Moving label "_03104_" from metal2 to via2 in cell simproc_system.
+Moving label "_03112_" from metal2 to via2 in cell simproc_system.
+Moving label "_03168_" from metal2 to via1 in cell simproc_system.
+Moving label "_03200_" from metal2 to via2 in cell simproc_system.
+Moving label "_03233_" from metal1 to via1 in cell simproc_system.
+Moving label "_03273_" from metal3 to via3 in cell simproc_system.
+Moving label "_03295_" from metal1 to viali in cell simproc_system.
+Moving label "_03301_" from metal2 to via2 in cell simproc_system.
+Moving label "_03308_" from metal2 to via2 in cell simproc_system.
+Moving label "_03341_" from metal3 to via3 in cell simproc_system.
+Moving label "_03376_" from metal3 to via3 in cell simproc_system.
+Moving label "_03497_" from metal2 to via2 in cell simproc_system.
+Moving label "_03636_" from metal1 to via1 in cell simproc_system.
+Moving label "_03640_" from metal1 to via1 in cell simproc_system.
+Moving label "_03651_" from metal1 to viali in cell simproc_system.
+Moving label "_03706_" from metal4 to via4 in cell simproc_system.
+Moving label "_03717_" from metal2 to via2 in cell simproc_system.
+Moving label "_03734_" from metal1 to via1 in cell simproc_system.
+Moving label "_03815_" from metal1 to viali in cell simproc_system.
+Moving label "_03821_" from metal2 to via2 in cell simproc_system.
+Moving label "_03829_" from metal2 to via1 in cell simproc_system.
+Moving label "_03831_" from metal2 to via2 in cell simproc_system.
+Moving label "_03848_" from metal2 to via2 in cell simproc_system.
+Moving label "_03878_" from metal2 to via2 in cell simproc_system.
+Moving label "_03897_" from metal1 to viali in cell simproc_system.
+Moving label "_03901_" from metal2 to via2 in cell simproc_system.
+Moving label "_03902_" from metal2 to via2 in cell simproc_system.
+Moving label "_03928_" from metal2 to via1 in cell simproc_system.
+Moving label "_03956_" from metal3 to via3 in cell simproc_system.
+Moving label "_04033_" from metal2 to via2 in cell simproc_system.
+Moving label "_04049_" from metal1 to via1 in cell simproc_system.
+Moving label "_04054_" from metal1 to viali in cell simproc_system.
+Moving label "_04074_" from metal2 to via2 in cell simproc_system.
+Moving label "_04109_" from metal1 to viali in cell simproc_system.
+Moving label "_04114_" from metal2 to via2 in cell simproc_system.
+Moving label "_04175_" from metal2 to via2 in cell simproc_system.
+Moving label "_04193_" from metal3 to via3 in cell simproc_system.
+Moving label "_04199_" from metal3 to via2 in cell simproc_system.
+Moving label "_04219_" from metal2 to via1 in cell simproc_system.
+Moving label "_04332_" from metal1 to viali in cell simproc_system.
+Moving label "_04334_" from metal2 to via2 in cell simproc_system.
+Moving label "_04347_" from metal1 to viali in cell simproc_system.
+Moving label "_04397_" from metal2 to via2 in cell simproc_system.
+Moving label "_04492_" from metal3 to via3 in cell simproc_system.
+Moving label "_04510_" from metal2 to via2 in cell simproc_system.
+Moving label "_04533_" from metal1 to viali in cell simproc_system.
+Moving label "_04538_" from metal3 to via3 in cell simproc_system.
+Moving label "_04563_" from metal2 to via2 in cell simproc_system.
+Moving label "_04584_" from metal2 to via2 in cell simproc_system.
+Moving label "_04594_" from metal2 to via2 in cell simproc_system.
+Moving label "_04597_" from metal2 to via2 in cell simproc_system.
+Moving label "_04599_" from metal1 to viali in cell simproc_system.
+Moving label "_04600_" from metal1 to viali in cell simproc_system.
+Moving label "_04622_" from metal1 to via1 in cell simproc_system.
+Moving label "_04631_" from metal2 to via2 in cell simproc_system.
+Moving label "_04635_" from metal2 to via2 in cell simproc_system.
+Moving label "_04641_" from metal2 to via2 in cell simproc_system.
+Moving label "_04669_" from metal3 to via3 in cell simproc_system.
+Moving label "_04674_" from metal2 to via2 in cell simproc_system.
+Moving label "_04681_" from metal1 to via1 in cell simproc_system.
+Moving label "_04685_" from metal1 to via1 in cell simproc_system.
+Moving label "_04799_" from metal2 to via2 in cell simproc_system.
+Moving label "_04829_" from metal3 to via3 in cell simproc_system.
+Moving label "_04875_" from metal2 to via2 in cell simproc_system.
+Moving label "_04876_" from metal1 to viali in cell simproc_system.
+Moving label "_04906_" from metal2 to via2 in cell simproc_system.
+Moving label "_04929_" from metal2 to via2 in cell simproc_system.
+Moving label "_04957_" from metal1 to via1 in cell simproc_system.
+Moving label "_04995_" from metal2 to via2 in cell simproc_system.
+Moving label "_05011_" from metal2 to via2 in cell simproc_system.
+Moving label "_05024_" from metal1 to viali in cell simproc_system.
+Moving label "_05041_" from metal3 to via3 in cell simproc_system.
+Moving label "_05054_" from metal1 to via1 in cell simproc_system.
+Moving label "_05065_" from metal1 to via1 in cell simproc_system.
+Moving label "_05066_" from metal2 to via1 in cell simproc_system.
+Moving label "_05107_" from metal1 to via1 in cell simproc_system.
+Moving label "_05112_" from metal2 to via2 in cell simproc_system.
+Moving label "_05121_" from metal2 to via2 in cell simproc_system.
+Moving label "_05128_" from metal2 to via2 in cell simproc_system.
+Moving label "_05136_" from metal1 to viali in cell simproc_system.
+Moving label "_05169_" from metal1 to viali in cell simproc_system.
+Moving label "_05170_" from metal1 to viali in cell simproc_system.
+Moving label "_05190_" from metal1 to via1 in cell simproc_system.
+Moving label "_05198_" from metal2 to via2 in cell simproc_system.
+Moving label "_05213_" from metal2 to via2 in cell simproc_system.
+Moving label "_05223_" from metal2 to via2 in cell simproc_system.
+Moving label "_05404_" from metal3 to via3 in cell simproc_system.
+Moving label "_05566_" from metal1 to via1 in cell simproc_system.
+Moving label "_06033_" from metal2 to via2 in cell simproc_system.
+Moving label "_06054_" from metal1 to viali in cell simproc_system.
+Moving label "_06454_" from metal1 to viali in cell simproc_system.
+Moving label "_06875_" from metal1 to viali in cell simproc_system.
+Moving label "_06944_" from metal1 to viali in cell simproc_system.
+Moving label "_07020_" from metal1 to via1 in cell simproc_system.
+Moving label "_07275_" from metal2 to via2 in cell simproc_system.
+Moving label "_07541_" from metal2 to via2 in cell simproc_system.
+Moving label "_07625_" from metal1 to viali in cell simproc_system.
+Moving label "_07627_" from metal1 to viali in cell simproc_system.
+Moving label "_07763_" from metal1 to viali in cell simproc_system.
+Moving label "_07860_" from metal1 to viali in cell simproc_system.
+Moving label "_07924_" from metal1 to viali in cell simproc_system.
+Moving label "_07933_" from metal2 to via1 in cell simproc_system.
+Moving label "_07942_" from metal1 to viali in cell simproc_system.
+Moving label "_08016_" from metal1 to viali in cell simproc_system.
+Moving label "_08068_" from metal1 to viali in cell simproc_system.
+Moving label "_08089_" from metal1 to viali in cell simproc_system.
+Moving label "_08118_" from metal1 to viali in cell simproc_system.
+Moving label "_08156_" from metal1 to viali in cell simproc_system.
+Moving label "_08163_" from metal1 to viali in cell simproc_system.
+Moving label "_08219_" from metal1 to via1 in cell simproc_system.
+Moving label "_08249_" from metal1 to via1 in cell simproc_system.
+Moving label "_08274_" from metal3 to via3 in cell simproc_system.
+Moving label "_08286_" from metal1 to via1 in cell simproc_system.
+Moving label "_08420_" from metal2 to via2 in cell simproc_system.
+Moving label "_08443_" from metal2 to via2 in cell simproc_system.
+Moving label "_08444_" from metal2 to via2 in cell simproc_system.
+Moving label "_08506_" from metal2 to via2 in cell simproc_system.
+Moving label "_08593_" from metal2 to via2 in cell simproc_system.
+Moving label "_08794_" from metal3 to via3 in cell simproc_system.
+Moving label "_08907_" from metal1 to via1 in cell simproc_system.
+Moving label "_08913_" from metal2 to via2 in cell simproc_system.
+Moving label "_08967_" from metal2 to via2 in cell simproc_system.
+Moving label "_08976_" from metal2 to via1 in cell simproc_system.
+Moving label "_09044_" from metal2 to via2 in cell simproc_system.
+Moving label "_09080_" from metal3 to via3 in cell simproc_system.
+Moving label "_09101_" from metal1 to via1 in cell simproc_system.
+Moving label "_09106_" from metal2 to via2 in cell simproc_system.
+Moving label "_09321_" from metal3 to via3 in cell simproc_system.
+Moving label "_09399_" from metal3 to via3 in cell simproc_system.
+Moving label "_09401_" from metal2 to via2 in cell simproc_system.
+Moving label "_09409_" from metal2 to via2 in cell simproc_system.
+Moving label "_09482_" from metal2 to via2 in cell simproc_system.
+Moving label "_09490_" from metal1 to via1 in cell simproc_system.
+Moving label "_09496_" from metal1 to viali in cell simproc_system.
+Moving label "_09527_" from metal2 to via2 in cell simproc_system.
+Moving label "_09531_" from metal1 to via1 in cell simproc_system.
+Moving label "_09532_" from metal3 to via3 in cell simproc_system.
+Moving label "_09537_" from metal2 to via1 in cell simproc_system.
+Moving label "_09551_" from metal2 to via2 in cell simproc_system.
+Moving label "_09613_" from metal2 to via2 in cell simproc_system.
+Moving label "_09615_" from metal2 to via2 in cell simproc_system.
+Moving label "_09619_" from metal1 to via1 in cell simproc_system.
+Moving label "_09688_" from metal2 to via2 in cell simproc_system.
+Moving label "_09692_" from metal1 to viali in cell simproc_system.
+Moving label "_09694_" from metal2 to via2 in cell simproc_system.
+Moving label "_09711_" from metal2 to via2 in cell simproc_system.
+Moving label "_09729_" from metal2 to via1 in cell simproc_system.
+Moving label "_09759_" from metal2 to via2 in cell simproc_system.
+Moving label "_09865_" from metal4 to via4 in cell simproc_system.
+Moving label "_09914_" from metal3 to via3 in cell simproc_system.
+Moving label "_09932_" from metal1 to viali in cell simproc_system.
+Moving label "_10064_" from metal1 to via1 in cell simproc_system.
+Moving label "_10084_" from metal1 to viali in cell simproc_system.
+Moving label "_10110_" from metal1 to via1 in cell simproc_system.
+Moving label "_10146_" from metal1 to via1 in cell simproc_system.
+Moving label "_10158_" from metal2 to via2 in cell simproc_system.
+Moving label "_10201_" from metal1 to viali in cell simproc_system.
+Moving label "_10219_" from metal2 to via2 in cell simproc_system.
+Moving label "_10323_" from metal1 to viali in cell simproc_system.
+Moving label "_10351_" from metal2 to via2 in cell simproc_system.
+Moving label "_10372_" from metal2 to via2 in cell simproc_system.
+Moving label "_10475_" from metal1 to viali in cell simproc_system.
+Moving label "_10508_" from metal1 to viali in cell simproc_system.
+Moving label "_10533_" from metal2 to via2 in cell simproc_system.
+Moving label "_10607_" from metal1 to via1 in cell simproc_system.
+Moving label "_10646_" from metal2 to via2 in cell simproc_system.
+Moving label "_10680_" from metal1 to via1 in cell simproc_system.
+Moving label "_10733_" from metal2 to via2 in cell simproc_system.
+Moving label "_10738_" from metal1 to viali in cell simproc_system.
+Moving label "_10771_" from metal2 to via2 in cell simproc_system.
+Moving label "_10785_" from metal2 to via2 in cell simproc_system.
+Moving label "_10869_" from metal2 to via1 in cell simproc_system.
+Moving label "_10870_" from metal2 to via2 in cell simproc_system.
+Moving label "_10900_" from metal2 to via2 in cell simproc_system.
+Moving label "_10928_" from metal2 to via2 in cell simproc_system.
+Moving label "_10941_" from metal1 to via1 in cell simproc_system.
+Moving label "_10960_" from metal1 to viali in cell simproc_system.
+Moving label "_10965_" from metal2 to via2 in cell simproc_system.
+Moving label "_11086_" from metal2 to via2 in cell simproc_system.
+Moving label "_11134_" from metal2 to via1 in cell simproc_system.
+Moving label "_11209_" from metal2 to via2 in cell simproc_system.
+Moving label "_11260_" from metal4 to via4 in cell simproc_system.
+Moving label "_11267_" from metal2 to via1 in cell simproc_system.
+Moving label "_11304_" from metal1 to via1 in cell simproc_system.
+Moving label "_11309_" from metal1 to viali in cell simproc_system.
+Moving label "_11329_" from metal2 to via2 in cell simproc_system.
+Moving label "_11333_" from metal2 to via2 in cell simproc_system.
+Moving label "_11377_" from metal2 to via2 in cell simproc_system.
+Moving label "_11384_" from metal2 to via1 in cell simproc_system.
+Moving label "_11437_" from metal2 to via2 in cell simproc_system.
+Moving label "_11494_" from metal2 to via2 in cell simproc_system.
+Moving label "_11519_" from metal2 to via2 in cell simproc_system.
+Moving label "_11551_" from metal3 to via3 in cell simproc_system.
+Moving label "_11592_" from metal2 to via2 in cell simproc_system.
+Moving label "_11619_" from metal1 to viali in cell simproc_system.
+Moving label "_11669_" from metal2 to via2 in cell simproc_system.
+Moving label "_11769_" from metal1 to via1 in cell simproc_system.
+Moving label "_11779_" from metal2 to via2 in cell simproc_system.
+Moving label "_11801_" from metal1 to viali in cell simproc_system.
+Moving label "_11813_" from metal2 to via2 in cell simproc_system.
+Moving label "_11831_" from metal2 to via2 in cell simproc_system.
+Moving label "_11861_" from metal2 to via2 in cell simproc_system.
+Moving label "_11891_" from metal3 to via3 in cell simproc_system.
+Moving label "_11934_" from metal1 to viali in cell simproc_system.
+Moving label "_12044_" from metal2 to via2 in cell simproc_system.
+Moving label "_12385_" from metal2 to via1 in cell simproc_system.
+Moving label "_12520_" from metal1 to via1 in cell simproc_system.
+Moving label "_12659_" from metal1 to viali in cell simproc_system.
+Moving label "_12744_" from metal1 to viali in cell simproc_system.
+Moving label "clknet_0_clk" from metal3 to via3 in cell simproc_system.
+Moving label "clknet_2_3_0_clk" from metal2 to via2 in cell simproc_system.
+Moving label "clknet_5_19__leaf_clk" from metal2 to via2 in cell simproc_system.
+Moving label "clknet_leaf_256_clk" from metal1 to via1 in cell simproc_system.
+Moving label "net102" from metal2 to via2 in cell simproc_system.
+Moving label "net107" from metal4 to via4 in cell simproc_system.
+Moving label "net118" from metal2 to via2 in cell simproc_system.
+Moving label "net126" from metal2 to via2 in cell simproc_system.
+Moving label "net128" from metal3 to via3 in cell simproc_system.
+Moving label "net131" from metal3 to via3 in cell simproc_system.
+Moving label "net135" from metal2 to via2 in cell simproc_system.
+Moving label "net162" from metal2 to via2 in cell simproc_system.
+Moving label "net179" from metal1 to via1 in cell simproc_system.
+Moving label "net19" from metal2 to via2 in cell simproc_system.
+Moving label "net207" from metal1 to via1 in cell simproc_system.
+Moving label "net216" from metal1 to via1 in cell simproc_system.
+Moving label "net262" from metal1 to viali in cell simproc_system.
+Moving label "net29" from metal2 to via2 in cell simproc_system.
+Moving label "net32" from metal3 to via3 in cell simproc_system.
+Moving label "net33" from metal2 to via1 in cell simproc_system.
+Moving label "net40" from metal2 to via2 in cell simproc_system.
+Moving label "net42" from metal2 to via2 in cell simproc_system.
+Moving label "net47" from metal2 to via2 in cell simproc_system.
+Moving label "net51" from metal2 to via2 in cell simproc_system.
+Moving label "net53" from metal3 to via3 in cell simproc_system.
+Moving label "net60" from metal2 to via2 in cell simproc_system.
+Moving label "net62" from metal2 to via2 in cell simproc_system.
+Moving label "net63" from metal2 to via1 in cell simproc_system.
+Moving label "net64" from metal2 to via2 in cell simproc_system.
+Moving label "net73" from metal2 to via2 in cell simproc_system.
+Moving label "net85" from metal2 to via2 in cell simproc_system.
+Moving label "net87" from metal2 to via2 in cell simproc_system.
+Processing simproc_system
+Extracting sky130_ef_sc_hd__decap_12 into sky130_ef_sc_hd__decap_12.ext:
+Extracting sky130_fd_sc_hd__fill_2 into sky130_fd_sc_hd__fill_2.ext:
+Extracting sky130_fd_sc_hd__decap_3 into sky130_fd_sc_hd__decap_3.ext:
+Extracting sky130_fd_sc_hd__clkbuf_4 into sky130_fd_sc_hd__clkbuf_4.ext:
+Extracting sky130_fd_sc_hd__decap_4 into sky130_fd_sc_hd__decap_4.ext:
+Extracting sky130_fd_sc_hd__fill_1 into sky130_fd_sc_hd__fill_1.ext:
+Extracting sky130_fd_sc_hd__tapvpwrvgnd_1 into sky130_fd_sc_hd__tapvpwrvgnd_1.ext:
+Extracting sky130_fd_sc_hd__decap_8 into sky130_fd_sc_hd__decap_8.ext:
+Extracting sky130_fd_sc_hd__decap_6 into sky130_fd_sc_hd__decap_6.ext:
+Extracting sky130_fd_sc_hd__diode_2 into sky130_fd_sc_hd__diode_2.ext:
+Extracting sky130_fd_sc_hd__dlygate4sd3_1 into sky130_fd_sc_hd__dlygate4sd3_1.ext:
+Extracting sky130_fd_sc_hd__buf_8 into sky130_fd_sc_hd__buf_8.ext:
+Extracting sky130_fd_sc_hd__clkbuf_8 into sky130_fd_sc_hd__clkbuf_8.ext:
+Extracting sky130_fd_sc_hd__dfxtp_1 into sky130_fd_sc_hd__dfxtp_1.ext:
+Extracting sky130_fd_sc_hd__clkbuf_1 into sky130_fd_sc_hd__clkbuf_1.ext:
+Extracting sky130_fd_sc_hd__mux2_1 into sky130_fd_sc_hd__mux2_1.ext:
+Extracting sky130_fd_sc_hd__clkbuf_16 into sky130_fd_sc_hd__clkbuf_16.ext:
+Extracting sky130_fd_sc_hd__buf_2 into sky130_fd_sc_hd__buf_2.ext:
+Extracting sky130_fd_sc_hd__buf_4 into sky130_fd_sc_hd__buf_4.ext:
+Extracting sky130_fd_sc_hd__buf_12 into sky130_fd_sc_hd__buf_12.ext:
+Extracting sky130_fd_sc_hd__buf_6 into sky130_fd_sc_hd__buf_6.ext:
+Extracting sky130_fd_sc_hd__nor2b_4 into sky130_fd_sc_hd__nor2b_4.ext:
+Extracting sky130_fd_sc_hd__nor2_4 into sky130_fd_sc_hd__nor2_4.ext:
+Extracting sky130_fd_sc_hd__dfxtp_4 into sky130_fd_sc_hd__dfxtp_4.ext:
+Extracting sky130_fd_sc_hd__nand2_4 into sky130_fd_sc_hd__nand2_4.ext:
+Extracting sky130_fd_sc_hd__dfxtp_2 into sky130_fd_sc_hd__dfxtp_2.ext:
+Extracting sky130_fd_sc_hd__a22o_1 into sky130_fd_sc_hd__a22o_1.ext:
+Extracting sky130_fd_sc_hd__or3_1 into sky130_fd_sc_hd__or3_1.ext:
+Extracting sky130_fd_sc_hd__inv_12 into sky130_fd_sc_hd__inv_12.ext:
+Extracting sky130_fd_sc_hd__mux4_2 into sky130_fd_sc_hd__mux4_2.ext:
+Extracting sky130_fd_sc_hd__mux2_8 into sky130_fd_sc_hd__mux2_8.ext:
+Extracting sky130_fd_sc_hd__and3_1 into sky130_fd_sc_hd__and3_1.ext:
+Extracting sky130_fd_sc_hd__a221o_1 into sky130_fd_sc_hd__a221o_1.ext:
+Extracting sky130_fd_sc_hd__or2_1 into sky130_fd_sc_hd__or2_1.ext:
+Extracting sky130_fd_sc_hd__a211o_1 into sky130_fd_sc_hd__a211o_1.ext:
+Extracting sky130_fd_sc_hd__o211a_1 into sky130_fd_sc_hd__o211a_1.ext:
+Extracting sky130_fd_sc_hd__mux2_4 into sky130_fd_sc_hd__mux2_4.ext:
+Extracting sky130_fd_sc_hd__a31o_1 into sky130_fd_sc_hd__a31o_1.ext:
+Extracting sky130_fd_sc_hd__and3_2 into sky130_fd_sc_hd__and3_2.ext:
+Extracting sky130_fd_sc_hd__and3_4 into sky130_fd_sc_hd__and3_4.ext:
+Extracting sky130_fd_sc_hd__a211o_2 into sky130_fd_sc_hd__a211o_2.ext:
+Extracting sky130_fd_sc_hd__mux2_2 into sky130_fd_sc_hd__mux2_2.ext:
+Extracting sky130_fd_sc_hd__clkbuf_2 into sky130_fd_sc_hd__clkbuf_2.ext:
+Extracting sky130_fd_sc_hd__a31o_2 into sky130_fd_sc_hd__a31o_2.ext:
+Extracting sky130_fd_sc_hd__and2_1 into sky130_fd_sc_hd__and2_1.ext:
+Extracting sky130_fd_sc_hd__o211a_2 into sky130_fd_sc_hd__o211a_2.ext:
+Extracting sky130_fd_sc_hd__a21o_1 into sky130_fd_sc_hd__a21o_1.ext:
+Extracting sky130_fd_sc_hd__o221a_2 into sky130_fd_sc_hd__o221a_2.ext:
+Extracting sky130_fd_sc_hd__o221a_1 into sky130_fd_sc_hd__o221a_1.ext:
+Extracting sky130_fd_sc_hd__o211a_4 into sky130_fd_sc_hd__o211a_4.ext:
+Extracting sky130_fd_sc_hd__or3_2 into sky130_fd_sc_hd__or3_2.ext:
+Extracting sky130_fd_sc_hd__mux4_1 into sky130_fd_sc_hd__mux4_1.ext:
+Extracting sky130_fd_sc_hd__a311o_1 into sky130_fd_sc_hd__a311o_1.ext:
+Extracting sky130_fd_sc_hd__a31o_4 into sky130_fd_sc_hd__a31o_4.ext:
+Extracting sky130_fd_sc_hd__o21a_1 into sky130_fd_sc_hd__o21a_1.ext:
+Extracting sky130_fd_sc_hd__nand3_2 into sky130_fd_sc_hd__nand3_2.ext:
+Extracting sky130_fd_sc_hd__or2_4 into sky130_fd_sc_hd__or2_4.ext:
+Extracting sky130_fd_sc_hd__nor2_8 into sky130_fd_sc_hd__nor2_8.ext:
+Extracting sky130_fd_sc_hd__nand2b_4 into sky130_fd_sc_hd__nand2b_4.ext:
+Extracting sky130_fd_sc_hd__or2_2 into sky130_fd_sc_hd__or2_2.ext:
+Extracting sky130_fd_sc_hd__nor2_1 into sky130_fd_sc_hd__nor2_1.ext:
+Extracting sky130_fd_sc_hd__o31a_1 into sky130_fd_sc_hd__o31a_1.ext:
+Extracting sky130_fd_sc_hd__inv_2 into sky130_fd_sc_hd__inv_2.ext:
+Extracting sky130_fd_sc_hd__o32a_1 into sky130_fd_sc_hd__o32a_1.ext:
+Extracting sky130_fd_sc_hd__and2b_1 into sky130_fd_sc_hd__and2b_1.ext:
+Extracting sky130_fd_sc_hd__nand2_1 into sky130_fd_sc_hd__nand2_1.ext:
+Extracting sky130_fd_sc_hd__o22a_1 into sky130_fd_sc_hd__o22a_1.ext:
+Extracting sky130_fd_sc_hd__and2_2 into sky130_fd_sc_hd__and2_2.ext:
+Extracting sky130_fd_sc_hd__and3b_1 into sky130_fd_sc_hd__and3b_1.ext:
+Extracting sky130_fd_sc_hd__xnor2_1 into sky130_fd_sc_hd__xnor2_1.ext:
+Extracting sky130_fd_sc_hd__a2111o_1 into sky130_fd_sc_hd__a2111o_1.ext:
+Extracting sky130_fd_sc_hd__xor2_4 into sky130_fd_sc_hd__xor2_4.ext:
+Extracting sky130_fd_sc_hd__o21bai_1 into sky130_fd_sc_hd__o21bai_1.ext:
+Extracting sky130_fd_sc_hd__or4_2 into sky130_fd_sc_hd__or4_2.ext:
+Extracting sky130_fd_sc_hd__o21ai_1 into sky130_fd_sc_hd__o21ai_1.ext:
+Extracting sky130_fd_sc_hd__a21oi_1 into sky130_fd_sc_hd__a21oi_1.ext:
+Extracting sky130_fd_sc_hd__xor2_2 into sky130_fd_sc_hd__xor2_2.ext:
+Extracting sky130_fd_sc_hd__or4b_1 into sky130_fd_sc_hd__or4b_1.ext:
+Extracting sky130_fd_sc_hd__or3_4 into sky130_fd_sc_hd__or3_4.ext:
+Extracting sky130_fd_sc_hd__a221o_2 into sky130_fd_sc_hd__a221o_2.ext:
+Extracting sky130_fd_sc_hd__o311a_1 into sky130_fd_sc_hd__o311a_1.ext:
+Extracting sky130_fd_sc_hd__a32o_1 into sky130_fd_sc_hd__a32o_1.ext:
+Extracting sky130_fd_sc_hd__o22a_2 into sky130_fd_sc_hd__o22a_2.ext:
+Extracting sky130_fd_sc_hd__nand2_8 into sky130_fd_sc_hd__nand2_8.ext:
+Extracting sky130_fd_sc_hd__or4_4 into sky130_fd_sc_hd__or4_4.ext:
+Extracting sky130_fd_sc_hd__a22o_2 into sky130_fd_sc_hd__a22o_2.ext:
+Extracting sky130_fd_sc_hd__a211o_4 into sky130_fd_sc_hd__a211o_4.ext:
+Extracting sky130_fd_sc_hd__nor2_2 into sky130_fd_sc_hd__nor2_2.ext:
+Extracting sky130_fd_sc_hd__nand2_2 into sky130_fd_sc_hd__nand2_2.ext:
+Extracting sky130_fd_sc_hd__o211ai_1 into sky130_fd_sc_hd__o211ai_1.ext:
+Extracting sky130_fd_sc_hd__and4_1 into sky130_fd_sc_hd__and4_1.ext:
+Extracting sky130_fd_sc_hd__or3b_2 into sky130_fd_sc_hd__or3b_2.ext:
+Extracting sky130_fd_sc_hd__o2bb2a_1 into sky130_fd_sc_hd__o2bb2a_1.ext:
+Extracting sky130_fd_sc_hd__a21o_2 into sky130_fd_sc_hd__a21o_2.ext:
+Extracting sky130_fd_sc_hd__o21ba_1 into sky130_fd_sc_hd__o21ba_1.ext:
+Extracting sky130_fd_sc_hd__o211ai_2 into sky130_fd_sc_hd__o211ai_2.ext:
+Extracting sky130_fd_sc_hd__and4bb_1 into sky130_fd_sc_hd__and4bb_1.ext:
+Extracting sky130_fd_sc_hd__a21bo_1 into sky130_fd_sc_hd__a21bo_1.ext:
+Extracting sky130_fd_sc_hd__nand3_1 into sky130_fd_sc_hd__nand3_1.ext:
+Extracting sky130_fd_sc_hd__o21a_2 into sky130_fd_sc_hd__o21a_2.ext:
+Extracting sky130_fd_sc_hd__a31oi_4 into sky130_fd_sc_hd__a31oi_4.ext:
+Extracting sky130_fd_sc_hd__a22o_4 into sky130_fd_sc_hd__a22o_4.ext:
+Extracting sky130_fd_sc_hd__a311o_4 into sky130_fd_sc_hd__a311o_4.ext:
+Extracting sky130_fd_sc_hd__a22oi_4 into sky130_fd_sc_hd__a22oi_4.ext:
+Extracting sky130_fd_sc_hd__or3b_4 into sky130_fd_sc_hd__or3b_4.ext:
+Extracting sky130_fd_sc_hd__a221o_4 into sky130_fd_sc_hd__a221o_4.ext:
+Extracting sky130_fd_sc_hd__a21boi_1 into sky130_fd_sc_hd__a21boi_1.ext:
+Extracting sky130_fd_sc_hd__a32o_4 into sky130_fd_sc_hd__a32o_4.ext:
+Extracting sky130_fd_sc_hd__a221oi_2 into sky130_fd_sc_hd__a221oi_2.ext:
+Extracting sky130_fd_sc_hd__o41ai_4 into sky130_fd_sc_hd__o41ai_4.ext:
+Extracting sky130_fd_sc_hd__a32oi_4 into sky130_fd_sc_hd__a32oi_4.ext:
+Extracting sky130_fd_sc_hd__a22oi_2 into sky130_fd_sc_hd__a22oi_2.ext:
+Extracting sky130_fd_sc_hd__a32o_2 into sky130_fd_sc_hd__a32o_2.ext:
+Extracting sky130_fd_sc_hd__a211oi_4 into sky130_fd_sc_hd__a211oi_4.ext:
+Extracting sky130_fd_sc_hd__a21oi_4 into sky130_fd_sc_hd__a21oi_4.ext:
+Extracting sky130_fd_sc_hd__a21oi_2 into sky130_fd_sc_hd__a21oi_2.ext:
+Extracting sky130_fd_sc_hd__o21ai_2 into sky130_fd_sc_hd__o21ai_2.ext:
+Extracting sky130_fd_sc_hd__and3b_2 into sky130_fd_sc_hd__and3b_2.ext:
+Extracting sky130_fd_sc_hd__clkinv_4 into sky130_fd_sc_hd__clkinv_4.ext:
+Extracting sky130_fd_sc_hd__o311a_2 into sky130_fd_sc_hd__o311a_2.ext:
+Extracting sky130_fd_sc_hd__o31a_2 into sky130_fd_sc_hd__o31a_2.ext:
+Extracting sky130_fd_sc_hd__dlymetal6s2s_1 into sky130_fd_sc_hd__dlymetal6s2s_1.ext:
+Extracting sky130_fd_sc_hd__a211oi_1 into sky130_fd_sc_hd__a211oi_1.ext:
+Extracting sky130_fd_sc_hd__or3b_1 into sky130_fd_sc_hd__or3b_1.ext:
+Extracting sky130_fd_sc_hd__xor2_1 into sky130_fd_sc_hd__xor2_1.ext:
+Extracting sky130_fd_sc_hd__nand3_4 into sky130_fd_sc_hd__nand3_4.ext:
+Extracting sky130_fd_sc_hd__xnor2_2 into sky130_fd_sc_hd__xnor2_2.ext:
+Extracting sky130_fd_sc_hd__o21bai_2 into sky130_fd_sc_hd__o21bai_2.ext:
+Extracting sky130_fd_sc_hd__a41o_1 into sky130_fd_sc_hd__a41o_1.ext:
+Extracting sky130_fd_sc_hd__a211oi_2 into sky130_fd_sc_hd__a211oi_2.ext:
+Extracting sky130_fd_sc_hd__and4_2 into sky130_fd_sc_hd__and4_2.ext:
+Extracting sky130_fd_sc_hd__o31ai_1 into sky130_fd_sc_hd__o31ai_1.ext:
+Extracting sky130_fd_sc_hd__nor3_1 into sky130_fd_sc_hd__nor3_1.ext:
+Extracting sky130_fd_sc_hd__nor3_4 into sky130_fd_sc_hd__nor3_4.ext:
+Extracting sky130_fd_sc_hd__or4b_4 into sky130_fd_sc_hd__or4b_4.ext:
+Extracting sky130_fd_sc_hd__buf_1 into sky130_fd_sc_hd__buf_1.ext:
+Extracting sky130_fd_sc_hd__a31oi_2 into sky130_fd_sc_hd__a31oi_2.ext:
+Extracting sky130_fd_sc_hd__or2b_1 into sky130_fd_sc_hd__or2b_1.ext:
+Extracting sky130_fd_sc_hd__o41a_1 into sky130_fd_sc_hd__o41a_1.ext:
+Extracting sky130_fd_sc_hd__and4b_1 into sky130_fd_sc_hd__and4b_1.ext:
+Extracting sky130_fd_sc_hd__a2bb2o_1 into sky130_fd_sc_hd__a2bb2o_1.ext:
+Extracting sky130_fd_sc_hd__and4_4 into sky130_fd_sc_hd__and4_4.ext:
+Extracting sky130_fd_sc_hd__a21o_4 into sky130_fd_sc_hd__a21o_4.ext:
+Extracting sky130_fd_sc_hd__and4bb_4 into sky130_fd_sc_hd__and4bb_4.ext:
+Extracting sky130_fd_sc_hd__dlygate4sd1_1 into sky130_fd_sc_hd__dlygate4sd1_1.ext:
+Extracting sky130_fd_sc_hd__and4b_4 into sky130_fd_sc_hd__and4b_4.ext:
+Extracting sky130_fd_sc_hd__o21a_4 into sky130_fd_sc_hd__o21a_4.ext:
+Extracting sky130_fd_sc_hd__or4bb_1 into sky130_fd_sc_hd__or4bb_1.ext:
+Extracting sky130_fd_sc_hd__o311a_4 into sky130_fd_sc_hd__o311a_4.ext:
+Extracting simproc_system into simproc_system.ext:
+simproc_system: 134634 errors
+Total of 134634 errors (check feedback entries).
+exttospice finished.
