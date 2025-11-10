@@ -12,16 +12,16 @@ module simproc_system #(
     // Debug outputs
     output logic                        halt,
     output logic                        done,
-    output logic    [7:0]               cmd_byte,
-    output logic    [7:0]               addr_byte,
-    output logic    [7:0]               data_byte,
-    output logic    [7:0]               tx_reg
+    // output logic    [7:0]               cmd_byte,
+    // output logic    [7:0]               addr_byte,
+    // output logic    [7:0]               data_byte,
+    // output logic    [7:0]               tx_reg
 );
 
-    // logic [7:0] cmd_byte;
-    // logic [7:0] addr_byte;
-    // logic [7:0] data_byte;
-    // logic [7:0] tx_reg;
+    logic [7:0] cmd_byte;
+    logic [7:0] addr_byte;
+    logic [7:0] data_byte;
+    logic [7:0] tx_reg;
 
     // Internal Signals
     // DP Ram
@@ -54,7 +54,7 @@ module simproc_system #(
     // DP Ram
     dp_ram #(
         .DATA_WIDTH(8),
-        .MEM_DEPTH(256)
+        .MEM_DEPTH(24)
     ) RAM1 (
         .clk(clk),
 
@@ -826,7 +826,7 @@ endmodule
 
 module dp_ram #(
     parameter DATA_WIDTH = 8,
-    parameter MEM_DEPTH = 256
+    parameter MEM_DEPTH = 32
 ) (
     input  logic            clk,
 
@@ -841,7 +841,7 @@ module dp_ram #(
     output logic    [7:0]   dout_b
 );
 
-    logic [7:0] mem [0:255];
+    logic [7:0] mem [0:MEM_DEPTH-1];
 
     always_ff @ (posedge clk) begin
         if (we_a) begin

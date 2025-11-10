@@ -1,6 +1,0 @@
-<< properties >>
-string FIXED_BBOX 0 0 161335 163479
-string GDS_END 57916726
-string GDS_FILE /openlane/designs/simproc_system/runs/RUN_2025.11.09_18.29.08/results/signoff/simproc_system.magic.gds
-string GDS_START 1104272
-<< end >>

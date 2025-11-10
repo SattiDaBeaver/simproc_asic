@@ -1,0 +1,71 @@
+%Warning-PINCONNECTEMPTY: /openlane/designs/simproc_system/src/simproc_system.sv:118:10: Cell pin connected by name with empty reference: 'RX_parityError'
+  118 |         .RX_parityError()
+      |          ^~~~~~~~~~~~~~
+                          ... For warning description see https://verilator.org/warn/PINCONNECTEMPTY?v=5.009
+                          ... Use "/* verilator lint_off PINCONNECTEMPTY */" and lint_on around source to disable this message.
+%Warning-WIDTHEXPAND: /openlane/designs/simproc_system/src/simproc_system.sv:980:19: Operator ASSIGNDLY expects 4 bits on the Assign RHS, but Assign RHS's CONST '1'h0' generates 1 bits.
+                                                                                   : ... In instance simproc_system.UART1.UART_RX1
+  980 |             index <= 1'b0;
+      |                   ^~
+%Warning-WIDTHTRUNC: /openlane/designs/simproc_system/src/simproc_system.sv:1022:36: Bit extraction of var[7:0] requires 3 bit index, not 4 bits.
+                                                                                   : ... In instance simproc_system.UART1.UART_RX1
+ 1022 |                             dataOut[index] <= regIn;
+      |                                    ^
+%Warning-WIDTHEXPAND: /openlane/designs/simproc_system/src/simproc_system.sv:1114:25: Operator ASSIGNDLY expects 4 bits on the Assign RHS, but Assign RHS's CONST '1'h0' generates 1 bits.
+                                                                                    : ... In instance simproc_system.UART1.UART_TX1
+ 1114 |             index       <= 1'b0;
+      |                         ^~
+%Warning-WIDTHEXPAND: /openlane/designs/simproc_system/src/simproc_system.sv:1122:33: Operator ASSIGNDLY expects 4 bits on the Assign RHS, but Assign RHS's CONST '1'h0' generates 1 bits.
+                                                                                    : ... In instance simproc_system.UART1.UART_TX1
+ 1122 |                     index       <= 1'b0;
+      |                                 ^~
+%Warning-WIDTHTRUNC: /openlane/designs/simproc_system/src/simproc_system.sv:1128:36: Operator ASSIGNDLY expects 10 bits on the Assign RHS, but Assign RHS's REPLICATE generates 11 bits.
+                                                                                   : ... In instance simproc_system.UART1.UART_TX1
+ 1128 |                             packet <= {{STOP_BITS{1'b1}}, parityBit, dataIn, 1'b0};
+      |                                    ^~
+%Warning-WIDTHEXPAND: /openlane/designs/simproc_system/src/simproc_system.sv:1168:33: Operator ASSIGNDLY expects 4 bits on the Assign RHS, but Assign RHS's CONST '1'h0' generates 1 bits.
+                                                                                    : ... In instance simproc_system.UART1.UART_TX1
+ 1168 |                     index       <= 1'b0;
+      |                                 ^~
+%Warning-WIDTHTRUNC: /openlane/designs/simproc_system/src/simproc_system.sv:848:16: Bit extraction of array[23:0] requires 5 bit index, not 8 bits.
+                                                                                  : ... In instance simproc_system.RAM1
+  848 |             mem[addr_a] <= din_a;
+      |                ^
+%Warning-WIDTHTRUNC: /openlane/designs/simproc_system/src/simproc_system.sv:851:16: Bit extraction of array[23:0] requires 5 bit index, not 8 bits.
+                                                                                  : ... In instance simproc_system.RAM1
+  851 |             mem[addr_b] <= din_b;
+      |                ^
+%Warning-WIDTHTRUNC: /openlane/designs/simproc_system/src/simproc_system.sv:856:21: Bit extraction of array[23:0] requires 5 bit index, not 8 bits.
+                                                                                  : ... In instance simproc_system.RAM1
+  856 |         dout_a = mem[addr_a];
+      |                     ^
+%Warning-WIDTHTRUNC: /openlane/designs/simproc_system/src/simproc_system.sv:857:21: Bit extraction of array[23:0] requires 5 bit index, not 8 bits.
+                                                                                  : ... In instance simproc_system.RAM1
+  857 |         dout_b = mem[addr_b];
+      |                     ^
+%Warning-UNUSEDSIGNAL: /openlane/designs/simproc_system/src/simproc_system.sv:44:17: Signal is not used: 'tx_busy'
+                                                                                   : ... In instance simproc_system
+   44 |     logic       tx_busy;
+      |                 ^~~~~~~
+%Warning-UNUSEDSIGNAL: /openlane/designs/simproc_system/src/simproc_system.sv:146:17: Signal is not driven, nor used: 'tx_start'
+                                                                                    : ... In instance simproc_system
+  146 |     logic       tx_start;
+      |                 ^~~~~~~~
+%Warning-UNUSEDPARAM: /openlane/designs/simproc_system/src/simproc_system.sv:828:15: Parameter is not used: 'DATA_WIDTH'
+                                                                                   : ... In instance simproc_system.RAM1
+  828 |     parameter DATA_WIDTH = 8,
+      |               ^~~~~~~~~~
+%Warning-UNUSEDSIGNAL: /openlane/designs/simproc_system/src/simproc_system.sv:834:29: Bits of signal are not used: 'addr_a'[7:5]
+                                                                                    : ... In instance simproc_system.RAM1
+  834 |     input  logic    [7:0]   addr_a,
+      |                             ^~~~~~
+%Warning-UNUSEDSIGNAL: /openlane/designs/simproc_system/src/simproc_system.sv:839:29: Bits of signal are not used: 'addr_b'[7:5]
+                                                                                    : ... In instance simproc_system.RAM1
+  839 |     input  logic    [7:0]   addr_b,
+      |                             ^~~~~~
+%Warning-CASEINCOMPLETE: /openlane/designs/simproc_system/src/simproc_system.sv:296:17: Case values incompletely covered (example pattern 0x0)
+  296 |                 case (uart_curr_state)
+      |                 ^~~~
+%Warning-CASEINCOMPLETE: /openlane/designs/simproc_system/src/simproc_system.sv:613:21: Case values incompletely covered (example pattern 0x0)
+  613 |                     case (instr_reg_out[3:0])
+      |                     ^~~~

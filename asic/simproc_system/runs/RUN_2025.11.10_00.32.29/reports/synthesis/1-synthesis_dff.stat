@@ -1,0 +1,25 @@
+
+53. Printing statistics.
+
+=== simproc_system ===
+
+   Number of wires:               2995
+   Number of wire bits:           3388
+   Number of public wires:          76
+   Number of public wire bits:     442
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:               3368
+     $_ANDNOT_                     540
+     $_AND_                         46
+     $_MUX_                       1197
+     $_NAND_                        96
+     $_NOR_                         71
+     $_NOT_                        264
+     $_ORNOT_                      114
+     $_OR_                         569
+     $_XNOR_                        19
+     $_XOR_                         65
+     sky130_fd_sc_hd__dfxtp_2      387
+

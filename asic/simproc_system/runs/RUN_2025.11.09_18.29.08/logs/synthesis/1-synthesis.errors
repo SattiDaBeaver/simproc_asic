@@ -1,2 +1,0 @@
-No latch inferred for signal `$paramod$a09743db7393d5db274ce6ffc6d8fc7da222a51c\UART_RX.\parityError' from process `$paramod$a09743db7393d5db274ce6ffc6d8fc7da222a51c\UART_RX.$proc$/openlane/designs/simproc_system/src/simproc_system.sv:0$295'.
-ABC: Error: The network is combinational.

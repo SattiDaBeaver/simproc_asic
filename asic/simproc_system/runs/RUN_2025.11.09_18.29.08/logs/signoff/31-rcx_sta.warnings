@@ -1,5 +1,0 @@
-Warning: /openlane/designs/simproc_system/runs/RUN_2025.11.09_18.29.08/results/routing/simproc_system.nl.v line 69653, module sky130_fd_sc_hd__tapvpwrvgnd_1 not found. Creating black box for TAP_584.
-Warning: /openlane/designs/simproc_system/runs/RUN_2025.11.09_18.29.08/results/routing/simproc_system.nl.v line 81881, module sky130_fd_sc_hd__fill_2 not found. Creating black box for FILLER_0_0_3.
-Warning: /openlane/designs/simproc_system/runs/RUN_2025.11.09_18.29.08/results/routing/simproc_system.nl.v line 81882, module sky130_ef_sc_hd__decap_12 not found. Creating black box for FILLER_0_0_11.
-Warning: /openlane/designs/simproc_system/runs/RUN_2025.11.09_18.29.08/results/routing/simproc_system.nl.v line 81884, module sky130_fd_sc_hd__fill_1 not found. Creating black box for FILLER_0_0_27.
-[WARNING] Did not save OpenROAD database!
