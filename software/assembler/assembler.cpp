@@ -7,6 +7,8 @@ Instruction::Instruction(string m, int l) {
 
 Assembler::Assembler() {
     curr_line = 0;
+    curr_mem_addr = 0;
+    is_text = false;
 }
 
 // Parse Line 
@@ -54,14 +56,15 @@ int Assembler::ParseLine (const string& line) {
 
 int32_t Assembler::GetValueFromString(string& str) {
     int32_t num;
-    if (str.rfind("0x", 0) == 0 || str.rfind("0X", 0) == 0) {
-        // Hex
-        num = static_cast<int32_t>(stoul(str, nullptr, 16));
-    } else {
-        // Decimal
-        num = static_cast<int32_t>(stoul(str, nullptr, 10));
+    try
+    {
+        num = static_cast<int32_t>(stoi(str, nullptr, 0));
     }
-
+    catch(const std::exception& e)
+    {
+        return VALUE_ERR;
+    }
+    
     return num;
 }
 
@@ -81,6 +84,14 @@ uint8_t Assembler::GetValueFromRegister(string& str) {
     return INVALID_REG;
 }
 
+uint8_t Assembler::FindLabel(string& str) {
+    auto iter = this->labels.find(str);
+    if (iter == opcode_table.end()) {
+        return LABEL_ERR; // return error
+    }
+    return iter->second;
+}
+
 uint8_t Assembler::IntToImm2(int32_t val) {
     return (val & 0x3);
 }
@@ -95,19 +106,73 @@ uint8_t Assembler::IntToImm5(int32_t val) {
 
 
 uint8_t Assembler::AssembleInstruction(const Instruction& instruction) {
+    string instr = instruction.mnemonic;
+
+    // Assembler directives
+    if (instr == ".data") {
+        // check text before data
+        if (this->is_text) { 
+            cout << "Error: \".data\" must be before \".text\" on line " << instruction.line_num << endl;
+            return INSTR_ERR;
+        }
+
+        return ASM_DATA;
+    }
+
+    if (instr == ".text") {
+        if (this->is_text) { 
+            cout << "Error: \".text\" cannot be defined twice on line " << instruction.line_num << endl;
+            return INSTR_ERR;
+        }
+        this->is_text = true;
+        return ASM_TEXT;
+    }
+
+    // check if data
+    // Change this section later to support labels
+    if (!this->is_text) {
+        if (instruction.operands.size() < 1) {
+            cout << "Error: Too few operands (found " << instruction.operands.size() << 
+            ", expected 1) on line " << instruction.line_num << "\n";
+            return INSTR_ERR; // return error
+        } 
+        else if (instruction.operands.size() > 1) {
+            cout << "Error: Too many operands (found " << instruction.operands.size() << 
+            ", expected 1) on line " << instruction.line_num << "\n";
+            return INSTR_ERR; // return error
+        }
+        string label = instruction.mnemonic;
+        string data_str = instruction.operands[0];
+        int32_t data_int32 = GetValueFromString(data_str);
+
+        if (data_int32 > 127 || data_int32 < -128) {
+            cout << "Error: Value out of bounds (found " << data_int32 << 
+            ", expected -128 to 127) on line " << instruction.line_num << "\n";
+            return INSTR_ERR; // return error
+        }
+        uint8_t data_word = (uint8_t) (data_int32 & 0xFF);
+
+        // store label 
+        this->labels.insert({label, (uint8_t)(curr_mem_addr)});
+
+        return data_word;
+    }
+
+
+    // Instruction
+    // This section might be redundant
+    //-----------------------------------
     auto iter = this->opcode_table.find(instruction.mnemonic);
     if (iter == opcode_table.end()) {
         cout << "Error: Unknown instruction \"" << instruction.mnemonic <<
         "\" on line " << instruction.line_num << endl;
-
         return INSTR_ERR; // return error
     }
 
+    //-----------------------------------
+
     uint8_t instr_word = 0;
     instr_word |= iter->second; // Set opcode bits
-
-    
-    string instr = instruction.mnemonic;
 
     // shift (2 instructions)
     if (instr == "shl" || instr == "shr") {
@@ -142,6 +207,7 @@ uint8_t Assembler::AssembleInstruction(const Instruction& instruction) {
         // Get immediate value
         int32_t val = GetValueFromString(shift_str);
 
+
         // Out of bounds check
         if (val > 3 || val < 0) {
             cout << "Error: Value out of bounds (found " << val << 
@@ -173,6 +239,18 @@ uint8_t Assembler::AssembleInstruction(const Instruction& instruction) {
         }
         string ori_str = instruction.operands[0];
         int32_t val = GetValueFromString(ori_str);
+
+        // Check for label
+        uint8_t label = FindLabel(ori_str);
+        if (label == LABEL_ERR) { // label does not exist OR number used
+            if (val == VALUE_ERR) { // label does not exist 
+                cout << "Error: Label \"" << ori_str << "\" does not exist on line " << instruction.line_num << "\n";
+                return INSTR_ERR; // return error
+            }
+        }
+        else { // label exists
+            val = label;
+        }
 
         // Out of bounds check
         if (val > 31 || val < 0) {
@@ -268,7 +346,7 @@ uint8_t Assembler::AssembleInstruction(const Instruction& instruction) {
     }
 
     // invalid instruction error
-    cout << "Error: Invalid instruction on line " << 
+    cout << "Error: (This error should not occur) Invalid instruction on line " << 
     instruction.line_num << "\n";
 
     return INSTR_ERR; 
@@ -309,11 +387,43 @@ int Assembler::Assemble(const string& input_file, const string& output_file) {
     // Assemble instructions
     for (Instruction instr : instructions) {
         uint8_t instr_word = AssembleInstruction(instr);
+
+        // invalid instruction / directive
         if (instr_word == INSTR_ERR) {
             return ASSEMBLER_ERR;
         }
+
+        // .data directive
+        if (instr_word == ASM_DATA) {
+            continue;
+        }
+
+        // .text directive
+        if (instr_word == ASM_TEXT) {
+            if (curr_mem_addr > DATA_END) {
+                cout << "Error: Too much data bro wtf (max bytes: " << 
+                (DATA_END - DATA_START + 1) << ")\n";
+                return ASSEMBLER_ERR;
+            }
+            for (; curr_mem_addr < TEXT_START; curr_mem_addr++) {
+                cout << bitset<8>(0).to_string() << "\n";
+                out_stream << bitset<8>(0).to_string() << "\n";
+            }
+            continue;
+        }
+
+        // Valid data / instruction
+        curr_mem_addr++;
+        #ifdef DEBUG
         cout << bitset<8>(instr_word).to_string() << "\n";
+        #endif
         out_stream << bitset<8>(instr_word).to_string() << "\n";
+    }
+
+    // Padding 
+    for (; curr_mem_addr <= TEXT_END; curr_mem_addr++) {
+        cout << bitset<8>(0).to_string() << "\n";
+        out_stream << bitset<8>(0).to_string() << "\n";
     }
 
     in_stream.close();

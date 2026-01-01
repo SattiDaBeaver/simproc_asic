@@ -21,6 +21,7 @@ else
 endif
 
 CXXFLAGS := -Wall -std=c++17
+HEADER := assembler.hpp
 SRC := main.cpp assembler.cpp
 INFILE := main.s
 OUTFILE := main.bin
@@ -28,7 +29,7 @@ OUT := assemble
 
 all: assemble
 
-assemble: $(SRC) 
+assemble: $(SRC) $(HEADER)
 	@echo "Compiling for $(ARCH_NAME)..."
 	$(CXX) $(CXXFLAGS) $(SRC) -o $(OUT)
 	@echo "Build complete."

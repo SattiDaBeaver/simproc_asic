@@ -8,9 +8,24 @@
 #include <unordered_map>
 #include <unordered_set>
 
+// Error Values
 #define INVALID_REG     8u
 #define INSTR_ERR       0x0C 
+#define ASM_DATA        0x1C
+#define ASM_TEXT        0x2C
 #define ASSEMBLER_ERR   -1
+#define LABEL_ERR       TEXT_END
+#define VALUE_ERR       0xFFFF
+
+// SimProc Data Alignment
+#define DATA_START      0
+#define DATA_END        31
+#define TEXT_START      DATA_END + 1
+#define TEXT_END        63
+#define PC_START        TEXT_START
+
+// Debug Flags
+#define DEBUG
 
 using namespace std;
 
@@ -25,8 +40,11 @@ public:
 
 class Assembler {
 private:
-    vector<Instruction> instructions;
+    vector <Instruction> instructions;
+    unordered_map <string, uint8_t> labels;
     int curr_line;
+    int curr_mem_addr;
+    bool is_text;
 
     // OpCodes
     static constexpr uint8_t ADD   = 0x04;
@@ -44,7 +62,7 @@ private:
     static constexpr uint8_t JUMP  = 0x01;
 
     // Mnemonic to OpCode mapping
-    const unordered_map<string, uint8_t> opcode_table = {
+    const unordered_map <string, uint8_t> opcode_table = {
         {"add"  , ADD},
         {"sub"  , SUB},
         {"nand" , NAND},
@@ -64,6 +82,7 @@ private:
     uint8_t AssembleInstruction(const Instruction& instruction);
     int32_t GetValueFromString(string& str);
     uint8_t GetValueFromRegister(string& str);
+    uint8_t FindLabel(string& str);
     uint8_t IntToImm2(int32_t val); 
     uint8_t IntToImm4(int32_t val); 
     uint8_t IntToImm5(int32_t val);
