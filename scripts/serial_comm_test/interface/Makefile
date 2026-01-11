@@ -21,8 +21,7 @@ else
 endif
 
 CXXFLAGS := -Wall -std=c++17
-SRC := main.cpp uart.cpp
-HEADER := uart.hpp
+SRC := src/main.cpp
 PORT := COM5
 OUT := main
 
@@ -32,7 +31,7 @@ OUT := main
 
 all: main
 
-main: $(SRC) $(HEADER)
+main: $(SRC)
 	@echo "Compiling for $(ARCH_NAME)..."
 	$(CXX) $(CXXFLAGS) $(SRC) -o $(OUT)
 	@echo "Build complete."
